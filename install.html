@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+   <link rel="stylesheet" href="./assets/libs/swiper/swiper-bundle.min.css" />
+   <!-- Favicon icon-->
+   <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/fillvisa-favicon.svg" />
+   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/fillvisa-favicon.svg" />
+   <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon/fillvisa-favicon.svg" />
+   <link rel="manifest" href="./assets/images/favicon/site.webmanifest" />
+   <link rel="mask-icon" href="./assets/images/favicon/block-safari-pinned-tab.svg" color="#8b3dff" />
+   <link rel="shortcut icon" href="./assets/images/favicon/fillvisa-favicon.svg" />
+   <meta name="msapplication-TileColor" content="#8b3dff" />
+   <meta name="msapplication-config" content="./assets/images/favicon/tile.xml" />
+
+   <!-- Color modes -->
+   <script src="./assets/js/vendors/color-modes.js"></script>
+
+   <!-- Libs CSS -->
+   <link href="./assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
+   <link href="./assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+   <!-- Scroll Cue -->
+   <link rel="stylesheet" href="./assets/libs/scrollcue/scrollCue.css" />
+
+   <!-- Box icons -->
+   <link rel="stylesheet" href="./assets/fonts/css/boxicons.min.css" />
+
+   <!-- Theme CSS -->
+   <link rel="stylesheet" href="./assets/css/theme.min.css">
+
+   <!-- Custom CSS -->
+   <link rel="stylesheet" href="./assets/css/custom.css?v=professional-nav-1">
+
+   <!-- Google tag (gtag.js) -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BXWPHK9N8P"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+         dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-BXWPHK9N8P');
+   </script>
+
+   <!-- Primary Meta Tags -->
+   <title>Install Fillvisa OS - Open Source Immigration Forms</title>
+   <meta name="description"
+      content="Download, self-host, or use Fillvisa OS, the open-source edition of Fillvisa's browser-based immigration form tools.">
+   <meta name="keywords"
+      content="Fillvisa OS, open source immigration forms, install Fillvisa, self host immigration forms, AGPL immigration form software, Fillvisa GitHub">
+   <meta name="robots" content="index, follow">
+
+   <!-- Open Graph / Facebook -->
+   <meta property="og:title" content="Install Fillvisa OS - Open Source Immigration Forms">
+   <meta property="og:description"
+      content="Get the latest source ZIP for Fillvisa OS, learn how to run it, and understand the difference between Fillvisa OS, fillvisa.com, and Fillvisa Plus.">
+   <meta property="og:url" content="https://fillvisa.com/install">
+   <meta property="og:type" content="website">
+
+   <!-- Twitter -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="Install Fillvisa OS - Open Source Immigration Forms">
+   <meta name="twitter:description"
+      content="Download the latest Fillvisa OS source ZIP and learn how the open-source edition fits with fillvisa.com and Plus.">
+
+   <!-- Canonical -->
+   <link rel="canonical" href="https://fillvisa.com/install">
+</head>
+
+<body>
+   <!-- Navbar -->
+   <header>
+      <nav class="navbar navbar-expand-lg navbar-light w-100">
+         <div class="container px-3">
+            <a class="navbar-brand" href="./">
+               <img class="navbar-logo" src="assets/images/logo/logo.svg" alt />
+            </a>
+            <button class="navbar-toggler offcanvas-nav-btn" type="button">
+               <i class="bi bi-list"></i>
+            </button>
+            <div class="offcanvas offcanvas-start offcanvas-nav" style="width: 20rem">
+               <div class="offcanvas-header">
+                  <a href="./" class="text-inverse">
+                     <img class="navbar-logo" src="assets/images/logo/logo.svg" alt />
+                  </a>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+               </div>
+               <div class="offcanvas-body pt-0 align-items-center">
+
+                  <ul class="navbar-nav mx-auto align-items-lg-center">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">Forms</a>
+                        <ul class="dropdown-menu">
+                           <li class="nav-item"><a class="nav-link" href="form/">All Forms</a></li>
+                           <li class="nav-item"><a class="nav-link" href="form/green-card.html">Green-card Based</a></li>
+                           <li class="nav-item"><a class="nav-link" href="form/travel-visa.html">Travel & Visa</a></li>
+                           <li class="nav-item"><a class="nav-link" href="form/adoption.html">Adoption-Based</a></li>
+                           <li class="nav-item"><a class="nav-link" href="form/citizenship-naturalization.html">Citizenship & Naturalization</a></li>
+                        </ul>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="uscis-cover-letter/">
+                           Cover Letter <span class="badge bg-warning text-dark ms-2">Beta</span>
+                        </a>
+                     </li>
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">Resources</a>
+                        <ul class="dropdown-menu">
+                           <li class="nav-item"><a class="nav-link" href="install.html">Install Fillvisa OS</a></li>
+                           <li class="nav-item"><a class="nav-link" href="https://blog.fillvisa.com/">Blog</a></li>
+                           <li class="nav-item"><a class="nav-link" href="https://changelog.fillvisa.com/">Changelog</a></li>
+                        </ul>
+                     </li>
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">About</a>
+                        <ul class="dropdown-menu">
+                           <li class="nav-item"><a class="nav-link" href="about.html">Why</a></li>
+                           <li class="nav-item"><a class="nav-link" href="privacy.html">Privacy Policy</a></li>
+                           <li class="nav-item"><a class="nav-link" href="support.html">Support</a></li>
+                        </ul>
+                     </li>
+                  </ul>
+                  <div class="mt-3 mt-lg-0 d-flex align-items-center">
+                     <a class="btn btn-primary" href="https://plus.fillvisa.com/">For Professionals &#128075;</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </nav>
+   </header>
+
+   <main>
+      <!-- Hero start -->
+      <section class="my-lg-9 my-5 px-5">
+         <div class="container">
+            <div class="row align-items-center g-5">
+               <div class="col-lg-7 col-12">
+                  <small class="text-uppercase ls-md fw-semibold text-primary">Fillvisa OS</small>
+                  <h1 class="mt-3 mb-4">Open-source immigration forms you can inspect, fork, and self-host</h1>
+                  <p class="lead mb-4">
+                     Fillvisa OS is the open-source edition of Fillvisa's browser-based form tools. It is a frontend-only
+                     project built with HTML, CSS, JavaScript, local assets, and form pages.
+                  </p>
+                  <div class="d-flex flex-column flex-sm-row gap-3">
+                     <a class="btn btn-primary btn-lg"
+                        href="https://github.com/fillvisa/fillvisa-os/archive/refs/heads/main.zip">
+                        <i class="bi bi-download me-2"></i>Download latest source ZIP
+                     </a>
+                     <a class="btn btn-outline-primary btn-lg" href="https://github.com/fillvisa/fillvisa-os">
+                        <i class="bi bi-github me-2"></i>View on GitHub
+                     </a>
+                  </div>
+                  <p class="small text-body-secondary mt-3 mb-0">
+                     The ZIP points to the main branch snapshot at download time. Downloaded copies do not auto-update.
+                  </p>
+               </div>
+               <div class="col-lg-5 col-12">
+                  <div class="border rounded-3 p-4 p-lg-5 bg-light-subtle">
+                     <div class="d-flex align-items-center gap-3 mb-4">
+                        <div class="icon-shape icon-lg bg-primary bg-opacity-10 text-primary rounded-3">
+                           <i class="bi bi-code-slash"></i>
+                        </div>
+                        <div>
+                           <h2 class="h4 mb-1">Static by design</h2>
+                           <p class="mb-0 text-body-secondary">No package registry, app store, or backend install.</p>
+                        </div>
+                     </div>
+                     <ul class="list-unstyled mb-0">
+                        <li class="d-flex gap-2 mb-3">
+                           <i class="bi bi-check-circle-fill text-success"></i>
+                           <span>Frontend HTML, CSS, JavaScript, PDFs, and local libraries.</span>
+                        </li>
+                        <li class="d-flex gap-2 mb-3">
+                           <i class="bi bi-check-circle-fill text-success"></i>
+                           <span>Clone, fork, download, inspect, and self-host.</span>
+                        </li>
+                        <li class="d-flex gap-2">
+                           <i class="bi bi-check-circle-fill text-success"></i>
+                           <span>Designed for online/static hosting in v1.</span>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Hero end -->
+
+      <!-- Install steps start -->
+      <section class="my-lg-9 my-5 px-5">
+         <div class="container">
+            <div class="row justify-content-center mb-6">
+               <div class="col-xl-8 col-lg-9 col-md-12 text-center">
+                  <small class="text-uppercase ls-md fw-semibold text-primary">Install</small>
+                  <h2 class="mt-3">How to install or self-host Fillvisa OS</h2>
+                  <p class="lead mb-0">
+                     For v1, Fillvisa OS is meant to run as an online static website. You can download the source,
+                     upload it to a static host, and serve it over the internet.
+                  </p>
+               </div>
+            </div>
+            <div class="row g-4">
+               <div class="col-lg-3 col-md-6">
+                  <div class="border rounded-3 p-4 h-100">
+                     <span class="badge bg-primary mb-3">Step 1</span>
+                     <h3 class="h4">Download</h3>
+                     <p class="text-body-secondary mb-0">
+                        Use the GitHub ZIP link or clone the repository if you are comfortable with Git.
+                     </p>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <div class="border rounded-3 p-4 h-100">
+                     <span class="badge bg-primary mb-3">Step 2</span>
+                     <h3 class="h4">Unzip</h3>
+                     <p class="text-body-secondary mb-0">
+                        Keep the folder structure intact so pages can find their local CSS, JavaScript, PDFs, and assets.
+                     </p>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <div class="border rounded-3 p-4 h-100">
+                     <span class="badge bg-primary mb-3">Step 3</span>
+                     <h3 class="h4">Host</h3>
+                     <p class="text-body-secondary mb-0">
+                        Upload the files to GitHub Pages, Cloudflare Pages, Netlify, a static server, or your own website.
+                     </p>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <div class="border rounded-3 p-4 h-100">
+                     <span class="badge bg-primary mb-3">Step 4</span>
+                     <h3 class="h4">Update</h3>
+                     <p class="text-body-secondary mb-0">
+                        Download the latest main branch ZIP again or pull the newest commits when forms or editions change.
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="alert alert-warning mt-5 mb-0" role="alert">
+               <strong>Internet required:</strong> Fillvisa OS can be self-hosted, but v1 is not packaged as an offline
+               installer. Users should access it through an online or locally hosted web address, not as a guaranteed
+               double-click offline app.
+            </div>
+         </div>
+      </section>
+      <!-- Install steps end -->
+
+      <!-- Product differences start -->
+      <section class="my-lg-9 my-5 px-5">
+         <div class="container">
+            <div class="row justify-content-center mb-6">
+               <div class="col-xl-8 col-lg-9 col-md-12 text-center">
+                  <small class="text-uppercase ls-md fw-semibold text-primary">Editions</small>
+                  <h2 class="mt-3">Open source, Fillvisa.com, and Plus are different surfaces</h2>
+                  <p class="lead mb-0">
+                     The same mission, three different ways to use it.
+                  </p>
+               </div>
+            </div>
+            <div class="row g-4">
+               <div class="col-lg-4 col-md-6">
+                  <div class="border rounded-3 p-4 h-100">
+                     <div class="icon-shape icon-lg bg-success bg-opacity-10 text-success rounded-3 mb-4">
+                        <i class="bi bi-git"></i>
+                     </div>
+                     <h3 class="h4">Fillvisa OS</h3>
+                     <p class="text-body-secondary">
+                        The public AGPL source project. It is for transparency, forks, self-hosting, audits, and community
+                        contributions around supported free forms.
+                     </p>
+                     <a class="btn btn-outline-success" href="https://github.com/fillvisa/fillvisa-os">Open GitHub</a>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-md-6">
+                  <div class="border rounded-3 p-4 h-100">
+                     <div class="icon-shape icon-lg bg-primary bg-opacity-10 text-primary rounded-3 mb-4">
+                        <i class="bi bi-browser-chrome"></i>
+                     </div>
+                     <h3 class="h4">Fillvisa.com</h3>
+                     <p class="text-body-secondary">
+                        The hosted free version. It is the easiest place for users to fill supported public forms, use
+                        local browser storage, and download completed PDFs.
+                     </p>
+                     <a class="btn btn-outline-primary" href="form/">Browse free forms</a>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-md-12">
+                  <div class="border rounded-3 p-4 h-100">
+                     <div class="icon-shape icon-lg bg-warning bg-opacity-10 text-warning rounded-3 mb-4">
+                        <i class="bi bi-people"></i>
+                     </div>
+                     <h3 class="h4">Fillvisa Plus</h3>
+                     <p class="text-body-secondary">
+                        The cloud workspace for individuals and professionals who need saved cases, multi-device access,
+                        collaborators, and broader family and employment-based workflows.
+                     </p>
+                     <a class="btn btn-outline-warning" href="https://plus.fillvisa.com/">Go to Plus</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Product differences end -->
+
+      <!-- License start -->
+      <section class="my-lg-9 my-5 px-5">
+         <div class="container">
+            <div class="row g-5 align-items-start">
+               <div class="col-lg-6 col-12">
+                  <small class="text-uppercase ls-md fw-semibold text-primary">License</small>
+                  <h2 class="mt-3">AGPL for the open-source core</h2>
+                  <p class="lead">
+                     Fillvisa OS is intended to use the GNU Affero General Public License, version 3. The goal is simple:
+                     people can use, study, modify, and self-host the code, while public hosted modifications should keep
+                     the same source-sharing spirit.
+                  </p>
+                  <p class="text-body-secondary mb-0">
+                     The license covers the open-source project code. Fillvisa trademarks, logos, and brand identity are
+                     separate and are not automatically licensed for reuse.
+                  </p>
+               </div>
+               <div class="col-lg-6 col-12">
+                  <div class="border rounded-3 p-4 bg-light-subtle">
+                     <h3 class="h4">Plain-English summary</h3>
+                     <ul class="mb-0">
+                        <li class="mb-2">You can inspect, fork, and self-host Fillvisa OS.</li>
+                        <li class="mb-2">If you modify and offer it over a network, share the corresponding source.</li>
+                        <li class="mb-2">Keep third-party library notices and licenses intact.</li>
+                        <li>Do not imply your fork is the official Fillvisa service unless you have permission.</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- License end -->
+   </main>
+
+   <footer class="pt-7">
+      <div class="container">
+         <!-- Footer 4 column -->
+         <div class="row">
+            <div class="col-lg-9 col-12">
+               <div class="row" id="ft-links">
+
+                  <div class="col-lg-3 col-12">
+                     <div>
+                        <div
+                           class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0 position-relative">
+                           <h4>Quick Links</h4>
+                           <a class="d-block d-lg-none stretched-link text-body collapsed" data-bs-toggle="collapse"
+                              href="#collapseLanding" role="button" aria-expanded="false"
+                              aria-controls="collapseLanding">
+                              <i class="bi bi-chevron-down"></i>
+                           </a>
+                        </div>
+                        <div class="collapse d-lg-block show" id="collapseLanding">
+                           <ul class="list-unstyled mb-0 py-3 py-lg-0">
+                              <li class="mb-2">
+                                 <a href="./" class="text-decoration-none text-reset">Home</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="./demo/" class="text-decoration-none text-reset">Demo</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="form/" class="text-decoration-none text-reset">All Forms</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="install.html" class="text-decoration-none text-reset">Install Fillvisa OS</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="https://plus.fillvisa.com/" class="text-decoration-none text-reset">Use Fillvisa Plus</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="support.html" class="text-decoration-none text-reset">Support</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="privacy.html" class="text-decoration-none text-reset">Privacy and Data
+                                    Policy</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="https://blog.fillvisa.com/" target="_blank"
+                                    class="text-decoration-none text-reset">Blog</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="about.html" class="text-decoration-none text-reset">About</a>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="col-lg-3 col-12">
+                     <div>
+                        <div
+                           class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0 position-relative">
+                           <h4>Immigration Forms</h4>
+                           <a class="d-block d-lg-none stretched-link text-body collapsed" data-bs-toggle="collapse"
+                              href="#collapseAccounts" role="button" aria-expanded="false"
+                              aria-controls="collapseAccounts">
+                              <i class="bi bi-chevron-down"></i>
+                           </a>
+                        </div>
+                        <div class="collapse d-lg-block" id="collapseAccounts">
+                           <ul class="list-unstyled mb-0 py-3 py-lg-0">
+                              <li class="mb-2">
+                                 <a href="form/green-card.html" class="text-decoration-none text-reset">Green-card
+                                    Based</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="form/travel-visa.html" class="text-decoration-none text-reset">Travel &
+                                    Visa</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="form/adoption.html" class="text-decoration-none text-reset">Adoption-Based</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="form/citizenship-naturalization.html"
+                                    class="text-decoration-none text-reset">Citizenship & Naturalization based</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="form/pdf-form.html" class="text-decoration-none text-reset">PDF-Based</a>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="col-lg-3 col-12">
+                     <div>
+                        <div
+                           class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0 position-relative">
+                           <h4>Blog</h4>
+                           <a class="d-block d-lg-none stretched-link text-body collapsed" data-bs-toggle="collapse"
+                              href="#collapseBlog" role="button" aria-expanded="false" aria-controls="collapseBlog">
+                              <i class="bi bi-chevron-down"></i>
+                           </a>
+                        </div>
+                        <div class="collapse d-lg-block" id="collapseBlog">
+                           <ul class="list-unstyled mb-0 py-3 py-lg-0">
+                              <li class="mb-2">
+                                 <a href="https://blog.fillvisa.com/why-fillvisa-is-free-forever/" target="_blank"
+                                    class="text-decoration-none text-reset">Why Fillvisa is Free Forever</a>
+                              </li>
+
+                           </ul>
+                           <ul class="list-unstyled mb-0 py-3 py-lg-0">
+                              <li class="mb-2">
+                                 <a href="https://blog.fillvisa.com/how-fillvisa-works/" target="_blank"
+                                    class="text-decoration-none text-reset">Turning USCIS PDFs Into Smart Web Forms</a>
+                              </li>
+
+                           </ul>
+                           <ul class="list-unstyled mb-0 py-3 py-lg-0">
+                              <li class="mb-2">
+                                 <a href="https://blog.fillvisa.com/you-dont-need-adobe-acrobat/" target="_blank"
+                                    class="text-decoration-none text-reset">You Dont Need Adobe Acrobat Standard to Fill Immigration Forms</a>
+                              </li>
+
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+
+               </div>
+            </div>
+            <div class="col-lg-3 col-12">
+               <div class="me-7">
+                  <h4 class="mb-4">Fillvisa</h4>
+                  <p class="text-body-secondary">Free, privacy-first tools that make immigration paperwork easier and
+                     more accessible.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="container mt-7 pt-lg-7 pb-4">
+         <div class="row align-items-center">
+            <div class="col-md-3">
+               <a class="mb-4 mb-lg-0 d-block text-inverse" href="./"><img class="navbar-logo"
+                     src="assets/images/logo/logo.svg" alt="" /></a>
+            </div>
+            <div class="col-md-9 col-lg-6">
+            </div>
+            <div class="col-lg-3">
+               <div class="text-lg-end d-flex align-items-center justify-content-lg-end">
+                  <div class="dropdown">
+                     <button class="btn btn-light btn-icon rounded-circle d-flex align-items-center" type="button"
+                        aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+                        <i class="bi theme-icon-active lh-1"><i class="bi theme-icon bi-sun-fill"></i></i>
+                        <span class="visually-hidden bs-theme-text">Toggle theme</span>
+                     </button>
+                     <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bs-theme-text">
+                        <li>
+                           <button type="button" class="dropdown-item d-flex align-items-center active"
+                              data-bs-theme-value="light" aria-pressed="true">
+                              <i class="bi theme-icon bi-sun-fill"></i>
+                              <span class="ms-2">Light</span>
+                           </button>
+                        </li>
+                        <li>
+                           <button type="button" class="dropdown-item d-flex align-items-center"
+                              data-bs-theme-value="dark" aria-pressed="false">
+                              <i class="bi theme-icon bi-moon-stars-fill"></i>
+                              <span class="ms-2">Dark</span>
+                           </button>
+                        </li>
+                        <li>
+                           <button type="button" class="dropdown-item d-flex align-items-center"
+                              data-bs-theme-value="auto" aria-pressed="false">
+                              <i class="bi theme-icon bi-circle-half"></i>
+                              <span class="ms-2">Auto</span>
+                           </button>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="ms-3 d-flex gap-2">
+                     <a href="https://x.com/fillvisa" target="_blank" class="btn btn-twitter btn-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                           class="bi bi-twitter" viewBox="0 0 16 16">
+                           <path
+                              d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z">
+                           </path>
+                        </svg>
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <div class="btn-scroll-top">
+      <svg class="progress-square svg-content" width="100%" height="100%" viewBox="0 0 40 40">
+         <path
+            d="M8 1H32C35.866 1 39 4.13401 39 8V32C39 35.866 35.866 39 32 39H8C4.13401 39 1 35.866 1 32V8C1 4.13401 4.13401 1 8 1Z" />
+      </svg>
+   </div>
+   <!-- Libs JS -->
+   <script src="./assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="./assets/libs/simplebar/dist/simplebar.min.js"></script>
+   <script src="./assets/libs/headhesive/dist/headhesive.min.js"></script>
+
+   <!-- Theme JS -->
+   <script src="./assets/js/theme.min.js"></script>
+
+   <script src="./assets/libs/parallax-js/dist/parallax.min.js"></script>
+   <script src="./assets/js/vendors/parallax.js"></script>
+   <script src="./assets/libs/rellax/rellax.min.js"></script>
+   <script src="./assets/js/vendors/rellax.js"></script>
+   <!-- Swiper JS -->
+   <script src="./assets/libs/swiper/swiper-bundle.min.js"></script>
+   <script src="./assets/js/vendors/swiper.js"></script>
+   <script src="./assets/libs/scrollcue/scrollCue.min.js"></script>
+   <script src="./assets/js/vendors/scrollcue.js"></script>
+   <script src="./assets/js/vendors/pricing.js"></script>
+</body>
+
+</html>

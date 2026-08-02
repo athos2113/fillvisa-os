@@ -1,0 +1,77 @@
+
+
+<svg width="1440" height="194" viewBox="0 0 1440 194" fill="none"  xmlns="http://www.w3.org/2000/svg">
+<style>
+
+    /* Define the Bootstrap primary color variable */
+    :root {
+      --bs-primary: #8b3dff; /* Change this to your desired Bootstrap primary color */
+    }
+  </style>
+<rect x="0.5" y="129.041" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="0.5" y="64.7705" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="0.5" y="0.5" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="196.725" y="129.041" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="196.725" y="64.7705" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="196.725" y="0.5" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="392.95" y="129.041" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="392.95" y="64.7705" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="392.95" y="0.5" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="589.176" y="129.041" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="589.176" y="64.7705" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="589.176" y="0.5" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="785.401" y="129.041" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="785.401" y="64.7705" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="785.401" y="0.5" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="981.626" y="129.041" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="981.626" y="64.7705" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="981.626" y="0.5" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="1177.85" y="129.041" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="1177.85" y="64.7705" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="1177.85" y="0.5" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="65.9082" y="129.041" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="65.9082" y="64.7705" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="65.9082" y="0.5" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="262.134" y="129.041" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="262.134" y="64.7705" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="262.134" y="0.5" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="458.359" y="129.041" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="458.359" y="64.7705" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="458.359" y="0.5" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="654.584" y="129.041" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="654.584" y="64.7705" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="654.584" y="0.5" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="850.81" y="129.041" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="850.81" y="64.7705" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="850.81" y="0.5" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="1047.03" y="129.041" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="1047.03" y="64.7705" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="1047.03" y="0.5" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="1243.26" y="129.041" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="1243.26" y="64.7705" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="1243.26" y="0.5" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="131.317" y="129.041" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="131.317" y="64.7705" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="131.317" y="0.5" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="327.542" y="129.041" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="327.542" y="64.7705" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="327.542" y="0.5" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="523.768" y="129.041" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="523.768" y="64.7705" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="523.768" y="0.5" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="719.992" y="129.041" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="719.992" y="64.7705" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="719.992" y="0.5" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="916.219" y="129.041" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="916.219" y="64.7705" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="916.219" y="0.5" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="1112.44" y="129.041" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="1112.44" y="64.7705" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="1112.44" y="0.5" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="1308.67" y="129.041" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="1374.08" y="129.041" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="1308.67" y="64.7705" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="1374.08" y="64.7705" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="1308.67" y="0.5" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+<rect x="1374.08" y="0.5" width="66" height="64.2854" stroke="var(--bs-primary)" stroke-opacity="0.09"/>
+</svg>

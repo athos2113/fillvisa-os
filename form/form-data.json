@@ -1,0 +1,242 @@
+[
+  {
+    "title": "AR-11",
+    "subtitle": "Aliens Change of Address Card",
+    "description": "Non-citizens use Form AR-11 to notify USCIS of an address change.",
+    "categories": ["pdf-form"],
+    "slug": "ar-11",
+    "pdf": "ar-11/fillvisa_ar11_acro.pdf",
+    "active": "true"
+  },
+  {
+    "title": "DS-160",
+    "subtitle": "Online Nonimmigrant Visa Application",
+    "description": "Travelers applying for a temporary U.S. visa must complete Form DS-160 online. It collects key personal and travel details and is submitted electronically before the visa interview.",
+    "categories": ["travel-visa", "web-form"],
+    "slug": "usa-ds160",
+    "pdf": "",
+    "active": "true"
+  },
+  {
+    "title": "G-1145",
+    "subtitle": "E-Notification of Application/Petition Acceptance",
+    "description": "Applicants and petitioners use Form G-1145 to request a text message and/or email when USCIS accepts their form.",
+    "categories": ["adoption", "pdf-form"],
+    "slug": "g-1145",
+    "pdf": "g-1145/fillvisa_g1145_acro.pdf",
+    "active": "true"
+  },
+  {
+    "title": "G-1450",
+    "subtitle": "Authorization for Credit Card Transactions",
+    "description": "Applicants and petitioners use Form G-1450 to authorize USCIS to charge filing fees to a credit card.",
+    "categories": ["pdf-form"],
+    "slug": "g-1450",
+    "pdf": "g-1450/fillvisa_g1450_acro.pdf",
+    "active": "true",
+    "plus": true
+  },
+  {
+    "title": "G-1650",
+    "subtitle": "Authorization for ACH Transactions",
+    "description": "Applicants and petitioners use Form G-1650 to authorize USCIS to charge filing fees through an ACH transaction.",
+    "categories": ["pdf-form"],
+    "slug": "g-1650",
+    "pdf": "g-1650/fillvisa_g1650_acro.pdf",
+    "active": "true",
+    "plus": true
+  },
+  {
+    "title": "I-129F",
+    "subtitle": "K-1 Visa Petition Package",
+    "description": "U.S. citizens may prepare Form I-129F (Petition for Alien Fiancé) to petition USCIS to bring a fiancé(e) to the U.S. for marriage and adjustment of status. Also used to petition for a spouse's K-3 visa.",
+    "categories": ["adoption", "pdf-form", "family", "green-card"],
+    "slug": "i-129f",
+    "pdf": "pdf/ar-11.pdf",
+    "active": "false"
+  },
+  {
+    "title": "I-130",
+    "subtitle": "Immigrant Visa Petition Package",
+    "description": "U.S. citizens, nationals, and permanent residents use Form I-130 (Petition for Alien Relative) to help a family member obtain a green card.",
+    "categories": ["pdf-form", "family", "green-card"],
+    "slug": "i-130",
+    "pdf": "",
+    "active": "true"
+  },
+  {
+    "title": "I-130A",
+    "subtitle": "Supplemental Information for Spouse Beneficiary",
+    "description": "Used by spouse beneficiary to submit supplemental information with Form I-130. This form is included with the Immigrant Visa Petition Package.",
+    "categories": ["pdf-form", "family", "green-card"],
+    "slug": "i-130a",
+    "pdf": "",
+    "active": "false"
+  },
+  {
+    "title": "I-131",
+    "subtitle": "Travel Document Package",
+    "description": "Certain individuals use Form I-131 (Application for Travel Documents, Parole Documents, and Arrival/Departure Records) to obtain a Reentry Permit, Advance Parole, and other documents.",
+    "categories": ["pdf-form", "employment", "family", "green-card"],
+    "slug": "i-131",
+    "pdf": "",
+    "active": "false"
+  },
+  {
+    "title": "I-131A",
+    "subtitle": "Carrier Documentation Package",
+    "description": "Permanent residents whose green card or reentry permit is lost, stolen, or destroyed while abroad use Form I-131A (Application for Carrier Documentation) to obtain temporary travel documentation.",
+    "categories": ["pdf-form", "employment", "family", "green-card"],
+    "slug": "i-131a",
+    "pdf": "",
+    "active": "false"
+  },
+  {
+    "title": "I-134",
+    "subtitle": "Non-immigrant Support Package",
+    "description": "Individuals may use Form I-134 (Declaration of Financial Support) to financially support a non-immigrant visitor to the United States.",
+    "categories": ["pdf-form", "adoption", "family"],
+    "slug": "i-134",
+    "pdf": "",
+    "active": "false"
+  },
+  {
+    "title": "ETA-9089",
+    "subtitle": "Application for Permanent Employment Certification",
+    "description": "Employers use Form ETA-9089 to request permanent labor certification for employment-based immigrant visa sponsorship.",
+    "categories": ["pdf-form", "employment", "perm"],
+    "slug": "eta-9089",
+    "pdf": "",
+    "active": "true",
+    "plus": true
+  },
+  {
+    "title": "ETA-9141",
+    "subtitle": "Application for Prevailing Wage Determination",
+    "description": "Employers use Form ETA-9141 to request a prevailing wage determination for PERM and other employment-based filings.",
+    "categories": ["pdf-form", "employment", "perm"],
+    "slug": "eta-9141",
+    "pdf": "",
+    "active": "true",
+    "plus": true
+  },
+  {
+    "title": "I-140",
+    "subtitle": "Immigrant Petition for Alien Workers",
+    "description": "Employers and eligible self-petitioners use Form I-140 to petition USCIS for employment-based immigrant worker classification.",
+    "categories": ["pdf-form", "employment", "perm", "green-card"],
+    "slug": "i-140",
+    "pdf": "",
+    "active": "true",
+    "plus": true
+  },
+  {
+    "title": "G-28",
+    "subtitle": "Notice of Entry of Appearance",
+    "description": "Attorneys and accredited representatives use Form G-28 to notify USCIS that they represent an applicant, petitioner, or respondent.",
+    "categories": ["pdf-form", "employment", "perm"],
+    "slug": "g-28",
+    "pdf": "",
+    "active": "true",
+    "plus": true
+  },
+  {
+    "title": "I-907",
+    "subtitle": "Request for Premium Processing Service",
+    "description": "Applicants and petitioners use Form I-907 to request premium processing for eligible immigration benefit requests.",
+    "categories": ["pdf-form", "employment", "perm"],
+    "slug": "i-907",
+    "pdf": "",
+    "active": "true",
+    "plus": true
+  },
+  {
+    "title": "I-485",
+    "subtitle": "Adjustment of Status Package",
+    "description": "Non-citizens use Form I-485 (Application to Register Permanent Residence or Adjust Status) to apply for permanent resident status and obtain a green card. Includes Form I-130 for concurrent family-based applications.",
+    "categories": ["pdf-form", "green-card"],
+    "slug": "i-485",
+    "pdf": "i-485/fillvisa_i-485-acro.pdf",
+    "active": "true"
+  },
+  {
+    "title": "I-751",
+    "subtitle": "Removal of Conditions Petition Package",
+    "description": "Conditional residents who obtained status through marriage use Form I-751 (Petition to Remove Conditions on Residence) to remove conditions and obtain a permanent 10-year green card.",
+    "categories": ["pdf-form", "green-card"],
+    "slug": "i-751",
+    "pdf": "",
+    "active": "false"
+  },
+  {
+    "title": "I-765",
+    "subtitle": "Employment Authorization Package",
+    "description": "Eligible individuals use Form I-765 (Application for Employment Authorization) to obtain an initial, renewal, or replacement Employment Authorization Document (EAD), also known as a work permit.",
+    "categories": ["pdf-form", "employment", "family", "green-card"],
+    "slug": "i-765",
+    "active": "true"
+  },
+  {
+    "title": "I-821D",
+    "subtitle": "DACA Application Package",
+    "description": "Certain individuals use Form I-821D (Consideration of Deferred Action for Childhood Arrivals) to apply for an initial or renewal grant of DACA. Includes all mandatory forms (I-821D, I-765, and I-765WS).",
+    "categories": ["humanitarian", "pdf-form"],
+    "slug": "i-821d",
+    "pdf": "",
+    "active": "false"
+  },
+  {
+    "title": "I-864",
+    "subtitle": "Immigrant Affidavit of Support Package",
+    "description": "U.S. citizens, nationals, or permanent residents use Form I-864 (Affidavit of Support) to financially sponsor a relative for a green card.",
+    "categories": [],
+    "slug": "i-864",
+    "pdf": "",
+    "active": "true"
+  },
+  {
+    "title": "I-864A",
+    "subtitle": "Contract Between Sponsor and Household Member",
+    "description": "Certain household members may contribute to income used on Form I-864 by submitting Form I-864A. Must be completed as an add-on to our I-864 service.",
+    "categories": [],
+    "slug": "i-864a",
+    "pdf": "",
+    "active": "false"
+  },
+  {
+    "title": "I-90",
+    "subtitle": "Green Card Renewal/Replacement Package",
+    "description": "Permanent residents use Form I-90 (Application to Replace Permanent Resident Card) to replace or renew a green card.",
+    "categories": ["green-card", "pdf-form"],
+    "slug": "i-90",
+    "pdf": "i-90/fillvisa_i90_acro.pdf",
+    "active": "true"
+  },
+  {
+    "title": "N-400",
+    "subtitle": "Naturalization Package",
+    "description": "Permanent residents use Form N-400 (Application for Naturalization) to apply for U.S. citizenship through naturalization.",
+    "categories": ["pdf-form", "citizenship-naturalization"],
+    "slug": "n-400",
+    "pdf": "n-400/fillvisa_n-400-acro.pdf",
+    "active": "true"
+  },
+  {
+    "title": "N-565",
+    "subtitle": "Citizenship Document Replacement Package",
+    "description": "U.S. citizens use Form N-565 (Application for Replacement Naturalization/Citizenship Document) to replace a previously issued Certificate of Naturalization or Certificate of Citizenship.",
+    "categories": ["pdf-form", "citizenship-naturalization"],
+    "slug": "n-565",
+    "pdf": "",
+    "active": "false"
+  },
+  {
+    "title": "N-600",
+    "subtitle": "Citizenship Certificate Package",
+    "description": "Individuals who gained citizenship through parents use Form N-600 (Application for Certificate of Citizenship) to request a Certificate of Citizenship.",
+    "categories": ["pdf-form", "adoption", "citizenship-naturalization"],
+    "slug": "n-600",
+    "pdf": "",
+    "active": "false"
+  }
+]

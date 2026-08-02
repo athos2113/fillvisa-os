@@ -1,7 +1,7 @@
 <a href="https://fillvisa.com/" target="_blank" rel="noopener">
   <picture>
-    <source media="(prefers-color-scheme: dark)" alt="Fillvisa" srcset="" />
-    <img alt="Fillvisa" src="g" />
+    <source media="(prefers-color-scheme: dark)" alt="Fillvisa" srcset="https://excalidraw.nyc3.cdn.digitaloceanspaces.com/github/excalidraw_github_cover_2_dark.png" />
+    <img alt="Fillvisa" src="https://excalidraw.nyc3.cdn.digitaloceanspaces.com/github/excalidraw_github_cover_2.png" />
   </picture>
 </a>
 
@@ -22,15 +22,25 @@
 
 <br />
 <p align="center">
-  <a href="https://github.com/athos2113/fillvisa-os/blob/master/LICENSE">
+  <a href="https://github.com/excalidraw/excalidraw/blob/master/LICENSE">
     <img alt="Fillvisa OS is released under the AGPL license." src="https://img.shields.io/badge/License-AGPL_v3-blue.svg"  /></a>
-  
+    
+  <a href="https://www.npmjs.com/package/@excalidraw/excalidraw">
+    <img alt="npm downloads/month" src="https://img.shields.io/npm/dm/@excalidraw/excalidraw"  /></a>
+  <a href="https://docs.excalidraw.com/docs/introduction/contributing">
+    <img alt="PRs welcome!" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat"  /></a>
+  <a href="https://discord.gg/UexuTaE">
+    <img alt="Chat on Discord" src="https://img.shields.io/discord/723672430744174682?color=738ad6&label=Chat%20on%20Discord&logo=discord&logoColor=ffffff&widget=false"/></a>
+  <a href="https://deepwiki.com/excalidraw/excalidraw">
+    <img alt="Ask DeepWiki" src="https://deepwiki.com/badge.svg" /></a>
+  <a href="https://twitter.com/excalidraw">
+    <img alt="Follow Excalidraw on Twitter" src="https://img.shields.io/twitter/follow/excalidraw.svg?label=follow+@excalidraw&style=social&logo=twitter"/></a>
 </p>
 
 <div align="center">
   <figure>
     <a href="https://excalidraw.com" target="_blank" rel="noopener">
-      <img src="" alt="Product showcase" />
+      <img src="https://excalidraw.nyc3.cdn.digitaloceanspaces.com/github%2Fproduct_showcase.png" alt="Product showcase" />
     </a>
     <figcaption>
       <p align="center">

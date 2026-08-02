@@ -1,0 +1,10 @@
+const tabsToDropdown=document.querySelectorAll(".tabs-to-dropdown");function generateDropdownMarkup(e){var t=e.querySelector(".nav-wrapper"),e=e.querySelector(".nav-line-bottom"),e=`
+     <div class="dropdown d-lg-none mb-4">
+          <button class="btn btn-light w-100 d-flex justify-content-between dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            ${e.querySelector("li:first-child a").textContent}
+          </button>
+          <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+            ${generateDropdownLinksMarkup(e.querySelectorAll("li"))}
+          </div>
+        </div>
+  `;t.insertAdjacentHTML("afterbegin",e)}function generateDropdownLinksMarkup(e){let t="";return e.forEach(function(e){e=e.querySelector("a").textContent.trim();t+=`<a class="dropdown-item" href="#">${e}</a>`}),t}function showDropdownHandler(e){const t=e.target.closest(".dropdown").querySelector(".dropdown-toggle").textContent.trim();e.target.querySelectorAll(".dropdown-menu a").forEach(function(e){e.textContent.trim()===t?e.classList.add("d-none"):e.classList.remove("d-none")})}function clickHandler(e){e.preventDefault();var t=e.target.textContent,o=e.target.closest(".dropdown"),t=(o.querySelector(".dropdown-toggle").textContent=t,e.target.closest(".tabs-to-dropdown")),o=Array.from(o.querySelectorAll(".dropdown-menu a")).indexOf(e.target);t.querySelectorAll(".nav-pills li a")[o].click()}function shownTabsHandler(e){var t=Array.from(e.target.parentNode.parentNode.children).indexOf(e.target.parentNode),e=e.target.closest(".tabs-to-dropdown"),t=e.querySelectorAll(".dropdown-menu a")[t];e.querySelector(".dropdown-toggle").textContent=t.textContent}tabsToDropdown.forEach(function(e){var t=e.querySelectorAll('a[data-bs-toggle="pill"]'),o=(generateDropdownMarkup(e),e.querySelector(".dropdown")),e=e.querySelectorAll(".dropdown-menu a");o.addEventListener("show.bs.dropdown",showDropdownHandler),e.forEach(function(e){e.addEventListener("click",clickHandler)}),t.forEach(function(e){e.addEventListener("shown.bs.tab",shownTabsHandler)})});
