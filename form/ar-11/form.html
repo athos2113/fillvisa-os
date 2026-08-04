@@ -68,18 +68,6 @@
     </style>
 
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BXWPHK9N8P"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-BXWPHK9N8P');
-    </script>
 
 
 
@@ -1489,16 +1477,6 @@
 
             alert("✅ Form validated successfully.");
 
-            // ✅ GA: page-level submission
-            // if (typeof gtag === "function") {
-            //     gtag("event", "form_page_submit", {
-            //         form_name: "AR-11",
-            //         form_type: "uscis",
-            //         page_number: 1,
-            //         total_pages: 1
-            //     });
-            // }
-
             updateGeneratePdfButton();
         }
     </script>
@@ -1534,16 +1512,6 @@
                     // Call your generatePDF() function here
                     fillForm();
                     
-                    // NEW: ✅ GA: final submission (PDF generated)
-                    // if (typeof gtag === "function") {
-                    //     gtag("event", "form_final_submit", {
-                    //         form_name: "AR-11",
-                    //         form_type: "uscis",
-                    //         total_pages: 1,
-                    //         value: 1,
-                    //         ar11: "timepass"
-                    //     });
-                    // }
                 });
 
                 container.appendChild(btn);

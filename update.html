@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+   <link rel="stylesheet" href="./assets/libs/swiper/swiper-bundle.min.css" />
+   <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/fillvisa-favicon.svg" />
+   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/fillvisa-favicon.svg" />
+   <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon/fillvisa-favicon.svg" />
+   <link rel="manifest" href="./assets/images/favicon/site.webmanifest" />
+   <link rel="mask-icon" href="./assets/images/favicon/block-safari-pinned-tab.svg" color="#8b3dff" />
+   <link rel="shortcut icon" href="./assets/images/favicon/fillvisa-favicon.svg" />
+   <meta name="msapplication-TileColor" content="#8b3dff" />
+   <meta name="msapplication-config" content="./assets/images/favicon/tile.xml" />
+
+   <script src="./assets/js/vendors/color-modes.js"></script>
+
+   <link href="./assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
+   <link href="./assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+   <link rel="stylesheet" href="./assets/libs/scrollcue/scrollCue.css" />
+   <link rel="stylesheet" href="./assets/fonts/css/boxicons.min.css" />
+   <link rel="stylesheet" href="./assets/css/theme.min.css">
+   <link rel="stylesheet" href="./assets/css/custom.css?v=professional-nav-1">
+
+   <title>Fillvisa OS Updates</title>
+   <meta name="description" content="Check whether a newer Fillvisa OS release is available.">
+   <meta name="robots" content="noindex, follow">
+</head>
+
+<body>
+   <header>
+      <nav class="navbar navbar-expand-lg navbar-light w-100">
+         <div class="container px-3">
+            <a class="navbar-brand" href="./">
+               <img class="navbar-logo" src="assets/images/logo/logo.svg" alt />
+            </a>
+            <button class="navbar-toggler offcanvas-nav-btn" type="button">
+               <i class="bi bi-list"></i>
+            </button>
+            <div class="offcanvas offcanvas-start offcanvas-nav" style="width: 20rem">
+               <div class="offcanvas-header">
+                  <a href="./" class="text-inverse">
+                     <img class="navbar-logo" src="assets/images/logo/logo.svg" alt />
+                  </a>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+               </div>
+               <div class="offcanvas-body pt-0 align-items-center">
+                  <ul class="navbar-nav mx-auto align-items-lg-center">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">Forms</a>
+                        <ul class="dropdown-menu">
+                           <li class="nav-item"><a class="nav-link" href="form/">All Forms</a></li>
+                           <li class="nav-item"><a class="nav-link" href="form/green-card.html">Green-card Based</a></li>
+                           <li class="nav-item"><a class="nav-link" href="form/travel-visa.html">Travel & Visa</a></li>
+                           <li class="nav-item"><a class="nav-link" href="form/adoption.html">Adoption-Based</a></li>
+                           <li class="nav-item"><a class="nav-link"
+                                 href="form/citizenship-naturalization.html">Citizenship & Naturalization</a></li>
+                        </ul>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="uscis-cover-letter/">
+                           Cover Letter <span class="badge bg-warning text-dark ms-2">Beta</span>
+                        </a>
+                     </li>
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">Resources</a>
+                        <ul class="dropdown-menu">
+                           <li class="nav-item"><a class="nav-link" href="https://blog.fillvisa.com/">Blog</a></li>
+                           <li class="nav-item"><a class="nav-link" href="https://changelog.fillvisa.com/">Changelog</a></li>
+                        </ul>
+                     </li>
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">About</a>
+                        <ul class="dropdown-menu">
+                           <li class="nav-item"><a class="nav-link" href="about.html">Why</a></li>
+                           <li class="nav-item"><a class="nav-link" href="privacy.html">Privacy Policy</a></li>
+                           <li class="nav-item"><a class="nav-link" href="support.html">Support</a></li>
+                           <li class="nav-item"><a class="nav-link" href="update.html">Updates</a></li>
+                        </ul>
+                     </li>
+                  </ul>
+                  <div class="mt-3 mt-lg-0 d-flex align-items-center">
+                     <a class="btn btn-primary" href="https://plus.fillvisa.com/">For Professionals &#128075;</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </nav>
+   </header>
+
+   <main>
+      <section class="container py-lg-8 py-5 px-5">
+         <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-9 col-12">
+               <div class="mb-5">
+                  <small class="text-uppercase ls-md fw-semibold text-primary">Settings</small>
+                  <h1 class="mt-3 mb-3">Fillvisa OS Updates</h1>
+                  <p class="lead mb-0">Check whether a newer Fillvisa OS release is available.</p>
+               </div>
+
+               <div class="border rounded-3 p-4 p-lg-5 bg-light-subtle">
+                  <div class="d-flex flex-column gap-3" id="fillvisa-os-update-status" aria-live="polite">
+                     <div class="d-flex align-items-center gap-3">
+                        <span class="spinner-border spinner-border-sm text-primary" aria-hidden="true"></span>
+                        <span>Checking latest release...</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+   </main>
+
+   <footer class="footer bg-light-subtle py-5">
+      <div class="container">
+         <div class="row align-items-center">
+            <div class="col-md-6">
+               <a class="mb-4 mb-md-0 d-block text-inverse" href="./">
+                  <img class="navbar-logo" src="assets/images/logo/logo.svg" alt="" />
+               </a>
+            </div>
+            <div class="col-md-6 text-md-end">
+               <a href="./" class="text-decoration-none text-body-secondary">Back to Fillvisa</a>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <div class="btn-scroll-top">
+      <svg class="progress-square svg-content" width="100%" height="100%" viewBox="0 0 40 40">
+         <path
+            d="M8 1H32C35.866 1 39 4.13401 39 8V32C39 35.866 35.866 39 32 39H8C4.13401 39 1 35.866 1 32V8C1 4.13401 4.13401 1 8 1Z" />
+      </svg>
+   </div>
+
+   <script src="./assets/js/utils.js"></script>
+   <script>
+      function appendParagraph(parent, className, text) {
+         const paragraph = document.createElement("p");
+
+         paragraph.className = className;
+         paragraph.textContent = text;
+         parent.append(paragraph);
+
+         return paragraph;
+      }
+
+      function appendAction(parent, className, href, text) {
+         const link = document.createElement("a");
+
+         link.className = className;
+         link.href = href;
+         link.target = "_blank";
+         link.rel = "noopener";
+         link.textContent = text;
+         parent.append(link);
+
+         return link;
+      }
+
+      function renderOfflineUpdateState(container) {
+         container.replaceChildren();
+         appendParagraph(container, "mb-2", `Installed version: ${window.FILLVISA_OS_CURRENT_VERSION}`);
+         appendParagraph(container, "mb-3 fw-semibold", "Internet connection required.");
+         appendParagraph(container, "mb-4 text-body-secondary", "Turn on internet and check again to see whether a new Fillvisa OS release is available.");
+
+         const retryButton = document.createElement("button");
+         retryButton.className = "btn btn-primary";
+         retryButton.type = "button";
+         retryButton.textContent = "Check again";
+         retryButton.addEventListener("click", initFillvisaOsUpdatePage);
+         container.append(retryButton);
+      }
+
+      function renderLatestUpdateState(container, updateStatus) {
+         container.replaceChildren();
+         appendParagraph(container, "mb-2", `Installed version: ${updateStatus.installedVersion}`);
+         appendParagraph(container, "mb-2", `Latest version: ${updateStatus.latestVersion}`);
+         appendParagraph(container, "mb-0 fw-semibold text-success", "You're running the latest version of Fillvisa OS.");
+      }
+
+      function renderAvailableUpdateState(container, updateStatus) {
+         container.replaceChildren();
+         appendParagraph(container, "mb-2", `Installed version: ${updateStatus.installedVersion}`);
+         appendParagraph(container, "mb-2", `Latest version: ${updateStatus.latestVersion}`);
+         appendParagraph(container, "mb-4 fw-semibold", "A newer version is available.");
+
+         const actions = document.createElement("div");
+         actions.className = "d-flex gap-2 flex-wrap";
+         appendAction(actions, "btn btn-outline-primary", updateStatus.releaseNotesUrl, "View release notes");
+         appendAction(actions, "btn btn-primary", updateStatus.downloadUrl, "Download update");
+         container.append(actions);
+      }
+
+      async function initFillvisaOsUpdatePage() {
+         const container = document.getElementById("fillvisa-os-update-status");
+
+         if (!container || !window.getFillvisaOsUpdateStatus) return;
+
+         container.replaceChildren();
+         const loading = document.createElement("div");
+         loading.className = "d-flex align-items-center gap-3";
+         loading.innerHTML = '<span class="spinner-border spinner-border-sm text-primary" aria-hidden="true"></span><span>Checking latest release...</span>';
+         container.append(loading);
+
+         if (navigator.onLine === false) {
+            renderOfflineUpdateState(container);
+            return;
+         }
+
+         try {
+            const updateStatus = await window.getFillvisaOsUpdateStatus();
+
+            if (updateStatus.updateAvailable) {
+               renderAvailableUpdateState(container, updateStatus);
+            } else {
+               renderLatestUpdateState(container, updateStatus);
+            }
+         } catch (error) {
+            console.warn("Unable to check Fillvisa OS updates:", error);
+            renderOfflineUpdateState(container);
+         }
+      }
+
+      document.addEventListener("DOMContentLoaded", initFillvisaOsUpdatePage);
+   </script>
+
+   <script src="./assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="./assets/libs/simplebar/dist/simplebar.min.js"></script>
+   <script src="./assets/libs/headhesive/dist/headhesive.min.js"></script>
+   <script src="./assets/js/theme.min.js"></script>
+</body>
+
+</html>
