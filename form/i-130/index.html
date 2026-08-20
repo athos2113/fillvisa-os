@@ -51,7 +51,7 @@
       <nav class="navbar navbar-expand-lg navbar-light w-100">
          <div class="container px-3">
             <a class="navbar-brand" href="../../">
-               <img class="navbar-logo" src="../../assets/images/logo/logo.svg" alt="Fillvisa" />
+               <img class="navbar-logo" src="../../assets/images/logo/logo.svg" alt />
             </a>
             <button class="navbar-toggler offcanvas-nav-btn" type="button">
                <i class="bi bi-list"></i>
@@ -59,11 +59,12 @@
             <div class="offcanvas offcanvas-start offcanvas-nav" style="width: 20rem">
                <div class="offcanvas-header">
                   <a href="../../" class="text-inverse">
-                     <img class="navbar-logo" src="../../assets/images/logo/logo.svg" alt="Fillvisa" />
+                     <img class="navbar-logo" src="../../assets/images/logo/logo.svg" alt />
                   </a>
                   <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                </div>
                <div class="offcanvas-body pt-0 align-items-center">
+
                   <ul class="navbar-nav mx-auto align-items-lg-center">
                      <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
@@ -76,15 +77,62 @@
                            <li class="nav-item"><a class="nav-link" href="../../form/citizenship-naturalization.html">Citizenship & Naturalization</a></li>
                         </ul>
                      </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="../../uscis-cover-letter/">
-                           Cover Letter <span class="badge bg-warning text-dark ms-2">Beta</span>
-                        </a>
+
+
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
+                        <div class="dropdown-menu dropdown-menu-md" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item mb-3 text-body" href="https://fillvisa.com/">
+                                 <div class="d-flex align-items-center">
+                                    <i class="bi bi-star-fill fs-4 text-primary"></i>
+                                    <div class="ms-3 lh-1">
+                                       <h5 class="mb-1">Fillvisa Free</h5>
+                                       <p class="mb-0 fs-6">For individuals</p>
+                                    </div>
+                                 </div>
+                              </a>
+                              <a class="dropdown-item mb-3 text-body" href="https://plus.fillvisa.com/">
+                                 <div class="d-flex align-items-center">
+                                    <i class="bi bi-cloud-plus-fill fs-4 text-primary"></i>
+                                    <div class="ms-3 lh-1">
+                                       <h5 class="mb-1">
+                                       Fillvisa Plus <span class="text-primary ms-1" id="changelog"></span>
+                                          </h5>
+                                             <p class="mb-0 fs-6">For professionals</p>
+                                    </div>
+                                 </div>
+                              </a>
+                              <a class="dropdown-item mb-3 text-body" href="https://github.com/athos2113/fillvisa-os/">
+                                 <div class="d-flex align-items-center">
+                                    <i class="bi bi-github fs-4 text-primary"></i>
+                                    <div class="ms-3 lh-1">
+                                       <h5 class="mb-1">
+                                       Fillvisa OS <span class="text-primary ms-1" id="changelog"></span>
+                                          </h5>
+                                             <p class="mb-0 fs-6">Open source</p>
+                                    </div>
+                                 </div>
+                              </a>
+                              <a class="dropdown-item mb-3 text-body" href="https://plus.fillvisa.com/white-label/">
+                                 <div class="d-flex align-items-center">
+                                    <i class="bi bi-briefcase-fill fs-4 text-primary"></i>
+                                    <div class="ms-3 lh-1">
+                                       <h5 class="mb-1">
+                                       Fillvisa White Label <span class="text-primary ms-1" id="changelog"></span>
+                                          </h5>
+                                             <p class="mb-0 fs-6">For organizations</p>
+                                    </div>
+                                 </div>
+                              </a>
+                        </div>
                      </li>
+
+
                      <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
                            aria-expanded="false">Resources</a>
                         <ul class="dropdown-menu">
+                           <li class="nav-item"><a class="nav-link" href="https://fillvisa.com/uscis-cover-letter/">Cover Letter</a></li>
                            <li class="nav-item"><a class="nav-link" href="https://blog.fillvisa.com/">Blog</a></li>
                            <li class="nav-item"><a class="nav-link" href="https://changelog.fillvisa.com/">Changelog</a></li>
                         </ul>
@@ -202,6 +250,8 @@
          </div>
       </section>
 
+      <div id="i130IntroSimpleCitizenReferral"></div>
+
       <section class="py-8 py-lg-10 px-5">
          <div class="container">
             <div class="row justify-content-center text-center mb-6">
@@ -298,59 +348,180 @@
 
    <footer class="pt-7">
       <div class="container">
-         <div class="row gy-6">
-            <div class="col-lg-3 col-12">
-               <div class="me-7">
-                  <h4 class="mb-4">Fillvisa</h4>
-                  <p class="text-body-secondary">The easiest way to complete immigration forms, free and entirely in
-                     your browser.</p>
+         <!-- Footer 4 column -->
+         <div class="row">
+            <div class="col-lg-9 col-12">
+               <div class="row" id="ft-links">
+
+                  <div class="col-lg-3 col-12">
+                     <div>
+                        <div
+                           class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0 position-relative">
+                           <h4>Quick Links</h4>
+                           <a class="d-block d-lg-none stretched-link text-body collapsed" data-bs-toggle="collapse"
+                              href="#collapseLanding" role="button" aria-expanded="false"
+                              aria-controls="collapseLanding">
+                              <i class="bi bi-chevron-down"></i>
+                           </a>
+                        </div>
+                        <div class="collapse d-lg-block show" id="collapseLanding">
+                           <ul class="list-unstyled mb-0 py-3 py-lg-0">
+                              <li class="mb-2">
+                                 <a href="../../" class="text-decoration-none text-reset">Home</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="../../demo/" class="text-decoration-none text-reset">Demo</a>
+                              </li>
+                               <li class="mb-2">
+                                  <a href="../../form/" class="text-decoration-none text-reset">All Forms</a>
+                               </li>
+                              <li class="mb-2">
+                                 <a href="https://fillvisa.com/uscis-cover-letter/" class="text-decoration-none text-reset">Cover Letter</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="https://plus.fillvisa.com/" class="text-decoration-none text-reset">Use Fillvisa Plus</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="../../support.html" class="text-decoration-none text-reset">❤️ Support</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="../../privacy.html" class="text-decoration-none text-reset">Privacy and Data
+                                    Policy</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="https://blog.fillvisa.com/" target="_blank"
+                                    class="text-decoration-none text-reset">Blog</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="../../about.html" class="text-decoration-none text-reset">About</a>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="col-lg-3 col-12">
+                     <div>
+                        <div
+                           class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0 position-relative">
+                           <h4>Immigration Forms</h4>
+                           <a class="d-block d-lg-none stretched-link text-body collapsed" data-bs-toggle="collapse"
+                              href="#collapseAccounts" role="button" aria-expanded="false"
+                              aria-controls="collapseAccounts">
+                              <i class="bi bi-chevron-down"></i>
+                           </a>
+                        </div>
+                        <div class="collapse d-lg-block" id="collapseAccounts">
+                           <ul class="list-unstyled mb-0 py-3 py-lg-0">
+                              <li class="mb-2">
+                                 <a href="../../form/green-card.html" class="text-decoration-none text-reset">Green-card
+                                    Based</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="../../form/travel-visa.html" class="text-decoration-none text-reset">Travel &
+                                    Visa</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="../../form/adoption.html" class="text-decoration-none text-reset">Adoption-Based</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="../../form/citizenship-naturalization.html"
+                                    class="text-decoration-none text-reset">Citizenship & Naturalization based</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="../../form/pdf-form.html" class="text-decoration-none text-reset">PDF-Based</a>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="col-lg-3 col-12">
+                     <div>
+                        <div
+                           class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0 position-relative">
+                           <h4>Products</h4>
+                           <a class="d-block d-lg-none stretched-link text-body collapsed" data-bs-toggle="collapse"
+                              href="#collapseAccounts" role="button" aria-expanded="false"
+                              aria-controls="collapseAccounts">
+                              <i class="bi bi-chevron-down"></i>
+                           </a>
+                        </div>
+                        <div class="collapse d-lg-block" id="collapseAccounts">
+                           <ul class="list-unstyled mb-0 py-3 py-lg-0">
+                              <li class="mb-2">
+                                 <a href="https://fillvisa.com/" class="text-decoration-none text-reset">Fillvisa Free</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="https://plus.fillvisa.com/" class="text-decoration-none text-reset">Fillvisa Plus</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="https://github.com/athos2113/fillvisa-os/" class="text-decoration-none text-reset">Fillvisa OS</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="https://plus.fillvisa.com/white-label/"
+                                    class="text-decoration-none text-reset">Fillvisa White Label</a>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="col-lg-3 col-12">
+                     <div>
+                        <div
+                           class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0 position-relative">
+                           <h4>Blog</h4>
+                           <a class="d-block d-lg-none stretched-link text-body collapsed" data-bs-toggle="collapse"
+                              href="#collapseBlog" role="button" aria-expanded="false" aria-controls="collapseBlog">
+                              <i class="bi bi-chevron-down"></i>
+                           </a>
+                        </div>
+                        <div class="collapse d-lg-block" id="collapseBlog">
+                           <ul class="list-unstyled mb-0 py-3 py-lg-0">
+                              <li class="mb-2">
+                                 <a href="https://blog.fillvisa.com/why-fillvisa-is-free-forever/" target="_blank"
+                                    class="text-decoration-none text-reset">Why Fillvisa is Free Forever</a>
+                              </li>
+
+                           </ul>
+                           <ul class="list-unstyled mb-0 py-3 py-lg-0">
+                              <li class="mb-2">
+                                 <a href="https://blog.fillvisa.com/how-fillvisa-works/" target="_blank"
+                                    class="text-decoration-none text-reset">Turning USCIS PDFs Into Smart Web Forms</a>
+                              </li>
+
+                           </ul>
+                           <ul class="list-unstyled mb-0 py-3 py-lg-0">
+                              <li class="mb-2">
+                                 <a href="https://blog.fillvisa.com/you-dont-need-adobe-acrobat/" target="_blank"
+                                    class="text-decoration-none text-reset">You Dont Need Adobe Acrobat Standard to Fill Immigration Forms</a>
+                              </li>
+
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+
                </div>
             </div>
             <div class="col-lg-3 col-12">
-               <h4 class="mb-4">Quick Links</h4>
-               <ul class="list-unstyled mb-0">
-                  <li class="mb-2"><a href="../../form/" class="text-decoration-none text-reset">All Forms</a></li>
-                  <li class="mb-2"><a href="../../uscis-cover-letter/" class="text-decoration-none text-reset">Cover Letter</a></li>
-                  <li class="mb-2"><a href="../../privacy.html" class="text-decoration-none text-reset">Privacy and Data
-                        Policy</a></li>
-                  <li class="mb-2"><a href="../../support.html" class="text-decoration-none text-reset">Support</a></li>
-                  <li class="mb-2"><a href="../../about.html" class="text-decoration-none text-reset">About</a></li>
-               </ul>
-            </div>
-            <div class="col-lg-3 col-12">
-               <h4 class="mb-4">Immigration Forms</h4>
-               <ul class="list-unstyled mb-0">
-                  <li class="mb-2"><a href="../green-card.html" class="text-decoration-none text-reset">Green-card
-                        Based</a></li>
-                  <li class="mb-2"><a href="../travel-visa.html" class="text-decoration-none text-reset">Travel &amp;
-                        Visa</a></li>
-                  <li class="mb-2"><a href="../adoption.html" class="text-decoration-none text-reset">Adoption-Based</a>
-                  </li>
-                  <li class="mb-2"><a href="../citizenship-naturalization.html"
-                        class="text-decoration-none text-reset">Citizenship &amp; Naturalization</a></li>
-               </ul>
-            </div>
-            <div class="col-lg-3 col-12">
-               <h4 class="mb-4">Resources</h4>
-               <ul class="list-unstyled mb-0">
-                  <li class="mb-2"><a href="https://blog.fillvisa.com/" class="text-decoration-none text-reset">Blog</a>
-                  </li>
-                  <li class="mb-2"><a href="https://help.fillvisa.com/" class="text-decoration-none text-reset">Help
-                        Center</a></li>
-                  <li class="mb-2"><a href="https://changelog.fillvisa.com/"
-                        class="text-decoration-none text-reset">Changelog</a></li>
-               </ul>
+               <div class="me-7">
+                  <h4 class="mb-4">Fillvisa</h4>
+                  <p class="text-body-secondary">Free, privacy-first tools that make immigration paperwork easier and
+                     more accessible.</p>
+               </div>
             </div>
          </div>
       </div>
-
       <div class="container mt-7 pt-lg-7 pb-4">
          <div class="row align-items-center">
             <div class="col-md-3">
                <a class="mb-4 mb-lg-0 d-block text-inverse" href="../../"><img class="navbar-logo"
-                     src="../../assets/images/logo/logo.svg" alt="Fillvisa" /></a>
+                     src="../../assets/images/logo/logo.svg" alt="" /></a>
             </div>
-            <div class="col-md-9 col-lg-6"></div>
+            <div class="col-md-9 col-lg-6">
+            </div>
             <div class="col-lg-3">
                <div class="text-lg-end d-flex align-items-center justify-content-lg-end">
                   <div class="dropdown">
@@ -383,6 +554,22 @@
                         </li>
                      </ul>
                   </div>
+                  <div class="ms-3 d-flex gap-2">
+                     <a href="https://x.com/fillvisa" target="_blank" class="btn btn-twitter btn-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                           class="bi bi-twitter" viewBox="0 0 16 16">
+                           <path
+                              d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z">
+                           </path>
+                        </svg>
+                     </a>
+                     <a href="https://www.reddit.com/r/fillvisa/" target="_blank" rel="noopener" class="btn btn-light btn-icon" aria-label="Fillvisa on Reddit">
+                        <i class="bi bi-reddit"></i>
+                     </a>
+                     <a href="https://github.com/athos2113/fillvisa-os" target="_blank" rel="noopener" class="btn btn-light btn-icon" aria-label="Fillvisa OS on GitHub">
+                        <i class="bi bi-github"></i>
+                     </a>
+                  </div>
                </div>
             </div>
          </div>
@@ -407,6 +594,7 @@
    <script src="../../assets/libs/intl-tel-input/build/js/intlTelInput.min.js"></script>
    <script src="../../assets/js/vendors/intl-tel.js"></script>
    <script src="../../assets/js/utils.js"></script>
+   <script src="../../assets/js/simplecitizen-referral.js"></script>
 
    <script>
       const formPrefix = "i130-";
@@ -436,6 +624,17 @@
       document.getElementById("bottomCreateNewBtn").addEventListener("click", startNewForm);
       document.getElementById("editBtn").addEventListener("click", () => {
          window.location.href = firstPage;
+      });
+
+      window.FillvisaSimpleCitizen?.mount({
+         form: "i-130",
+         placement: "intro_support",
+         campaign: "i130_intro",
+         target: "#i130IntroSimpleCitizenReferral",
+         copy: {
+            title: "Want guided support for your I-130?",
+            body: "Fillvisa is free for completing and downloading your I-130 yourself. If you want guided filing support, SimpleCitizen packages include attorney review through their platform."
+         }
       });
    </script>
 </body>
