@@ -3,6 +3,50 @@
 window.FILLVISA_OS_CURRENT_VERSION = "1.0.0";
 window.REPO_NAME = "fillvisa-os";
 
+const fillvisaOsUtilsScriptUrl = document.currentScript?.src || "";
+
+function getFillvisaOsUpdatePageHref() {
+  const utilsScriptUrl = fillvisaOsUtilsScriptUrl || document.querySelector('script[src$="assets/js/utils.js"]')?.src;
+
+  if (utilsScriptUrl) {
+    try {
+      return new URL("../../update.html", utilsScriptUrl).href;
+    } catch (error) {
+      console.warn("Unable to resolve Fillvisa OS update page URL:", error);
+    }
+  }
+
+  return "update.html";
+}
+
+function displayFillvisaOsFooterVersion() {
+  const version = window.FILLVISA_OS_CURRENT_VERSION;
+
+  if (!version) return;
+
+  document.querySelectorAll("footer .col-lg-3.col-12 .me-7").forEach(footerColumn => {
+    const heading = footerColumn.querySelector("h4");
+    const description = Array.from(footerColumn.querySelectorAll("p")).find(paragraph =>
+      paragraph.textContent.includes("Free, privacy-first tools")
+    );
+
+    if (!heading || heading.textContent.trim() !== "Fillvisa" || !description) return;
+    if (footerColumn.querySelector("[data-fillvisa-os-version]")) return;
+
+    const versionParagraph = document.createElement("p");
+    const versionLink = document.createElement("a");
+
+    versionParagraph.className = "mb-0 text-body-secondary small";
+    versionParagraph.dataset.fillvisaOsVersion = "";
+
+    versionLink.href = getFillvisaOsUpdatePageHref();
+    versionLink.textContent = version;
+
+    versionParagraph.append("Version ", versionLink);
+    description.insertAdjacentElement("afterend", versionParagraph);
+  });
+}
+
 async function fetchLatestReleaseName(repoName = window.REPO_NAME) {
   const release = await fetchLatestRelease(repoName);
 
@@ -118,6 +162,13 @@ window.fetchLatestRelease = fetchLatestRelease;
 window.normalizeVersion = normalizeVersion;
 window.compareSemanticVersions = compareSemanticVersions;
 window.getFillvisaOsUpdateStatus = getFillvisaOsUpdateStatus;
+window.displayFillvisaOsFooterVersion = displayFillvisaOsFooterVersion;
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", displayFillvisaOsFooterVersion);
+} else {
+  displayFillvisaOsFooterVersion();
+}
 window.displayFillvisaOsUpdate = displayFillvisaOsUpdate;
 
 function clearVisaData(prefix) {
