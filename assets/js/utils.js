@@ -1,7 +1,7 @@
 // utils.js
 
 window.FILLVISA_OS_CURRENT_VERSION = "1.0.0";
-window.REPO_NAME = "Mind-Expanding-Books";
+window.REPO_NAME = "fillvisa-os";
 
 async function fetchLatestReleaseName(repoName = window.REPO_NAME) {
   const release = await fetchLatestRelease(repoName);
