@@ -129,3 +129,15 @@ Fillvisa OS is open source, but we are not accepting pull requests right now.
 
 - Found Fillvisa useful? [Leave a review](https://www.trustpilot.com/evaluate/fillvisa.com).
 - Want to support the project? [Buy me a coffee](https://dodo.pe/z466okphgg).
+
+
+
+## Star History
+
+<a href="https://www.star-history.com/?repos=athos2113%2Ffillvisa-os&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=athos2113/fillvisa-os&type=date&theme=dark&legend=top-left&sealed_token=EaFsq3gYtqwTY6Q1HXkvbwTPxkzDx9FKsCJPuS_Gmj_4wa6FzbuYVN_C1ZnM-CDkYYETVRvca4mJEsPeIxt6-ohqc2JeHp8WzN6tUXSWQLZTmX37ybfdMKaZna6mzLPAC8aW6oK_YYm55U3-y6Qj8hkc0abJGFKcCQrUjJoTJX82F4R4O5OqnMY_PYrP" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=athos2113/fillvisa-os&type=date&legend=top-left&sealed_token=EaFsq3gYtqwTY6Q1HXkvbwTPxkzDx9FKsCJPuS_Gmj_4wa6FzbuYVN_C1ZnM-CDkYYETVRvca4mJEsPeIxt6-ohqc2JeHp8WzN6tUXSWQLZTmX37ybfdMKaZna6mzLPAC8aW6oK_YYm55U3-y6Qj8hkc0abJGFKcCQrUjJoTJX82F4R4O5OqnMY_PYrP" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=athos2113/fillvisa-os&type=date&legend=top-left&sealed_token=EaFsq3gYtqwTY6Q1HXkvbwTPxkzDx9FKsCJPuS_Gmj_4wa6FzbuYVN_C1ZnM-CDkYYETVRvca4mJEsPeIxt6-ohqc2JeHp8WzN6tUXSWQLZTmX37ybfdMKaZna6mzLPAC8aW6oK_YYm55U3-y6Qj8hkc0abJGFKcCQrUjJoTJX82F4R4O5OqnMY_PYrP" />
+ </picture>
+</a>
