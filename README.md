@@ -125,6 +125,19 @@ Fillvisa OS is open source, but we are not accepting pull requests right now.
 - Post on [r/fillvisa](https://www.reddit.com/r/fillvisa/).
 - Email me at [junaid@fillvisa.com](mailto:junaid@fillvisa.com).
 
+## For founders, developers, and nonprofits
+
+You can self-host Fillvisa OS, customize it for your community or workflow, and build services with it under the AGPL license.
+
+This can be useful for:
+
+- Founders exploring immigration-tech products.
+- Developers building custom form workflows or integrations.
+- Nonprofits, clinics, and community organizations supporting applicants.
+- Attorneys and legal teams that want a private, self-hosted tool.
+
+If you are interested in building with Fillvisa OS, learning more, or talking directly with the founder, you can [share your contact details here](https://tally.so/r/Y5l4B5).
+
 ## Sponsors & support
 
 - Found Fillvisa useful? [Leave a review](https://www.trustpilot.com/evaluate/fillvisa.com).
