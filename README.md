@@ -59,24 +59,30 @@
 
 ## Supported forms include:
 
-- DS-160: Nonimmigrant Visa Application
-- AR-11: Alien’s Change of Address Card.
+Available now:
+
+- AR-11: Aliens Change of Address Card.
+- DS-160: Online Nonimmigrant Visa Application.
 - G-1145: E-Notification of Application/Petition Acceptance.
 - I-90: Green Card Renewal/Replacement Package.
-- I-129-F: K-1 Visa Petition Package.
 - I-130: Immigrant Visa Petition Package.
-- I-130-A: Supplemental Information for Spouse Beneficiary.
-- I-131: Travel Document Package.
-- I-131-A: Carrier Documentation Package.
-- I-134: Nonimmigrant Support Package.
 - I-485: Adjustment of Status Package.
-- I-751: Removal of Conditions Petition Package.
 - I-765: Employment Authorization Package.
-- I-821-D: DACA Application Package.
-- I-864: Affidavit of Support Package.
-- I-864-A: Contract Between Sponsor and Household Member.
+- I-864: Immigrant Affidavit of Support Package.
 - N-400: Naturalization Package.
+
+Coming soon:
+
+- I-129F: K-1 Visa Petition Package.
+- I-130A: Supplemental Information for Spouse Beneficiary.
+- I-131: Travel Document Package.
+- I-131A: Carrier Documentation Package.
+- I-134: Non-immigrant Support Package.
+- I-751: Removal of Conditions Petition Package.
+- I-821D: DACA Application Package.
+- I-864A: Contract Between Sponsor and Household Member.
 - N-565: Citizenship Document Replacement Package.
+- N-600: Citizenship Certificate Package.
 
 ## Fillvisa.com
 
@@ -145,12 +151,10 @@ If you are interested in building with Fillvisa OS, learning more, or talking di
 
 
 
-## Star History
+## Custom services and commercial licensing
 
-<a href="https://www.star-history.com/?repos=athos2113%2Ffillvisa-os&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=athos2113/fillvisa-os&type=date&theme=dark&legend=top-left&sealed_token=EaFsq3gYtqwTY6Q1HXkvbwTPxkzDx9FKsCJPuS_Gmj_4wa6FzbuYVN_C1ZnM-CDkYYETVRvca4mJEsPeIxt6-ohqc2JeHp8WzN6tUXSWQLZTmX37ybfdMKaZna6mzLPAC8aW6oK_YYm55U3-y6Qj8hkc0abJGFKcCQrUjJoTJX82F4R4O5OqnMY_PYrP" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=athos2113/fillvisa-os&type=date&legend=top-left&sealed_token=EaFsq3gYtqwTY6Q1HXkvbwTPxkzDx9FKsCJPuS_Gmj_4wa6FzbuYVN_C1ZnM-CDkYYETVRvca4mJEsPeIxt6-ohqc2JeHp8WzN6tUXSWQLZTmX37ybfdMKaZna6mzLPAC8aW6oK_YYm55U3-y6Qj8hkc0abJGFKcCQrUjJoTJX82F4R4O5OqnMY_PYrP" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=athos2113/fillvisa-os&type=date&legend=top-left&sealed_token=EaFsq3gYtqwTY6Q1HXkvbwTPxkzDx9FKsCJPuS_Gmj_4wa6FzbuYVN_C1ZnM-CDkYYETVRvca4mJEsPeIxt6-ohqc2JeHp8WzN6tUXSWQLZTmX37ybfdMKaZna6mzLPAC8aW6oK_YYm55U3-y6Qj8hkc0abJGFKcCQrUjJoTJX82F4R4O5OqnMY_PYrP" />
- </picture>
-</a>
+Need help deploying, customizing, or integrating Fillvisa OS?
+
+We may be able to help with custom software development, private deployments, workflow automation, integrations, or commercial licensing for organizations that need terms beyond the AGPL.
+
+If you are interested, [share your details here](https://tally.so/r/q45je8) or email [junaid@fillvisa.com](mailto:junaid@fillvisa.com).
