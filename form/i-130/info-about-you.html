@@ -426,12 +426,12 @@
                      <p class="mb-4">Provide your physical addresses for the last five years. Provide your current address first.</p>
 
                      <h5 class="mt-4">Physical Address 1</h5>
-                     <div class="mb-3">
+                     <div class="mb-3 physical-1-details">
                         <label class="form-label">12.a. Street Number and Name</label>
                         <input type="text" class="form-control" id="physical_1_street">
                         <div class="invalid-feedback">Physical Address 1 street is required when the physical address is different.</div>
                      </div>
-                     <div class="row">
+                     <div class="row physical-1-details">
                         <div class="col-md-6 mb-3">
                            <label class="form-label d-block">12.b. Unit Type</label>
                            <div class="d-flex gap-4 flex-wrap">
@@ -455,7 +455,7 @@
                            <div class="invalid-feedback">Unit number is required when Apt., Ste., or Flr. is selected.</div>
                         </div>
                      </div>
-                     <div class="row">
+                     <div class="row physical-1-details">
                         <div class="col-md-6 mb-3">
                            <label class="form-label">12.c. City or Town</label>
                            <input type="text" class="form-control" id="physical_1_city">
@@ -491,7 +491,7 @@
                            <div class="invalid-feedback">Enter a valid ZIP Code.</div>
                         </div>
                      </div>
-                     <div class="row">
+                     <div class="row physical-1-details">
                         <div class="col-md-4 mb-3">
                            <label class="form-label">12.f. Province</label>
                            <input type="text" class="form-control" id="physical_1_province">
@@ -1651,6 +1651,10 @@
          return document.getElementById("same_physical_no")?.checked;
       }
 
+      function isPhysicalHistoryAnswered() {
+         return ["same_physical_yes", "same_physical_no"].some(id => document.getElementById(id)?.checked);
+      }
+
       const currentMarriageFieldIds = [
          "current_marriage_date", "current_marriage_city", "current_marriage_state",
          "current_marriage_province", "current_marriage_country"
@@ -1832,8 +1836,10 @@
       }
 
       function togglePhysicalAddressHistory() {
-         const show = isPhysicalHistoryRequired();
+         const show = isPhysicalHistoryAnswered();
+         const showPhysical1Details = isPhysicalHistoryRequired();
          document.getElementById("physicalAddressHistorySection")?.classList.toggle("d-none", !show);
+         document.querySelectorAll(".physical-1-details").forEach(el => el.classList.toggle("d-none", !showPhysical1Details));
 
          if (!show) {
             clearConditionalFields([
@@ -1843,6 +1849,12 @@
                "physical_2_apt", "physical_2_ste", "physical_2_flr", "physical_2_number", "physical_2_city",
                "physical_2_state", "physical_2_zip", "physical_2_province", "physical_2_postal",
                "physical_2_country", "physical_2_date_from", "physical_2_date_to"
+            ]);
+         } else if (!showPhysical1Details) {
+            clearConditionalFields([
+               "physical_1_street", "physical_1_apt", "physical_1_ste", "physical_1_flr", "physical_1_number",
+               "physical_1_city", "physical_1_state", "physical_1_zip", "physical_1_province", "physical_1_postal",
+               "physical_1_country"
             ]);
          }
       }

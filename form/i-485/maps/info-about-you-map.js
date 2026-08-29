@@ -148,9 +148,9 @@ const fields = [
 
     {
       id: "other_dob_2",
-      // label: "Family Name (Last Name)",
-      validate: v => v !== "",
-      message: "Please enter your other second date of birth."
+      condition: () => document.getElementById("other_dob_yes")?.checked,
+      validate: v => v === "" || /^\d{4}-\d{2}-\d{2}$/.test(v),
+      message: "Please enter a valid second other date of birth."
    },
 
 
@@ -180,10 +180,10 @@ const fields = [
    },
 
     {
-    id: "has_a_number",
+    id: "a_number",
     required: false,
     condition: () => document.getElementById("a_number_yes")?.checked,
-    validate: v => v === "" || /^[0-9]{7,9}$/.test(v),
+    validate: v => /^[0-9]{7,9}$/.test(v),
     message: "Please enter a valid A-Number."
     },
 
@@ -222,9 +222,9 @@ const fields = [
 
     {
       id: "other_anumber_2",
-      // label: "Family Name (Last Name)",
-      validate: v => v !== "",
-      message: "Please enter your other second a-number"
+      condition: () => document.getElementById("other_a_number_yes")?.checked,
+      validate: v => v === "" || /^[0-9]{7,9}$/.test(v),
+      message: "Please enter a valid second other A-Number."
    },
 
     //    6.

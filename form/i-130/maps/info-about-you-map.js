@@ -120,12 +120,16 @@ function isPhysicalHistoryRequired() {
    return isChecked("same_physical_no");
 }
 
+function isPhysicalHistoryAnswered() {
+   return samePhysicalIds.some(isChecked);
+}
+
 function isPhysical1UnitSelected() {
    return isPhysicalHistoryRequired() && physical1UnitIds.some(isChecked);
 }
 
 function hasPhysical2Data() {
-   return isPhysicalHistoryRequired() &&
+   return isPhysicalHistoryAnswered() &&
       (physical2DataIds.some(hasValue) || physical2UnitIds.some(isChecked));
 }
 
@@ -472,7 +476,7 @@ const fields = [
    {
       id: "physical_1_date_from",
       required: true,
-      condition: isPhysicalHistoryRequired,
+      condition: isPhysicalHistoryAnswered,
       validate: isNotFutureDate,
       message: "Enter a valid Date From for Physical Address 1."
    },

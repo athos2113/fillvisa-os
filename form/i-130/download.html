@@ -1020,6 +1020,7 @@
 
             setCheckBoxField("same_physical_yes", i130Data_2.same_physical_yes);
             setCheckBoxField("same_physical_no", i130Data_2.same_physical_no);
+            setTextField("physical_1_date_from", i130Data_2.physical_1_date_from, formatDate);
 
             if (i130Data_2.same_physical_no) {
                setTextField("physical_1_street", i130Data_2.physical_1_street);
@@ -1033,8 +1034,14 @@
                setTextField("physical_1_province", i130Data_2.physical_1_province);
                setTextField("physical_1_postal", i130Data_2.physical_1_postal);
                setTextField("physical_1_country", i130Data_2.physical_1_country);
-               setTextField("physical_1_date_from", i130Data_2.physical_1_date_from, formatDate);
+            }
 
+            const hasPhysical2Data = [
+               "physical_2_street", "physical_2_number", "physical_2_city", "physical_2_state", "physical_2_zip",
+               "physical_2_province", "physical_2_postal", "physical_2_country", "physical_2_date_from", "physical_2_date_to",
+               "physical_2_apt", "physical_2_ste", "physical_2_flr"
+            ].some(id => i130Data_2[id]);
+            if ((i130Data_2.same_physical_yes || i130Data_2.same_physical_no) && hasPhysical2Data) {
                setTextField("physical_2_street", i130Data_2.physical_2_street);
                setCheckBoxField("physical_2_apt", i130Data_2.physical_2_apt);
                setCheckBoxField("physical_2_ste", i130Data_2.physical_2_ste);
