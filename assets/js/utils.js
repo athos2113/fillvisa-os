@@ -1,6 +1,6 @@
 // utils.js
 
-window.FILLVISA_OS_CURRENT_VERSION = "1.0.0";
+window.FILLVISA_OS_CURRENT_VERSION = "1.1.0";
 window.REPO_NAME = "fillvisa-os";
 
 const fillvisaOsUtilsScriptUrl = document.currentScript?.src || "";

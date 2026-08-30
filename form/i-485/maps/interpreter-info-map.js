@@ -1,3 +1,17 @@
+const interpreterDataIds = [
+  "interpreter_lastname",
+  "interpreter_firstname",
+  "interpreter_businessname",
+  "interpreter_telephone",
+  "interpreter_mobile",
+  "interpreter_email",
+  "interpreter_language"
+];
+
+function hasInterpreterData() {
+  return interpreterDataIds.some(id => (document.getElementById(id)?.value.trim() || "") !== "");
+}
+
 const fields = [
 
   /* =====================================================
@@ -6,15 +20,14 @@ const fields = [
 
   {
     id: "interpreter_lastname",
-    // required: true,
-    // validate: v => v.trim() !== "",
-    validate: () => true,
-    // message: "Please enter the interpreter’s family name (last name)."
-    message: ""
+    condition: hasInterpreterData,
+    validate: v => v.trim() !== "",
+    message: "Please enter the interpreter’s family name (last name)."
   },
 
   {
     id: "interpreter_firstname",
+    condition: hasInterpreterData,
     validate: v => v.trim() !== "",
     message:
       "Please enter the interpreter’s given name (first name)."
@@ -32,6 +45,7 @@ const fields = [
 
   {
     id: "interpreter_telephone",
+    condition: hasInterpreterData,
     validate: v => v.trim() !== "",
     message:
       "Please provide the interpreter’s daytime telephone number."
@@ -54,6 +68,7 @@ const fields = [
 
   {
     id: "interpreter_language",
+    condition: hasInterpreterData,
     validate: v => v.trim() !== "",
     message:
       "Please enter the language you interpreted for the applicant."
