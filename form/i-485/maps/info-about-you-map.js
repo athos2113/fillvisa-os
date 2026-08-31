@@ -284,23 +284,23 @@ const fields = [
     // 10
     {
     id: "passport_number",
-    required: true,
-    validate: v => v.trim() !== "",
-    message: "Please enter your passport or travel document number."
+    required: false,
+    validate: () => true,
+    message: ""
     },
 
     {
     id: "passport_expiration_date",
-    required: true,
-    validate: v => v !== "",
-    message: "Please enter the expiration date of your passport or travel document."
+    required: false,
+    validate: v => v === "" || /^\d{4}-\d{2}-\d{2}$/.test(v),
+    message: "Please enter a valid expiration date of your passport or travel document."
     },
 
     {
     id: "passport_issued_country",
-    required: true,
-    validate: v => v.trim() !== "",
-    message: "Please enter the country that issued your passport or travel document."
+    required: false,
+    validate: () => true,
+    message: ""
     },
 
     {

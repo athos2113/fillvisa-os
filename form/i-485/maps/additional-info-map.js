@@ -64,9 +64,9 @@ const fields = [
 
   {
     id: "employer_choose",
-    required: true,
-    validate: v => v.trim() !== "",
-    message: "Employer or school is required."
+    required: false,
+    validate: () => true,
+    message: ""
   },
 
   {
