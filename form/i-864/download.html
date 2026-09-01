@@ -1157,7 +1157,9 @@
             }));
 
             form.updateFieldAppearances(helvetica);
-            form.flatten();
+            form.getFields().forEach(field => {
+               field.enableReadOnly();
+            });
 
             const pdfBytes = await pdfDoc.save();
             showI864PdfPreview(pdfBytes);
