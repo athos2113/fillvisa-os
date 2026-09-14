@@ -160,6 +160,15 @@
     "active": "true"
   },
   {
+    "title": "I-539",
+    "subtitle": "Application to Extend/Change Nonimmigrant Status",
+    "description": "Eligible nonimmigrants use Form I-539 to apply for an extension of stay or a change to another nonimmigrant status.",
+    "categories": ["pdf-form"],
+    "slug": "i-539",
+    "pdf": "",
+    "active": "false"
+  },
+  {
     "title": "I-751",
     "subtitle": "Removal of Conditions Petition Package",
     "description": "Conditional residents who obtained status through marriage use Form I-751 (Petition to Remove Conditions on Residence) to remove conditions and obtain a permanent 10-year green card.",
