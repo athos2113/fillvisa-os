@@ -6,6 +6,7 @@
 </a>
 
 <h4 align="center">
+  <a href="https://fillvisa.com/demo">Live Demo</a> |
   <a href="https://github.com/athos2113/fillvisa-os/releases">Download Latest Release</a> |
   <a href="https://fillvisa.com">Fillvisa Hosted</a> |
   <a href="https://blog.fillvisa.com/blog">Blog</a> |
