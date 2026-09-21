@@ -38,6 +38,18 @@
     <link rel="stylesheet" href="../../assets/css/custom.css?v=professional-nav-1">
 
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BXWPHK9N8P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BXWPHK9N8P');
+    </script>
 
 
    
@@ -75,7 +87,8 @@
 <body>
     <!-- Navbar -->
 
-    <header>
+   <!-- Navbar -->
+   <header>
       <nav class="navbar navbar-expand-lg navbar-light w-100">
          <div class="container px-3">
             <a class="navbar-brand" href="../../">
@@ -183,7 +196,7 @@
             </div>
          </div>
       </nav>
-   </header>
+    </header>
 
     <main>
         <!-- Main Layout -->
@@ -341,12 +354,12 @@
                     <h2>Part 9e: General Eligibility (Illegal Entries)</h2>
 
                     <div class="form-section">
-                        <h4>Questions 67. - 73.</h4>
+                        <h4>Questions 65–71</h4>
 
-                        <!-- 67 -->
+                        <!-- 65 -->
                         <div class="mb-4">
                             <label class="form-label fw-bold">
-                                67. Have you <strong>EVER</strong> failed or refused to attend or to remain in attendance at any removal proceeding filed against you on or after April 1, 1997?
+                                65. Have you <strong>EVER</strong> failed or refused to attend or to remain in attendance at any removal proceeding filed against you on or after April 1, 1997?
                             </label>
 
                             <div class="form-check form-check-inline">
@@ -365,10 +378,16 @@
                             <div class="valid-feedback">Looks good!</div>
                         </div>
 
-                        <!-- 68 -->
+                        <div class="mb-4 d-none" id="refuse_attend_details_block">
+                            <label class="form-label fw-bold" for="refuse_attend_details">Optional: Provide explanation</label>
+                            <p id="refuse_attend_details_help">Explain why you failed or refused to attend or remain in attendance at the removal proceeding, including any reasonable cause for that failure or refusal.</p>
+                            <textarea class="form-control" id="refuse_attend_details" name="refuse_attend_details" rows="4" aria-describedby="refuse_attend_details_help"></textarea>
+                        </div>
+
+                        <!-- 66 -->
                         <div class="mb-4">
                             <label class="form-label fw-bold">
-                                68. Have you <strong>EVER</strong> submitted altered, fraudulent, or counterfeit documentation to any U.S. Government official to obtain or attempt to obtain any immigration benefit, including a visa or entry into the United States?
+                                66. Have you <strong>EVER</strong> submitted altered, fraudulent, or counterfeit documentation to any U.S. Government official to obtain or attempt to obtain any immigration benefit, including a visa or entry into the United States?
                             </label>
 
                             <div class="form-check form-check-inline">
@@ -387,10 +406,10 @@
                             <div class="valid-feedback">Looks good!</div>
                         </div>
 
-                        <!-- 69 -->
+                        <!-- 67 -->
                         <div class="mb-4">
                             <label class="form-label fw-bold">
-                                69. Have you <strong>EVER</strong> lied about, concealed, or misrepresented any information on an application or petition to obtain a visa, other documentation required for entry into the United States, admission to the United States, or any other kind of immigration benefit?
+                                67. Have you <strong>EVER</strong> lied about, concealed, or misrepresented any information on an application or petition to obtain a visa, other documentation required for entry into the United States, admission to the United States, or any other kind of immigration benefit?
                             </label>
 
                             <div class="form-check form-check-inline">
@@ -409,10 +428,10 @@
                             <div class="valid-feedback">Looks good!</div>
                         </div>
 
-                        <!-- 70 -->
+                        <!-- 68 -->
                         <div class="mb-4">
                             <label class="form-label fw-bold">
-                                70. Have you <strong>EVER</strong> falsely claimed to be a U.S. citizen (in writing or any other way)?
+                                68. Have you <strong>EVER</strong> falsely claimed to be a U.S. citizen (in writing or any other way)?
                             </label>
 
                             <div class="form-check form-check-inline">
@@ -431,10 +450,10 @@
                             <div class="valid-feedback">Looks good!</div>
                         </div>
 
-                        <!-- 71 -->
+                        <!-- 69 -->
                         <div class="mb-4">
                             <label class="form-label fw-bold">
-                                71. Have you <strong>EVER</strong> been a stowaway on a vessel or aircraft arriving in the United States?
+                                69. Have you <strong>EVER</strong> been a stowaway on a vessel or aircraft arriving in the United States?
                             </label>
 
                             <div class="form-check form-check-inline">
@@ -453,10 +472,10 @@
                             <div class="valid-feedback">Looks good!</div>
                         </div>
 
-                        <!-- 72 -->
+                        <!-- 70 -->
                         <div class="mb-4">
                             <label class="form-label fw-bold">
-                                72. Have you <strong>EVER</strong> knowingly encouraged, induced, assisted, abetted, or aided any alien to enter or to try to enter the United States illegally (alien smuggling)?
+                                70. Have you <strong>EVER</strong> knowingly encouraged, induced, assisted, abetted, or aided any alien to enter or to try to enter the United States illegally (alien smuggling)?
                             </label>
 
                             <div class="form-check form-check-inline">
@@ -475,10 +494,10 @@
                             <div class="valid-feedback">Looks good!</div>
                         </div>
 
-                        <!-- 73 -->
+                        <!-- 71 -->
                         <div class="mb-4">
                             <label class="form-label fw-bold">
-                                73. Are you under a final order of civil penalty for violating INA section 274C for use of fraudulent documents?
+                                71. Are you under a final order of civil penalty for violating INA section 274C for use of fraudulent documents?
                             </label>
 
                             <div class="form-check form-check-inline">
@@ -522,7 +541,7 @@
         ❗
     </a>
 
-    <footer class="pt-7">
+   <footer class="pt-7">
       <div class="container">
          <!-- Footer 4 column -->
          <div class="row">
@@ -750,7 +769,7 @@
             </div>
          </div>
       </div>
-   </footer>
+    </footer>
 
 
     <div class="btn-scroll-top">
@@ -773,7 +792,6 @@
 
     <!-- Theme JS -->
     <script src="../../assets/js/theme.min.js"></script>
-    <script src="../../assets/js/utils.js"></script>
 
     <!-- Swiper JS -->
     <script src="../../assets/libs/swiper/swiper-bundle.min.js"></script>
@@ -837,12 +855,23 @@
         }
 
        
+        function toggleRefuseAttendDetails() {
+            document.getElementById("refuse_attend_details_block").classList.toggle(
+                "d-none", !document.getElementById("refuse_attend_yes").checked
+            );
+        }
+
+        document.querySelectorAll('input[name="refuse_attend"]').forEach(radio => {
+            radio.addEventListener("change", toggleRefuseAttendDetails);
+        });
+
         // === 2. Form Data Handling ===
         function getFormData() {
             return {
 
                 refuse_attend_yes: document.getElementById("refuse_attend_yes").checked,
                 refuse_attend_no: document.getElementById("refuse_attend_no").checked,
+                refuse_attend_details: document.getElementById("refuse_attend_details").value,
 
                 fraud_document_yes: document.getElementById("fraud_document_yes").checked,
                 fraud_document_no: document.getElementById("fraud_document_no").checked,
@@ -897,6 +926,8 @@
             
             document.getElementById("refuse_attend_yes").checked = !!saved.refuse_attend_yes;
             document.getElementById("refuse_attend_no").checked = !!saved.refuse_attend_no;
+            document.getElementById("refuse_attend_details").value = saved.refuse_attend_details || "";
+            toggleRefuseAttendDetails();
 
             document.getElementById("fraud_document_yes").checked = !!saved.fraud_document_yes;
             document.getElementById("fraud_document_no").checked = !!saved.fraud_document_no;

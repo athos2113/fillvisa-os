@@ -81,40 +81,13 @@ function isBenefitRowActive(row) {
         `benefit_receive_${row}`,
         `benefit_start_${row}`,
         `benefit_end_${row}`,
-        `benefit_dollar_${row}`
+        `benefit_dollar_${row}`,
+        `benefit_reason_${row}`
     ].some(id => {
         const el = document.getElementById(id);
         return el && el.value.trim() !== "";
     });
 }
-
-function isBenefitAnswered(row) {
-    return (
-        document.getElementById(`benefit_exempt_yes_${row}`).checked ||
-        document.getElementById(`benefit_exempt_no_${row}`).checked
-    );
-}
-
-function isLongtermRowActive(row) {
-    return [
-        `longterm_name_${row}`,
-        `longterm_fromdate_${row}`,
-        `longterm_todate_${row}`,
-        `longterm_reason_${row}`
-    ].some(id => {
-        const el = document.getElementById(id);
-        return el && el.value.trim() !== "";
-    });
-}
-
-function isLongtermAnswered(row) {
-    return (
-        document.getElementById(`longterm_exempt_yes_${row}`).checked ||
-        document.getElementById(`longterm_exempt_no_${row}`).checked
-    );
-}
-
-
 
 
 const fields = [
@@ -199,72 +172,32 @@ const fields = [
     { id: "ssi_needy_yes", label: "Question 63", condition: () => document.getElementById("exempt_nope").checked, validate: () => document.getElementById("ssi_needy_yes").checked || document.getElementById("ssi_needy_no").checked, message: "Please select Yes or No." },
     { id: "ssi_needy_no",  label: "Question 63", condition: () => document.getElementById("exempt_nope").checked, validate: () => document.getElementById("ssi_needy_yes").checked || document.getElementById("ssi_needy_no").checked, message: "" },
 
-    // 64
-    { id: "longterm_yes", label: "Question 64", condition: () => document.getElementById("exempt_nope").checked, validate: () => document.getElementById("longterm_yes").checked || document.getElementById("longterm_no").checked, message: "Please select Yes or No." },
-    { id: "longterm_no",  label: "Question 64", condition: () => document.getElementById("exempt_nope").checked, validate: () => document.getElementById("longterm_yes").checked || document.getElementById("longterm_no").checked, message: "" },
+    // 64 row 1
+    { id: "benefit_receive_1", label: "Question 64 Means-Tested Public Benefit", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked, validate: v => v.trim() !== "", message: "Please enter the benefit received." },
+    { id: "benefit_start_1", label: "Question 64 Start Date", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked, validate: v => v !== "", message: "Please enter the start date." },
+    { id: "benefit_end_1", label: "Question 64 End Date", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked, validate: v => v !== "", message: "Please enter the end date." },
+    { id: "benefit_dollar_1", label: "Question 64 Dollar Amount", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked, validate: () => true, message: "" },
+    { id: "benefit_reason_1", label: "Question 64 Reason", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked, validate: v => v.trim() !== "", message: "Please enter the reason you received the benefit." },
 
-    // 65 row 1
-    { id: "benefit_receive_1", label: "Question 65 Benefit", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked, validate: v => v.trim() !== "", message: "Please enter the benefit received." },
-    { id: "benefit_start_1", label: "Question 65 Start Date", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked, validate: v => v !== "", message: "Please enter the start date." },
-    { id: "benefit_end_1", label: "Question 65 End Date", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked, validate: v => v !== "", message: "Please enter the end date." },
-    { id: "benefit_dollar_1", label: "Question 65 Dollar Amount", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked, validate: v => v.trim() !== "", message: "Please enter the dollar amount." },
-    { id: "benefit_exempt_yes_1", label: "Question 65 Exempt", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked, validate: () => isBenefitAnswered(1), message: "Please select Yes or No." },
-    { id: "benefit_exempt_no_1",  label: "Question 65 Exempt", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked, validate: () => isBenefitAnswered(1), message: "" },
+    // 64 row 2
+    { id: "benefit_receive_2", label: "Question 64 Means-Tested Public Benefit", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(2), validate: v => v.trim() !== "", message: "Please enter the benefit received." },
+    { id: "benefit_start_2", label: "Question 64 Start Date", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(2), validate: v => v !== "", message: "Please enter the start date." },
+    { id: "benefit_end_2", label: "Question 64 End Date", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(2), validate: v => v !== "", message: "Please enter the end date." },
+    { id: "benefit_dollar_2", label: "Question 64 Dollar Amount", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(2), validate: () => true, message: "" },
+    { id: "benefit_reason_2", label: "Question 64 Reason", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(2), validate: v => v.trim() !== "", message: "Please enter the reason you received the benefit." },
 
-    // 65 row 2
-    { id: "benefit_receive_2", label: "Question 65 Benefit", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(2), validate: v => v.trim() !== "", message: "Please enter the benefit received." },
-    { id: "benefit_start_2", label: "Question 65 Start Date", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(2), validate: v => v !== "", message: "Please enter the start date." },
-    { id: "benefit_end_2", label: "Question 65 End Date", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(2), validate: v => v !== "", message: "Please enter the end date." },
-    { id: "benefit_dollar_2", label: "Question 65 Dollar Amount", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(2), validate: v => v.trim() !== "", message: "Please enter the dollar amount." },
-    { id: "benefit_exempt_yes_2", label: "Question 65 Exempt", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(2), validate: () => isBenefitAnswered(2), message: "Please select Yes or No." },
-    { id: "benefit_exempt_no_2",  label: "Question 65 Exempt", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(2), validate: () => isBenefitAnswered(2), message: "" },
+    // 64 row 3
+    { id: "benefit_receive_3", label: "Question 64 Means-Tested Public Benefit", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(3), validate: v => v.trim() !== "", message: "Please enter the benefit received." },
+    { id: "benefit_start_3", label: "Question 64 Start Date", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(3), validate: v => v !== "", message: "Please enter the start date." },
+    { id: "benefit_end_3", label: "Question 64 End Date", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(3), validate: v => v !== "", message: "Please enter the end date." },
+    { id: "benefit_dollar_3", label: "Question 64 Dollar Amount", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(3), validate: () => true, message: "" },
+    { id: "benefit_reason_3", label: "Question 64 Reason", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(3), validate: v => v.trim() !== "", message: "Please enter the reason you received the benefit." },
 
-    // 65 row 3
-    { id: "benefit_receive_3", label: "Question 65 Benefit", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(3), validate: v => v.trim() !== "", message: "Please enter the benefit received." },
-    { id: "benefit_start_3", label: "Question 65 Start Date", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(3), validate: v => v !== "", message: "Please enter the start date." },
-    { id: "benefit_end_3", label: "Question 65 End Date", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(3), validate: v => v !== "", message: "Please enter the end date." },
-    { id: "benefit_dollar_3", label: "Question 65 Dollar Amount", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(3), validate: v => v.trim() !== "", message: "Please enter the dollar amount." },
-    { id: "benefit_exempt_yes_3", label: "Question 65 Exempt", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(3), validate: () => isBenefitAnswered(3), message: "Please select Yes or No." },
-    { id: "benefit_exempt_no_3",  label: "Question 65 Exempt", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(3), validate: () => isBenefitAnswered(3), message: "" },
-
-    // 65 row 4
-    { id: "benefit_receive_4", label: "Question 65 Benefit", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(4), validate: v => v.trim() !== "", message: "Please enter the benefit received." },
-    { id: "benefit_start_4", label: "Question 65 Start Date", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(4), validate: v => v !== "", message: "Please enter the start date." },
-    { id: "benefit_end_4", label: "Question 65 End Date", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(4), validate: v => v !== "", message: "Please enter the end date." },
-    { id: "benefit_dollar_4", label: "Question 65 Dollar Amount", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(4), validate: v => v.trim() !== "", message: "Please enter the dollar amount." },
-    { id: "benefit_exempt_yes_4", label: "Question 65 Exempt", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(4), validate: () => isBenefitAnswered(4), message: "Please select Yes or No." },
-    { id: "benefit_exempt_no_4",  label: "Question 65 Exempt", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(4), validate: () => isBenefitAnswered(4), message: "" },
-
-    // 66 row 1
-    { id: "longterm_name_1", label: "Question 66 Institution", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("longterm_yes").checked, validate: v => v.trim() !== "", message: "Please enter the institution name/city/state." },
-    { id: "longterm_fromdate_1", label: "Question 66 Date From", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("longterm_yes").checked, validate: v => v !== "", message: "Please enter the start date." },
-    { id: "longterm_todate_1", label: "Question 66 Date To", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("longterm_yes").checked, validate: v => v !== "", message: "Please enter the end date." },
-    { id: "longterm_reason_1", label: "Question 66 Reason", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("longterm_yes").checked, validate: v => v.trim() !== "", message: "Please enter the reason." },
-    { id: "longterm_exempt_yes_1", label: "Question 66 Exempt", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("longterm_yes").checked, validate: () => isLongtermAnswered(1), message: "Please select Yes or No." },
-    { id: "longterm_exempt_no_1",  label: "Question 66 Exempt", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("longterm_yes").checked, validate: () => isLongtermAnswered(1), message: "" },
-
-    // 66 row 2
-    { id: "longterm_name_2", label: "Question 66 Institution", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("longterm_yes").checked && isLongtermRowActive(2), validate: v => v.trim() !== "", message: "Please enter the institution name/city/state." },
-    { id: "longterm_fromdate_2", label: "Question 66 Date From", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("longterm_yes").checked && isLongtermRowActive(2), validate: v => v !== "", message: "Please enter the start date." },
-    { id: "longterm_todate_2", label: "Question 66 Date To", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("longterm_yes").checked && isLongtermRowActive(2), validate: v => v !== "", message: "Please enter the end date." },
-    { id: "longterm_reason_2", label: "Question 66 Reason", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("longterm_yes").checked && isLongtermRowActive(2), validate: v => v.trim() !== "", message: "Please enter the reason." },
-    { id: "longterm_exempt_yes_2", label: "Question 66 Exempt", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("longterm_yes").checked && isLongtermRowActive(2), validate: () => isLongtermAnswered(2), message: "Please select Yes or No." },
-    { id: "longterm_exempt_no_2",  label: "Question 66 Exempt", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("longterm_yes").checked && isLongtermRowActive(2), validate: () => isLongtermAnswered(2), message: "" },
-
-    // 66 row 3
-    { id: "longterm_name_3", label: "Question 66 Institution", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("longterm_yes").checked && isLongtermRowActive(3), validate: v => v.trim() !== "", message: "Please enter the institution name/city/state." },
-    { id: "longterm_fromdate_3", label: "Question 66 Date From", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("longterm_yes").checked && isLongtermRowActive(3), validate: v => v !== "", message: "Please enter the start date." },
-    { id: "longterm_todate_3", label: "Question 66 Date To", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("longterm_yes").checked && isLongtermRowActive(3), validate: v => v !== "", message: "Please enter the end date." },
-    { id: "longterm_reason_3", label: "Question 66 Reason", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("longterm_yes").checked && isLongtermRowActive(3), validate: v => v.trim() !== "", message: "Please enter the reason." },
-    { id: "longterm_exempt_yes_3", label: "Question 66 Exempt", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("longterm_yes").checked && isLongtermRowActive(3), validate: () => isLongtermAnswered(3), message: "Please select Yes or No." },
-    { id: "longterm_exempt_no_3",  label: "Question 66 Exempt", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("longterm_yes").checked && isLongtermRowActive(3), validate: () => isLongtermAnswered(3), message: "" },
-
-    // 66 row 4
-    { id: "longterm_name_4", label: "Question 66 Institution", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("longterm_yes").checked && isLongtermRowActive(4), validate: v => v.trim() !== "", message: "Please enter the institution name/city/state." },
-    { id: "longterm_fromdate_4", label: "Question 66 Date From", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("longterm_yes").checked && isLongtermRowActive(4), validate: v => v !== "", message: "Please enter the start date." },
-    { id: "longterm_todate_4", label: "Question 66 Date To", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("longterm_yes").checked && isLongtermRowActive(4), validate: v => v !== "", message: "Please enter the end date." },
-    { id: "longterm_reason_4", label: "Question 66 Reason", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("longterm_yes").checked && isLongtermRowActive(4), validate: v => v.trim() !== "", message: "Please enter the reason." },
-    { id: "longterm_exempt_yes_4", label: "Question 66 Exempt", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("longterm_yes").checked && isLongtermRowActive(4), validate: () => isLongtermAnswered(4), message: "Please select Yes or No." },
-    { id: "longterm_exempt_no_4",  label: "Question 66 Exempt", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("longterm_yes").checked && isLongtermRowActive(4), validate: () => isLongtermAnswered(4), message: "" },
+    // 64 row 4
+    { id: "benefit_receive_4", label: "Question 64 Means-Tested Public Benefit", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(4), validate: v => v.trim() !== "", message: "Please enter the benefit received." },
+    { id: "benefit_start_4", label: "Question 64 Start Date", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(4), validate: v => v !== "", message: "Please enter the start date." },
+    { id: "benefit_end_4", label: "Question 64 End Date", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(4), validate: v => v !== "", message: "Please enter the end date." },
+    { id: "benefit_dollar_4", label: "Question 64 Dollar Amount", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(4), validate: () => true, message: "" },
+    { id: "benefit_reason_4", label: "Question 64 Reason", condition: () => document.getElementById("exempt_nope").checked && document.getElementById("ssi_needy_yes").checked && isBenefitRowActive(4), validate: v => v.trim() !== "", message: "Please enter the reason you received the benefit." },
 
 ];

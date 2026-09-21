@@ -68,6 +68,18 @@
     </style>
 
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BXWPHK9N8P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BXWPHK9N8P');
+    </script>
 
 
     <!-- Primary Meta Tags -->
@@ -111,7 +123,8 @@
 <body>
     <!-- Navbar -->
 
-    <header>
+   <!-- Navbar -->
+   <header>
       <nav class="navbar navbar-expand-lg navbar-light w-100">
          <div class="container px-3">
             <a class="navbar-brand" href="../../">
@@ -413,11 +426,11 @@
 
                       <div id="support" class="d-none">
                         <!--Fillvisa Review start-->
-                        <section class="my-lg-9 my-5">
+                        <section class="my-lg-8 my-5">
                               <div class="container">
                                  <div class="row mb-lg-9 mb-5">
                                  <div class="col-xl-10 offset-xl-1 col-md-12">
-                                    <div class="row">
+                                    <div class="row d-none">
                                           <div class="col-lg-6 offset-lg-3 col-md-12">
                                              <div class="text-center mb-5">
                                              <small class="text-uppercase ls-md fw-semibold text-body-tertiary">❤️ PAY IT FORWARD</small>
@@ -428,8 +441,8 @@
                                           </div>
                                     </div>
                                     <div class="row">
-                                          <div class="col-xl-8 offset-xl-2 col-12">
-                                             <div class="text-center mb-xl-7 mb-5">
+                                          <div class="col-xl-10 offset-xl-1 col-lg-12 col-12">
+                                             <div class="text-center mb-xl-7 mb-5 d-none">
                                              <p class="lead text-center">
                                                 A honest review helps the next person find Fillvisa - and know it's free, 
                                                 it works, and they can trust it. Takes less than a minute. Means everything to them.
@@ -437,22 +450,31 @@
                                              </div>
 
                                              <div class="container text-center">
-                                                <div class="d-flex align-items-center justify-content-center gap-3 mb-4">
+                                                <div class="d-flex align-items-center justify-content-center gap-3 mb-4 d-none">
                                                    <span class="i485-workflow-step">2</span>
                                                    <p class="lead mb-0">If Fillvisa helped, support the project or leave a quick review.</p>
                                                 </div>
-                                                <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-5">
+                                                <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-5 d-none">
                                                    <a class="btn btn-lg btn-primary" href="https://dodo.pe/z466okphgg" target="_blank" rel="noopener">Buy me a coffee</a>
                                                    <a class="btn btn-lg btn-outline-primary" href="https://www.trustpilot.com/evaluate/fillvisa.com" target="_blank" rel="noopener">Leave a review</a>
                                                 </div>
 
-                                                <div class="d-flex align-items-center justify-content-center gap-3 mb-4">
-                                                   <span class="i485-workflow-step">3</span>
-                                                   <p class="lead mb-0">Download the reviewed PDF when you are ready.</p>
+                                                <div class="text-center border-top pt-5">
+                                                   <div class="d-inline-flex align-items-center gap-3 mb-3">
+                                                      <span class="i485-workflow-step">2</span>
+                                                      <small class="text-uppercase ls-md fw-semibold text-body-tertiary">
+                                                         Download
+                                                      </small>
+                                                   </div>
+                                                   <div>
+                                                      <button id="downloadPdfBtn" class="btn btn-lg btn-success" type="button" disabled>
+                                                         <i class="bi bi-download me-2"></i>Download PDF
+                                                      </button>
+                                                   </div>
+                                                   <p class="small text-body-secondary mt-3 mb-0">
+                                                      Need another look? Scroll back to the preview before downloading.
+                                                   </p>
                                                 </div>
-                                                <button id="downloadPdfBtn" class="btn btn-lg btn-success" type="button" disabled>
-                                                   Download PDF
-                                                </button>
                                              </div>
 
 
@@ -479,7 +501,7 @@
       ❗
     </a>
 
-    <footer class="pt-7">
+   <footer class="pt-7">
       <div class="container">
          <!-- Footer 4 column -->
          <div class="row">
@@ -726,8 +748,7 @@
 
     <!-- Theme JS -->
     <script src="../../assets/js/theme.min.js"></script>
-    <script src="../../assets/js/utils.js"></script>
-    <!-- <script src="../../assets/js/donate-flow.js"></script> -->
+    <script src="../../assets/js/donate-flow.js"></script>
     <script>
       window.FillvisaSimpleCitizenConfig = {
          form: "i-485",
@@ -981,11 +1002,6 @@
                if (supportEl) {
                   supportEl.classList.remove("d-none");
                }
-
-               window.FillvisaDonate?.show("all-sections-complete", {
-                  title: "If this project helped you",
-                  body: "You made it through the form. Fillvisa is a one-person project, and a coffee helps me keep it free for people doing this under pressure."
-               });
 
                console.log("✅ PDF button rendered");
 
@@ -3611,7 +3627,7 @@
                      if (i485Data_9d.list_certification) form.getTextField("list_certification").setText(i485Data_9d.list_certification);
 
 
-                     //63+65
+                     //63+64
                      if (i485Data_9d.ssi_needy_no){
                         form.getCheckBox("ssi_needy_no").check();
                      }
@@ -3619,7 +3635,7 @@
                      if (i485Data_9d.ssi_needy_yes){
                         form.getCheckBox("ssi_needy_yes").check();
 
-                        //65
+                        //64
                         //1st row
                         if (i485Data_9d.benefit_receive_1) form.getTextField("benefit_receive_1").setText(i485Data_9d.benefit_receive_1);
                         if (i485Data_9d.benefit_start_1) {
@@ -3633,12 +3649,7 @@
                            form.getTextField("benefit_end_1").setText(formatted);
                         }
                         if (i485Data_9d.benefit_dollar_1) form.getTextField("benefit_dollar_1").setText(i485Data_9d.benefit_dollar_1);
-                        if (i485Data_9d.benefit_exempt_yes_1){
-                           form.getCheckBox("benefit_exempt_yes_1").check();
-                        }
-                        if (i485Data_9d.benefit_exempt_no_1){
-                           form.getCheckBox("benefit_exempt_no_1").check();
-                        }
+                        if (i485Data_9d.benefit_reason_1) form.getTextField("benefit_reason_1").setText(i485Data_9d.benefit_reason_1);
 
                         //2nd row
                         if (i485Data_9d.benefit_receive_2) form.getTextField("benefit_receive_2").setText(i485Data_9d.benefit_receive_2);
@@ -3653,12 +3664,7 @@
                            form.getTextField("benefit_end_2").setText(formatted);
                         }
                         if (i485Data_9d.benefit_dollar_2) form.getTextField("benefit_dollar_2").setText(i485Data_9d.benefit_dollar_2);
-                        if (i485Data_9d.benefit_exempt_yes_2){
-                           form.getCheckBox("benefit_exempt_yes_2").check();
-                        }
-                        if (i485Data_9d.benefit_exempt_no_2){
-                           form.getCheckBox("benefit_exempt_no_2").check();
-                        }
+                        if (i485Data_9d.benefit_reason_2) form.getTextField("benefit_reason_2").setText(i485Data_9d.benefit_reason_2);
 
 
                         //3rd row
@@ -3674,12 +3680,7 @@
                            form.getTextField("benefit_end_3").setText(formatted);
                         }
                         if (i485Data_9d.benefit_dollar_3) form.getTextField("benefit_dollar_3").setText(i485Data_9d.benefit_dollar_3);
-                        if (i485Data_9d.benefit_exempt_yes_3){
-                           form.getCheckBox("benefit_exempt_yes_3").check();
-                        }
-                        if (i485Data_9d.benefit_exempt_no_3){
-                           form.getCheckBox("benefit_exempt_no_3").check();
-                        }
+                        if (i485Data_9d.benefit_reason_3) form.getTextField("benefit_reason_3").setText(i485Data_9d.benefit_reason_3);
 
 
                         //4th row
@@ -3695,112 +3696,10 @@
                            form.getTextField("benefit_end_4").setText(formatted);
                         }
                         if (i485Data_9d.benefit_dollar_4) form.getTextField("benefit_dollar_4").setText(i485Data_9d.benefit_dollar_4);
-                        if (i485Data_9d.benefit_exempt_yes_4){
-                           form.getCheckBox("benefit_exempt_yes_4").check();
-                        }
-                        if (i485Data_9d.benefit_exempt_no_4){
-                           form.getCheckBox("benefit_exempt_no_4").check();
-                        }
+                        if (i485Data_9d.benefit_reason_4) form.getTextField("benefit_reason_4").setText(i485Data_9d.benefit_reason_4);
 
                      }
 
-
-                     //64+66
-                     if (i485Data_9d.longterm_no){
-                        form.getCheckBox("longterm_no").check();
-                     }
-
-                     if (i485Data_9d.longterm_yes){
-                        form.getCheckBox("longterm_yes").check();
-
-                        //66
-                        //1st row
-                        if (i485Data_9d.longterm_name_1) form.getTextField("longterm_name_1").setText(i485Data_9d.longterm_name_1);
-                        if (i485Data_9d.longterm_fromdate_1) {
-                           const [yyyy, mm, dd] = i485Data_9d.longterm_fromdate_1.split("-");
-                           const formatted = `${mm}/${dd}/${yyyy}`;
-                           form.getTextField("longterm_fromdate_1").setText(formatted);
-                        }
-                        if (i485Data_9d.longterm_todate_1) {
-                           const [yyyy, mm, dd] = i485Data_9d.longterm_todate_1.split("-");
-                           const formatted = `${mm}/${dd}/${yyyy}`;
-                           form.getTextField("longterm_todate_1").setText(formatted);
-                        }
-                        if (i485Data_9d.longterm_reason_1) form.getTextField("longterm_reason_1").setText(i485Data_9d.longterm_reason_1);
-                        if (i485Data_9d.longterm_exempt_yes_1){
-                           form.getCheckBox("longterm_exempt_yes_1").check();
-                        }
-                        if (i485Data_9d.longterm_exempt_no_1){
-                           form.getCheckBox("longterm_exempt_no_1").check();
-                        }
-
-
-                        //2nd row 
-                        if (i485Data_9d.longterm_name_2) form.getTextField("longterm_name_2").setText(i485Data_9d.longterm_name_2);
-                        if (i485Data_9d.longterm_fromdate_2) {
-                           const [yyyy, mm, dd] = i485Data_9d.longterm_fromdate_2.split("-");
-                           const formatted = `${mm}/${dd}/${yyyy}`;
-                           form.getTextField("longterm_fromdate_2").setText(formatted);
-                        }
-                        if (i485Data_9d.longterm_todate_2) {
-                           const [yyyy, mm, dd] = i485Data_9d.longterm_todate_2.split("-");
-                           const formatted = `${mm}/${dd}/${yyyy}`;
-                           form.getTextField("longterm_todate_2").setText(formatted);
-                        }
-                        if (i485Data_9d.longterm_reason_2) form.getTextField("longterm_reason_2").setText(i485Data_9d.longterm_reason_2);
-                        if (i485Data_9d.longterm_exempt_yes_2){
-                           form.getCheckBox("longterm_exempt_yes_2").check();
-                        }
-                        if (i485Data_9d.longterm_exempt_no_2){
-                           form.getCheckBox("longterm_exempt_no_2").check();
-                        }
-
-
-
-                        //3rd row 
-                        if (i485Data_9d.longterm_name_3) form.getTextField("longterm_name_3").setText(i485Data_9d.longterm_name_3);
-                        if (i485Data_9d.longterm_fromdate_3) {
-                           const [yyyy, mm, dd] = i485Data_9d.longterm_fromdate_3.split("-");
-                           const formatted = `${mm}/${dd}/${yyyy}`;
-                           form.getTextField("longterm_fromdate_3").setText(formatted);
-                        }
-                        if (i485Data_9d.longterm_todate_3) {
-                           const [yyyy, mm, dd] = i485Data_9d.longterm_todate_3.split("-");
-                           const formatted = `${mm}/${dd}/${yyyy}`;
-                           form.getTextField("longterm_todate_3").setText(formatted);
-                        }
-                        if (i485Data_9d.longterm_reason_3) form.getTextField("longterm_reason_3").setText(i485Data_9d.longterm_reason_3);
-                        if (i485Data_9d.longterm_exempt_yes_3){
-                           form.getCheckBox("longterm_exempt_yes_3").check();
-                        }
-                        if (i485Data_9d.longterm_exempt_no_3){
-                           form.getCheckBox("longterm_exempt_no_3").check();
-                        }
-
-
-
-                        //4th row 
-                        if (i485Data_9d.longterm_name_4) form.getTextField("longterm_name_4").setText(i485Data_9d.longterm_name_4);
-                        if (i485Data_9d.longterm_fromdate_4) {
-                           const [yyyy, mm, dd] = i485Data_9d.longterm_fromdate_4.split("-");
-                           const formatted = `${mm}/${dd}/${yyyy}`;
-                           form.getTextField("longterm_fromdate_4").setText(formatted);
-                        }
-                        if (i485Data_9d.longterm_todate_4) {
-                           const [yyyy, mm, dd] = i485Data_9d.longterm_todate_4.split("-");
-                           const formatted = `${mm}/${dd}/${yyyy}`;
-                           form.getTextField("longterm_todate_4").setText(formatted);
-                        }
-                        if (i485Data_9d.longterm_reason_4) form.getTextField("longterm_reason_4").setText(i485Data_9d.longterm_reason_4);
-                        if (i485Data_9d.longterm_exempt_yes_4){
-                           form.getCheckBox("longterm_exempt_yes_4").check();
-                        }
-                        if (i485Data_9d.longterm_exempt_no_4){
-                           form.getCheckBox("longterm_exempt_no_4").check();
-                        }
-
-
-                     }
 
                   }
 
@@ -3813,6 +3712,10 @@
 
                   if (i485Data_9e.refuse_attend_yes){
                      form.getCheckBox("refuse_attend_yes").check();
+
+                     if (i485Data_9e.refuse_attend_details && i485Data_9e.refuse_attend_details.trim() !== "") {
+                        fillAdditionalInfo(form, "20", "9", "65", i485Data_9e.refuse_attend_details);
+                     }
                   }
 
                   if (i485Data_9e.fraud_document_no){
@@ -3891,9 +3794,9 @@
                      if (i485Data_9f.unlawful_present_details && i485Data_9f.unlawful_present_details.trim() !== "") {
                         fillAdditionalInfo(
                            form,
-                           "21", // Page number
+                           "20", // Page number
                            "9", // Part number
-                           "76", // Item number
+                           "74", // Item number
                            i485Data_9f.unlawful_present_details
                         );
                      }

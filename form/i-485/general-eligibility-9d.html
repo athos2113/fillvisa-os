@@ -38,6 +38,18 @@
     <link rel="stylesheet" href="../../assets/css/custom.css?v=professional-nav-1">
 
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BXWPHK9N8P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BXWPHK9N8P');
+    </script>
 
 
    
@@ -75,7 +87,8 @@
 <body>
     <!-- Navbar -->
 
-    <header>
+   <!-- Navbar -->
+   <header>
       <nav class="navbar navbar-expand-lg navbar-light w-100">
          <div class="container px-3">
             <a class="navbar-brand" href="../../">
@@ -183,7 +196,7 @@
             </div>
          </div>
       </nav>
-   </header>
+    </header>
 
     <main>
         <!-- Main Layout -->
@@ -517,13 +530,13 @@
                         </div>
 
 
-                        <!-- 63-66 start -->
+                        <!-- 63 and 64 start -->
                         <div class="form-section">
 
                             <!-- 63 -->
                             <div class="mb-4">
                                 <label class="form-label fw-bold">
-                                    63. Have you ever received Supplemental Security Income (SSI), Temporary Assistance for Needy Families (TANF), or state, Tribal, territorial, or local cash benefit programs for income maintenance?
+                                    63. Have you ever received any means-tested public benefit?
                                 </label>
 
                                 <div class="form-check form-check-inline">
@@ -540,33 +553,14 @@
                                 <div class="valid-feedback">Looks good!</div>
                             </div>
 
-                            <!-- 64 -->
-                            <div class="mb-4">
-                                <label class="form-label fw-bold">
-                                    64. Have you ever received long-term institutionalization at government expense?
-                                </label>
-
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="longterm" id="longterm_yes">
-                                    <label class="form-check-label" for="longterm_yes">Yes</label>
-                                </div>
-
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="longterm" id="longterm_no">
-                                    <label class="form-check-label" for="longterm_no">No</label>
-                                </div>
-
-                                <div class="invalid-feedback">Please select Yes or No.</div>
-                                <div class="valid-feedback">Looks good!</div>
-                            </div>
-
                         </div>
 
 
-                        <!-- ================= ITEM 65 ================= -->
-                        <div class="form-section d-none" id="item_65_block">
+                        <!-- ================= ITEM 64 ================= -->
+                        <div class="form-section d-none" id="item_64_block">
 
-                            <h4>65. Benefits Received</h4>
+                            <h4>64. Benefits Received</h4>
+                            <p>If your answer to Item Number 63. is &ldquo;Yes,&rdquo; list the specific means-tested public benefit(s) you received, the start and end dates of each period of receipt, the dollar amount of benefits received (if applicable), and the reason you received the benefit.</p>
 
                             <!-- ROW 1 -->
                             <div class="benefit-row mb-4 bg-light p-4 rounded" id="benefit_row_1">
@@ -574,7 +568,7 @@
 
                                 <div class="row g-3">
                                     <div class="col-md-4">
-                                        <label class="form-label fw-bold">Benefit Received</label>
+                                        <label class="form-label fw-bold">Means-Tested Public Benefit Received</label>
                                         <input type="text" class="form-control" id="benefit_receive_1">
                                     </div>
 
@@ -589,16 +583,13 @@
                                     </div>
 
                                     <div class="col-md-2">
-                                        <label class="form-label fw-bold">Dollar Amount</label>
+                                        <label class="form-label fw-bold">Dollar Amount (if applicable)</label>
                                         <input type="text" class="form-control" id="benefit_dollar_1">
                                     </div>
 
                                     <div class="col-md-2">
-                                        <label class="form-label fw-bold">Exempt?</label>
-                                        <div>
-                                            <input class="form-check-input" type="radio" name="benefit_exempt_1" id="benefit_exempt_yes_1"> Yes
-                                            <input class="form-check-input ms-2" type="radio" name="benefit_exempt_1" id="benefit_exempt_no_1"> No
-                                        </div>
+                                        <label class="form-label fw-bold" for="benefit_reason_1">Reason</label>
+                                        <input type="text" class="form-control" id="benefit_reason_1" name="benefit_reason_1">
                                     </div>
                                 </div>
                             </div>
@@ -609,7 +600,7 @@
 
                                 <div class="row g-3">
                                     <div class="col-md-4">
-                                        <label class="form-label fw-bold">Benefit Received</label>
+                                        <label class="form-label fw-bold">Means-Tested Public Benefit Received</label>
                                         <input type="text" class="form-control" id="benefit_receive_2">
                                     </div>
 
@@ -624,16 +615,13 @@
                                     </div>
 
                                     <div class="col-md-2">
-                                        <label class="form-label fw-bold">Dollar Amount</label>
+                                        <label class="form-label fw-bold">Dollar Amount (if applicable)</label>
                                         <input type="text" class="form-control" id="benefit_dollar_2">
                                     </div>
 
                                     <div class="col-md-2">
-                                        <label class="form-label fw-bold">Exempt?</label>
-                                        <div>
-                                            <input class="form-check-input" type="radio" name="benefit_exempt_2" id="benefit_exempt_yes_2"> Yes
-                                            <input class="form-check-input ms-2" type="radio" name="benefit_exempt_2" id="benefit_exempt_no_2"> No
-                                        </div>
+                                        <label class="form-label fw-bold" for="benefit_reason_2">Reason</label>
+                                        <input type="text" class="form-control" id="benefit_reason_2" name="benefit_reason_2">
                                     </div>
                                 </div>
                             </div>
@@ -644,7 +632,7 @@
 
                                 <div class="row g-3">
                                     <div class="col-md-4">
-                                        <label class="form-label fw-bold">Benefit Received</label>
+                                        <label class="form-label fw-bold">Means-Tested Public Benefit Received</label>
                                         <input type="text" class="form-control" id="benefit_receive_3">
                                     </div>
 
@@ -659,16 +647,13 @@
                                     </div>
 
                                     <div class="col-md-2">
-                                        <label class="form-label fw-bold">Dollar Amount</label>
+                                        <label class="form-label fw-bold">Dollar Amount (if applicable)</label>
                                         <input type="text" class="form-control" id="benefit_dollar_3">
                                     </div>
 
                                     <div class="col-md-2">
-                                        <label class="form-label fw-bold">Exempt?</label>
-                                        <div>
-                                            <input class="form-check-input" type="radio" name="benefit_exempt_3" id="benefit_exempt_yes_3"> Yes
-                                            <input class="form-check-input ms-2" type="radio" name="benefit_exempt_3" id="benefit_exempt_no_3"> No
-                                        </div>
+                                        <label class="form-label fw-bold" for="benefit_reason_3">Reason</label>
+                                        <input type="text" class="form-control" id="benefit_reason_3" name="benefit_reason_3">
                                     </div>
                                 </div>
                             </div>
@@ -679,7 +664,7 @@
 
                                 <div class="row g-3">
                                     <div class="col-md-4">
-                                        <label class="form-label fw-bold">Benefit Received</label>
+                                        <label class="form-label fw-bold">Means-Tested Public Benefit Received</label>
                                         <input type="text" class="form-control" id="benefit_receive_4">
                                     </div>
 
@@ -694,16 +679,13 @@
                                     </div>
 
                                     <div class="col-md-2">
-                                        <label class="form-label fw-bold">Dollar Amount</label>
+                                        <label class="form-label fw-bold">Dollar Amount (if applicable)</label>
                                         <input type="text" class="form-control" id="benefit_dollar_4">
                                     </div>
 
                                     <div class="col-md-2">
-                                        <label class="form-label fw-bold">Exempt?</label>
-                                        <div>
-                                            <input class="form-check-input" type="radio" name="benefit_exempt_4" id="benefit_exempt_yes_4"> Yes
-                                            <input class="form-check-input ms-2" type="radio" name="benefit_exempt_4" id="benefit_exempt_no_4"> No
-                                        </div>
+                                        <label class="form-label fw-bold" for="benefit_reason_4">Reason</label>
+                                        <input type="text" class="form-control" id="benefit_reason_4" name="benefit_reason_4">
                                     </div>
                                 </div>
                             </div>
@@ -715,158 +697,7 @@
                         </div>
 
 
-                        <!-- ================= ITEM 66 ================= -->
-                        <div class="form-section d-none" id="item_66_block">
-
-                            <h4>66. Long-Term Institutionalization</h4>
-
-                            <!-- ROW 1 -->
-                            <div class="longterm-row mb-4 bg-light p-4 rounded" id="longterm_row_1">
-                                <label class="form-label fw-bold">Institution Record 1</label>
-
-                                <div class="row g-3">
-                                    <div class="col-md-4">
-                                        <label class="form-label fw-bold">Institution Name/City/State</label>
-                                        <input type="text" class="form-control" id="longterm_name_1">
-                                    </div>
-
-                                    <div class="col-md-2">
-                                        <label class="form-label fw-bold">Date From</label>
-                                        <input type="date" class="form-control" id="longterm_fromdate_1">
-                                    </div>
-
-                                    <div class="col-md-2">
-                                        <label class="form-label fw-bold">Date To</label>
-                                        <input type="date" class="form-control" id="longterm_todate_1">
-                                    </div>
-
-                                    <div class="col-md-2">
-                                        <label class="form-label fw-bold">Reason</label>
-                                        <input type="text" class="form-control" id="longterm_reason_1">
-                                    </div>
-
-                                    <div class="col-md-2">
-                                        <label class="form-label fw-bold">Exempt?</label>
-                                        <div>
-                                            <input class="form-check-input" type="radio" name="longterm_exempt_1" id="longterm_exempt_yes_1"> Yes
-                                            <input class="form-check-input ms-2" type="radio" name="longterm_exempt_1" id="longterm_exempt_no_1"> No
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- ROW 2 -->
-                            <div class="longterm-row mb-4 bg-light p-4 rounded d-none" id="longterm_row_2">
-                                <label class="form-label fw-bold">Institution Record 2</label>
-
-                                <div class="row g-3">
-                                    <div class="col-md-4">
-                                        <label class="form-label fw-bold">Institution Name/City/State</label>
-                                        <input type="text" class="form-control" id="longterm_name_2">
-                                    </div>
-
-                                    <div class="col-md-2">
-                                        <label class="form-label fw-bold">Date From</label>
-                                        <input type="date" class="form-control" id="longterm_fromdate_2">
-                                    </div>
-
-                                    <div class="col-md-2">
-                                        <label class="form-label fw-bold">Date To</label>
-                                        <input type="date" class="form-control" id="longterm_todate_2">
-                                    </div>
-
-                                    <div class="col-md-2">
-                                        <label class="form-label fw-bold">Reason</label>
-                                        <input type="text" class="form-control" id="longterm_reason_2">
-                                    </div>
-
-                                    <div class="col-md-2">
-                                        <label class="form-label fw-bold">Exempt?</label>
-                                        <div>
-                                            <input class="form-check-input" type="radio" name="longterm_exempt_2" id="longterm_exempt_yes_2"> Yes
-                                            <input class="form-check-input ms-2" type="radio" name="longterm_exempt_2" id="longterm_exempt_no_2"> No
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- ROW 3 -->
-                            <div class="longterm-row mb-4 bg-light p-4 rounded d-none" id="longterm_row_3">
-                                <label class="form-label fw-bold">Institution Record 3</label>
-
-                                <div class="row g-3">
-                                    <div class="col-md-4">
-                                        <label class="form-label fw-bold">Institution Name/City/State</label>
-                                        <input type="text" class="form-control" id="longterm_name_3">
-                                    </div>
-
-                                    <div class="col-md-2">
-                                        <label class="form-label fw-bold">Date From</label>
-                                        <input type="date" class="form-control" id="longterm_fromdate_3">
-                                    </div>
-
-                                    <div class="col-md-2">
-                                        <label class="form-label fw-bold">Date To</label>
-                                        <input type="date" class="form-control" id="longterm_todate_3">
-                                    </div>
-
-                                    <div class="col-md-2">
-                                        <label class="form-label fw-bold">Reason</label>
-                                        <input type="text" class="form-control" id="longterm_reason_3">
-                                    </div>
-
-                                    <div class="col-md-2">
-                                        <label class="form-label fw-bold">Exempt?</label>
-                                        <div>
-                                            <input class="form-check-input" type="radio" name="longterm_exempt_3" id="longterm_exempt_yes_3"> Yes
-                                            <input class="form-check-input ms-2" type="radio" name="longterm_exempt_3" id="longterm_exempt_no_3"> No
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- ROW 4 -->
-                            <div class="longterm-row mb-4 bg-light p-4 rounded d-none" id="longterm_row_4">
-                                <label class="form-label fw-bold">Institution Record 4</label>
-
-                                <div class="row g-3">
-                                    <div class="col-md-4">
-                                        <label class="form-label fw-bold">Institution Name/City/State</label>
-                                        <input type="text" class="form-control" id="longterm_name_4">
-                                    </div>
-
-                                    <div class="col-md-2">
-                                        <label class="form-label fw-bold">Date From</label>
-                                        <input type="date" class="form-control" id="longterm_fromdate_4">
-                                    </div>
-
-                                    <div class="col-md-2">
-                                        <label class="form-label fw-bold">Date To</label>
-                                        <input type="date" class="form-control" id="longterm_todate_4">
-                                    </div>
-
-                                    <div class="col-md-2">
-                                        <label class="form-label fw-bold">Reason</label>
-                                        <input type="text" class="form-control" id="longterm_reason_4">
-                                    </div>
-
-                                    <div class="col-md-2">
-                                        <label class="form-label fw-bold">Exempt?</label>
-                                        <div>
-                                            <input class="form-check-input" type="radio" name="longterm_exempt_4" id="longterm_exempt_yes_4"> Yes
-                                            <input class="form-check-input ms-2" type="radio" name="longterm_exempt_4" id="longterm_exempt_no_4"> No
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mt-3">
-                                <button type="button" class="btn btn-sm btn-outline-primary" id="add_longterm_btn">+ Add another institution</button>
-                                <button type="button" class="btn btn-sm btn-outline-danger d-none" id="remove_longterm_btn">− Remove</button>
-                            </div>
-                        </div>
-
-                        <!-- 63-66 end -->
+                        <!-- 63 and 64 end -->
 
                     </div>
 
@@ -893,7 +724,7 @@
         ❗
     </a>
 
-    <footer class="pt-7">
+   <footer class="pt-7">
       <div class="container">
          <!-- Footer 4 column -->
          <div class="row">
@@ -1121,7 +952,7 @@
             </div>
          </div>
       </div>
-   </footer>
+    </footer>
 
 
     <div class="btn-scroll-top">
@@ -1144,7 +975,6 @@
 
     <!-- Theme JS -->
     <script src="../../assets/js/theme.min.js"></script>
-    <script src="../../assets/js/utils.js"></script>
 
     <!-- Swiper JS -->
     <script src="../../assets/libs/swiper/swiper-bundle.min.js"></script>
@@ -1240,19 +1070,15 @@
     </script>
     
 
-    <!-- 63-66 -->
+    <!-- 63 and 64 -->
     <script>
         let currentBenefitRow = 1;
-        let currentLongtermRow = 1;
 
         const addBenefitBtn = document.getElementById("add_benefit_btn");
         const removeBenefitBtn = document.getElementById("remove_benefit_btn");
 
-        const addLongtermBtn = document.getElementById("add_longterm_btn");
-        const removeLongtermBtn = document.getElementById("remove_longterm_btn");
 
-        const benefitFieldSuffixes = ["receive", "start", "end", "dollar"];
-        const longtermFieldSuffixes = ["name", "fromdate", "todate", "reason"];
+        const benefitFieldSuffixes = ["receive", "start", "end", "dollar", "reason"];
 
         function clearBenefitRow(row) {
             benefitFieldSuffixes.forEach(f => {
@@ -1260,44 +1086,17 @@
                 if (el) el.value = "";
             });
 
-            const yes = document.getElementById(`benefit_exempt_yes_${row}`);
-            const no = document.getElementById(`benefit_exempt_no_${row}`);
-            if (yes) yes.checked = false;
-            if (no) no.checked = false;
         }
 
-        function clearLongtermRow(row) {
-            longtermFieldSuffixes.forEach(f => {
-                const el = document.getElementById(`longterm_${f}_${row}`);
-                if (el) el.value = "";
-            });
+        function toggleBenefitDetails() {
+            const show64 = document.getElementById("ssi_needy_yes").checked;
 
-            const yes = document.getElementById(`longterm_exempt_yes_${row}`);
-            const no = document.getElementById(`longterm_exempt_no_${row}`);
-            if (yes) yes.checked = false;
-            if (no) no.checked = false;
-        }
-
-        function togglePublicCharge63to66() {
-            const show65 = document.getElementById("ssi_needy_yes").checked;
-            const show66 = document.getElementById("longterm_yes").checked;
-
-            document.getElementById("item_65_block").classList.toggle("d-none", !show65);
-            document.getElementById("item_66_block").classList.toggle("d-none", !show66);
+            document.getElementById("item_64_block").classList.toggle("d-none", !show64);
         }
 
         document.querySelectorAll('input[name="ssi_needy"]').forEach(radio => {
             radio.addEventListener("change", () => {
-                togglePublicCharge63to66();
-                saveFormToLocalStorage();
-                updateSidebarStatus();
-                updateMobileNavStatus();
-            });
-        });
-
-        document.querySelectorAll('input[name="longterm"]').forEach(radio => {
-            radio.addEventListener("change", () => {
-                togglePublicCharge63to66();
+                toggleBenefitDetails();
                 saveFormToLocalStorage();
                 updateSidebarStatus();
                 updateMobileNavStatus();
@@ -1338,39 +1137,6 @@
             }
         });
 
-        addLongtermBtn.addEventListener("click", () => {
-            if (currentLongtermRow < 4) {
-                currentLongtermRow++;
-                document.getElementById(`longterm_row_${currentLongtermRow}`).classList.remove("d-none");
-                removeLongtermBtn.classList.remove("d-none");
-
-                if (currentLongtermRow === 4) {
-                    addLongtermBtn.classList.add("d-none");
-                }
-
-                saveFormToLocalStorage();
-                updateSidebarStatus();
-                updateMobileNavStatus();
-            }
-        });
-
-        removeLongtermBtn.addEventListener("click", () => {
-            if (currentLongtermRow > 1) {
-                clearLongtermRow(currentLongtermRow);
-                document.getElementById(`longterm_row_${currentLongtermRow}`).classList.add("d-none");
-                currentLongtermRow--;
-
-                addLongtermBtn.classList.remove("d-none");
-
-                if (currentLongtermRow === 1) {
-                    removeLongtermBtn.classList.add("d-none");
-                }
-
-                saveFormToLocalStorage();
-                updateSidebarStatus();
-                updateMobileNavStatus();
-            }
-        });
     </script>
 
 
@@ -1483,70 +1249,34 @@
                 list_certification: document.getElementById("list_certification").value,
 
 
-                // 63-66
+                // 63 and 64
                 ssi_needy_yes: document.getElementById("ssi_needy_yes").checked,
                 ssi_needy_no: document.getElementById("ssi_needy_no").checked,
 
-                longterm_yes: document.getElementById("longterm_yes").checked,
-                longterm_no: document.getElementById("longterm_no").checked,
 
                 benefit_receive_1: document.getElementById("benefit_receive_1").value,
                 benefit_start_1: document.getElementById("benefit_start_1").value,
                 benefit_end_1: document.getElementById("benefit_end_1").value,
                 benefit_dollar_1: document.getElementById("benefit_dollar_1").value,
-                benefit_exempt_yes_1: document.getElementById("benefit_exempt_yes_1").checked,
-                benefit_exempt_no_1: document.getElementById("benefit_exempt_no_1").checked,
+                benefit_reason_1: document.getElementById("benefit_reason_1").value,
 
                 benefit_receive_2: document.getElementById("benefit_receive_2").value,
                 benefit_start_2: document.getElementById("benefit_start_2").value,
                 benefit_end_2: document.getElementById("benefit_end_2").value,
                 benefit_dollar_2: document.getElementById("benefit_dollar_2").value,
-                benefit_exempt_yes_2: document.getElementById("benefit_exempt_yes_2").checked,
-                benefit_exempt_no_2: document.getElementById("benefit_exempt_no_2").checked,
+                benefit_reason_2: document.getElementById("benefit_reason_2").value,
 
                 benefit_receive_3: document.getElementById("benefit_receive_3").value,
                 benefit_start_3: document.getElementById("benefit_start_3").value,
                 benefit_end_3: document.getElementById("benefit_end_3").value,
                 benefit_dollar_3: document.getElementById("benefit_dollar_3").value,
-                benefit_exempt_yes_3: document.getElementById("benefit_exempt_yes_3").checked,
-                benefit_exempt_no_3: document.getElementById("benefit_exempt_no_3").checked,
+                benefit_reason_3: document.getElementById("benefit_reason_3").value,
 
                 benefit_receive_4: document.getElementById("benefit_receive_4").value,
                 benefit_start_4: document.getElementById("benefit_start_4").value,
                 benefit_end_4: document.getElementById("benefit_end_4").value,
                 benefit_dollar_4: document.getElementById("benefit_dollar_4").value,
-                benefit_exempt_yes_4: document.getElementById("benefit_exempt_yes_4").checked,
-                benefit_exempt_no_4: document.getElementById("benefit_exempt_no_4").checked,
-
-                longterm_name_1: document.getElementById("longterm_name_1").value,
-                longterm_fromdate_1: document.getElementById("longterm_fromdate_1").value,
-                longterm_todate_1: document.getElementById("longterm_todate_1").value,
-                longterm_reason_1: document.getElementById("longterm_reason_1").value,
-                longterm_exempt_yes_1: document.getElementById("longterm_exempt_yes_1").checked,
-                longterm_exempt_no_1: document.getElementById("longterm_exempt_no_1").checked,
-
-                longterm_name_2: document.getElementById("longterm_name_2").value,
-                longterm_fromdate_2: document.getElementById("longterm_fromdate_2").value,
-                longterm_todate_2: document.getElementById("longterm_todate_2").value,
-                longterm_reason_2: document.getElementById("longterm_reason_2").value,
-                longterm_exempt_yes_2: document.getElementById("longterm_exempt_yes_2").checked,
-                longterm_exempt_no_2: document.getElementById("longterm_exempt_no_2").checked,
-
-                longterm_name_3: document.getElementById("longterm_name_3").value,
-                longterm_fromdate_3: document.getElementById("longterm_fromdate_3").value,
-                longterm_todate_3: document.getElementById("longterm_todate_3").value,
-                longterm_reason_3: document.getElementById("longterm_reason_3").value,
-                longterm_exempt_yes_3: document.getElementById("longterm_exempt_yes_3").checked,
-                longterm_exempt_no_3: document.getElementById("longterm_exempt_no_3").checked,
-
-                longterm_name_4: document.getElementById("longterm_name_4").value,
-                longterm_fromdate_4: document.getElementById("longterm_fromdate_4").value,
-                longterm_todate_4: document.getElementById("longterm_todate_4").value,
-                longterm_reason_4: document.getElementById("longterm_reason_4").value,
-                longterm_exempt_yes_4: document.getElementById("longterm_exempt_yes_4").checked,
-                longterm_exempt_no_4: document.getElementById("longterm_exempt_no_4").checked,
-                    
-
+                benefit_reason_4: document.getElementById("benefit_reason_4").value,
             };
         }
 
@@ -1643,66 +1373,39 @@
 
 
 
-            // 63-66
+            // 63 and 64
             document.getElementById("ssi_needy_yes").checked = !!saved.ssi_needy_yes;
             document.getElementById("ssi_needy_no").checked = !!saved.ssi_needy_no;
 
-            document.getElementById("longterm_yes").checked = !!saved.longterm_yes;
-            document.getElementById("longterm_no").checked = !!saved.longterm_no;
 
             ["1", "2", "3", "4"].forEach(i => {
                 document.getElementById(`benefit_receive_${i}`).value = saved[`benefit_receive_${i}`] || "";
                 document.getElementById(`benefit_start_${i}`).value = saved[`benefit_start_${i}`] || "";
                 document.getElementById(`benefit_end_${i}`).value = saved[`benefit_end_${i}`] || "";
                 document.getElementById(`benefit_dollar_${i}`).value = saved[`benefit_dollar_${i}`] || "";
-                document.getElementById(`benefit_exempt_yes_${i}`).checked = saved[`benefit_exempt_yes_${i}`] || false;
-                document.getElementById(`benefit_exempt_no_${i}`).checked = saved[`benefit_exempt_no_${i}`] || false;
+                document.getElementById(`benefit_reason_${i}`).value = saved[`benefit_reason_${i}`] || "";
 
-                document.getElementById(`longterm_name_${i}`).value = saved[`longterm_name_${i}`] || "";
-                document.getElementById(`longterm_fromdate_${i}`).value = saved[`longterm_fromdate_${i}`] || "";
-                document.getElementById(`longterm_todate_${i}`).value = saved[`longterm_todate_${i}`] || "";
-                document.getElementById(`longterm_reason_${i}`).value = saved[`longterm_reason_${i}`] || "";
-                document.getElementById(`longterm_exempt_yes_${i}`).checked = saved[`longterm_exempt_yes_${i}`] || false;
-                document.getElementById(`longterm_exempt_no_${i}`).checked = saved[`longterm_exempt_no_${i}`] || false;
             });
 
-            if (saved.benefit_receive_4 || saved.benefit_start_4) {
+            if (benefitFieldSuffixes.some(f => saved[`benefit_${f}_4`])) {
                 benefit_row_2.classList.remove("d-none");
                 benefit_row_3.classList.remove("d-none");
                 benefit_row_4.classList.remove("d-none");
                 currentBenefitRow = 4;
                 add_benefit_btn.classList.add("d-none");
                 remove_benefit_btn.classList.remove("d-none");
-            } else if (saved.benefit_receive_3 || saved.benefit_start_3) {
+            } else if (benefitFieldSuffixes.some(f => saved[`benefit_${f}_3`])) {
                 benefit_row_2.classList.remove("d-none");
                 benefit_row_3.classList.remove("d-none");
                 currentBenefitRow = 3;
                 remove_benefit_btn.classList.remove("d-none");
-            } else if (saved.benefit_receive_2 || saved.benefit_start_2) {
+            } else if (benefitFieldSuffixes.some(f => saved[`benefit_${f}_2`])) {
                 benefit_row_2.classList.remove("d-none");
                 currentBenefitRow = 2;
                 remove_benefit_btn.classList.remove("d-none");
             }
 
-            if (saved.longterm_name_4 || saved.longterm_fromdate_4) {
-                longterm_row_2.classList.remove("d-none");
-                longterm_row_3.classList.remove("d-none");
-                longterm_row_4.classList.remove("d-none");
-                currentLongtermRow = 4;
-                add_longterm_btn.classList.add("d-none");
-                remove_longterm_btn.classList.remove("d-none");
-            } else if (saved.longterm_name_3 || saved.longterm_fromdate_3) {
-                longterm_row_2.classList.remove("d-none");
-                longterm_row_3.classList.remove("d-none");
-                currentLongtermRow = 3;
-                remove_longterm_btn.classList.remove("d-none");
-            } else if (saved.longterm_name_2 || saved.longterm_fromdate_2) {
-                longterm_row_2.classList.remove("d-none");
-                currentLongtermRow = 2;
-                remove_longterm_btn.classList.remove("d-none");
-            }
-
-            togglePublicCharge63to66();
+            toggleBenefitDetails();
 
 
 
