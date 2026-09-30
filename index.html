@@ -108,7 +108,7 @@
                         <div class="dropdown-menu dropdown-menu-md" aria-labelledby="navbarDropdown">
                               <a class="dropdown-item mb-3 text-body" href="https://fillvisa.com/">
                                  <div class="d-flex align-items-center">
-                                    <i class="bi bi-star-fill fs-4 text-primary"></i>
+                                    <i class="bi bi-gift-fill fs-4 text-primary"></i>
                                     <div class="ms-3 lh-1">
                                        <h5 class="mb-1">Fillvisa Free</h5>
                                        <p class="mb-0 fs-6">For individuals</p>
@@ -137,29 +137,67 @@
                                     </div>
                                  </div>
                               </a>
-                              <a class="dropdown-item mb-3 text-body" href="https://plus.fillvisa.com/white-label/">
-                                 <div class="d-flex align-items-center">
-                                    <i class="bi bi-briefcase-fill fs-4 text-primary"></i>
-                                    <div class="ms-3 lh-1">
-                                       <h5 class="mb-1">
-                                       Fillvisa White Label <span class="text-primary ms-1" id="changelog"></span>
-                                          </h5>
-                                             <p class="mb-0 fs-6">For organizations</p>
-                                    </div>
-                                 </div>
-                              </a>
                         </div>
                      </li>
 
 
                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">Resources</a>
-                        <ul class="dropdown-menu">
-                           <li class="nav-item"><a class="nav-link" href="https://fillvisa.com/uscis-cover-letter/">Cover Letter</a></li>
-                           <li class="nav-item"><a class="nav-link" href="https://blog.fillvisa.com/">Blog</a></li>
-                           <li class="nav-item"><a class="nav-link" href="https://changelog.fillvisa.com/">Changelog</a></li>
-                        </ul>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources</a>
+                        <div class="dropdown-menu dropdown-menu-md" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item mb-3 text-body" href="https://help.fillvisa.com/">
+                                 <div class="d-flex align-items-center">
+                                    <i class="bi bi-question-circle-fill fs-4 text-primary" aria-hidden="true"></i>
+                                    <div class="ms-3 lh-1">
+                                       <h5 class="mb-1">Help Center</h5>
+                                       <p class="mb-0 fs-6">Find guides and answers</p>
+                                    </div>
+                                 </div>
+                              </a>
+                              <a class="dropdown-item mb-3 text-body" href="https://changelog.fillvisa.com/">
+                                 <div class="d-flex align-items-center">
+                                    <i class="bi bi-clock-history fs-4 text-primary" aria-hidden="true"></i>
+                                    <div class="ms-3 lh-1">
+                                       <h5 class="mb-1">
+                                       Changelog <span class="text-primary ms-1" id="changelog"></span>
+                                          </h5>
+                                             <p class="mb-0 fs-6">See what’s new in Fillvisa</p>
+                                    </div>
+                                 </div>
+                              </a>
+                              <a class="dropdown-item mb-3 text-body" href="https://blog.fillvisa.com/">
+                                 <div class="d-flex align-items-center">
+                                    <i class="bi bi-journal-text fs-4 text-primary" aria-hidden="true"></i>
+                                    <div class="ms-3 lh-1">
+                                       <h5 class="mb-1">
+                                       Blog<span class="text-primary ms-1" id="changelog"></span>
+                                          </h5>
+                                             <p class="mb-0 fs-6">Explore tips and insights</p>
+                                    </div>
+                                 </div>
+                              </a>
+                              <a class="dropdown-item mb-3 text-body" href="https://fillvisa.com/">
+                                 <div class="d-flex align-items-center">
+                                    <i class="bi bi-gift-fill fs-4 text-primary" aria-hidden="true"></i>
+                                    <div class="ms-3 lh-1">
+                                       <h5 class="mb-1">
+                                       Fillvisa Free <span class="text-primary ms-1" id="changelog"></span>
+                                          </h5>
+                                             <p class="mb-0 fs-6">Free tools for individuals</p>
+                                    </div>
+                                 </div>
+                              </a>
+                              <a class="dropdown-item mb-3 text-body" href="https://github.com/athos2113/fillvisa-os">
+                                 <div class="d-flex align-items-center">
+                                    <i class="bi bi-github fs-4 text-primary" aria-hidden="true"></i>
+                                    <div class="ms-3 lh-1">
+                                       <h5 class="mb-1">
+                                       Fillvisa OS <span class="text-primary ms-1" id="changelog"></span>
+                                          </h5>
+                                             <p class="mb-0 fs-6">Explore the open-source project</p>
+                                    </div>
+                                 </div>
+                              </a>
+                        </div>
                      </li>
                      <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
@@ -1381,16 +1419,28 @@
             const FEED_URL = "https://changelog.fillvisa.com/feed.json";
             const MAX_POSTS = 5;
 
-            function decodeHtmlEntities(str = "") {
-               const txt = document.createElement("textarea");
-               txt.innerHTML = str;
-               return txt.value;
+            // Feed strings are plain text, never HTML. Invalid links stay non-clickable.
+            function feedText(value, fallback = "") {
+               const text = typeof value === "string" ? value : fallback;
+               const decoder = document.createElement("textarea");
+               // Parse only individual character references, never feed markup.
+               // Decoded output must still be assigned through textContent.
+               return text.replace(/&(?:#[0-9]+|#x[0-9a-f]+|[a-z][a-z0-9]+);/gi, entity => {
+                  decoder.innerHTML = entity;
+                  return decoder.value;
+               });
             }
 
-            function stripHtml(html = "") {
-               const div = document.createElement("div");
-               div.innerHTML = html;
-               return div.textContent || div.innerText || "";
+            function setFeedLink(link, value, origin) {
+               try {
+                  if (typeof value !== "string" || !value.trim()) return;
+                  const url = new URL(value, origin);
+                  if (url.origin !== origin || url.protocol !== "https:" || url.username || url.password) return;
+                  link.href = url.href;
+                  if (link.target === "_blank") link.rel = "noopener noreferrer";
+               } catch (_) {
+                  // Malformed feed URLs must not become navigation targets.
+               }
             }
 
             function getRecentDate(item) {
@@ -1404,7 +1454,7 @@
             }
 
             function formatHumanDate(date) {
-               if (!date) return "";
+               if (!date || Number.isNaN(date.getTime())) return "";
                return new Intl.DateTimeFormat("en-US", {
                   day: "numeric",
                   month: "short",
@@ -1436,40 +1486,38 @@
                   return;
                }
 
-               container.innerHTML = items.map(item => {
-                  const title = decodeHtmlEntities(item.title || "Untitled");
-                  const summary = decodeHtmlEntities(stripHtml(item.summary || ""));
-                  const tag = item.tags && item.tags.length ? item.tags[0] : "Update";
-                  const badgeClass = getBadgeClass(tag);
-                  const recentDate = getRecentDate(item);
-                  const formattedDate = formatHumanDate(recentDate);
-
-                  return `
-                  <article class="row d-flex align-items-center justify-content-center mb-7 mb-md-5">
+               const fragment = document.createDocumentFragment();
+               items.forEach(item => {
+                  const article = document.createElement("article");
+                  article.className = "row d-flex align-items-center justify-content-center mb-7 mb-md-5";
+                  // Only fixed, application-owned markup belongs in this template.
+                  article.innerHTML = `
                      <div class="col-lg-7 col-xl-7 col-md-12 col-12">
                         <div class="ms-lg-4">
-                        <div class="d-flex align-items-center flex-wrap gap-2 mb-3">
-                           <a href="${item.url}" class="badge ${badgeClass} rounded-pill text-uppercase text-decoration-none">
-                              ${tag}
-                           </a>
-                           ${formattedDate ? `<small class="text-muted">${formattedDate}</small>` : ""}
+                           <div class="d-flex align-items-center flex-wrap gap-2 mb-3">
+                              <a class="badge rounded-pill text-uppercase text-decoration-none"></a>
+                              <small class="text-muted"></small>
+                           </div>
+                           <div class="mb-4">
+                              <h3 class="lh-base h4 mb-2"><a class="text-reset text-decoration-none"></a></h3>
+                              <p class="mb-0"></p>
+                           </div>
                         </div>
-
-                        <div class="mb-4">
-                           <h3 class="lh-base h4 mb-2">
-                              <a href="${item.url}" class="text-reset text-decoration-none">
-                              ${title}
-                              </a>
-                           </h3>
-                           <p class="mb-0">
-                              ${summary}
-                           </p>
-                        </div>
-                        </div>
-                     </div>
-                  </article>
-                  `;
-               }).join("");
+                     </div>`;
+                  const tag = feedText(item.tags?.[0], "Update");
+                  const badge = article.querySelector(".badge");
+                  badge.classList.add(...getBadgeClass(tag).split(" "));
+                  badge.textContent = tag;
+                  article.querySelector("h3 a").textContent = feedText(item.title, "Untitled");
+                  // JSON Feed summary/content_text are plain text; do not parse HTML.
+                  article.querySelector("p").textContent = feedText(item.summary, feedText(item.content_text));
+                  const date = article.querySelector("small");
+                  date.textContent = formatHumanDate(getRecentDate(item));
+                  date.hidden = !date.textContent;
+                  article.querySelectorAll("a").forEach(link => setFeedLink(link, item.url, "https://changelog.fillvisa.com"));
+                  fragment.append(article);
+               });
+               container.replaceChildren(fragment);
             }
 
             async function loadChangelog() {
@@ -1716,28 +1764,22 @@
                               <li class="mb-2">
                                  <a href="./" class="text-decoration-none text-reset">Home</a>
                               </li>
-                              <li class="mb-2">
-                                 <a href="demo/" class="text-decoration-none text-reset">Demo</a>
-                              </li>
                                <li class="mb-2">
                                   <a href="form/" class="text-decoration-none text-reset">All Forms</a>
                                </li>
                               <li class="mb-2">
-                                 <a href="https://fillvisa.com/uscis-cover-letter/" class="text-decoration-none text-reset">Cover Letter</a>
-                              </li>
-                              <li class="mb-2">
-                                 <a href="https://plus.fillvisa.com/" class="text-decoration-none text-reset">Use Fillvisa Plus</a>
+                                 <a href="https://plus.fillvisa.com/" class="text-decoration-none text-reset">Fillvisa Plus</a>
                               </li>
                               <li class="mb-2">
                                  <a href="support.html" class="text-decoration-none text-reset">❤️ Support</a>
                               </li>
                               <li class="mb-2">
-                                 <a href="privacy.html" class="text-decoration-none text-reset">Privacy and Data
-                                    Policy</a>
-                              </li>
-                              <li class="mb-2">
                                  <a href="https://blog.fillvisa.com/" target="_blank"
                                     class="text-decoration-none text-reset">Blog</a>
+                              </li>
+                              <li class="mb-2">
+                                 <a href="https://help.fillvisa.com/" target="_blank"
+                                    class="text-decoration-none text-reset">Help Center</a>
                               </li>
                               <li class="mb-2">
                                  <a href="about.html" class="text-decoration-none text-reset">About</a>
@@ -1804,10 +1846,6 @@
                               </li>
                               <li class="mb-2">
                                  <a href="https://github.com/athos2113/fillvisa-os/" class="text-decoration-none text-reset">Fillvisa OS</a>
-                              </li>
-                              <li class="mb-2">
-                                 <a href="https://plus.fillvisa.com/white-label/"
-                                    class="text-decoration-none text-reset">Fillvisa White Label</a>
                               </li>
                            </ul>
                         </div>
@@ -1940,6 +1978,7 @@
 
          try {
             const res = await fetch(feedUrl);
+            if (!res.ok) throw new Error("Failed to fetch blog feed");
             const data = await res.json();
 
             const items = (data.items || []).sort(
@@ -1947,39 +1986,28 @@
             );
             const top3 = items.slice(0, 3);
 
-            container.innerHTML = top3.map((item) => {
-               const date = new Date(item.date_published).toLocaleDateString("en-US", {
-                  month: "short",
-                  day: "numeric",
-                  year: "numeric",
-               });
-
-               const tag = item.tags && item.tags.length ? item.tags[0] : "Article";
-
-               return `
-               <article class="col-lg-4 col-md-6 col-12">
-                  <a href="${item.url}" target="_blank"
-                  class="badge bg-primary-subtle text-primary-emphasis rounded-pill text-uppercase">
-                     ${tag}
-                  </a>
-                  
-                  <h3 class="my-3 lh-base h4">
-                  <a href="${item.url}" target="_blank" class="text-reset">${item.title}</a>
-                  </h3>
-
+            const fragment = document.createDocumentFragment();
+            top3.forEach(item => {
+               const article = document.createElement("article");
+               article.className = "col-lg-4 col-md-6 col-12";
+               article.innerHTML = `
+                  <a target="_blank" class="badge bg-primary-subtle text-primary-emphasis rounded-pill text-uppercase"></a>
+                  <h3 class="my-3 lh-base h4"><a target="_blank" class="text-reset"></a></h3>
                   <div class="d-flex align-items-center justify-content-between mb-3 mb-md-0">
-                  <div class="d-flex align-items-center">
-                     <img src="assets/images/junaid.png"
-                        alt="Avatar" class="avatar avatar-xs rounded-circle" />
-                     <div class="ms-2">
-                        <a href="${item.url}" class="text-reset fs-6">${item.author?.name || "Fillvisa Team"}</a>
+                     <div class="d-flex align-items-center">
+                        <img src="assets/images/junaid.png" alt="Avatar" class="avatar avatar-xs rounded-circle" />
+                        <div class="ms-2"><a class="text-reset fs-6"></a></div>
                      </div>
-                  </div>
-                  <div class="ms-3"><span class="fs-6">${date}</span></div>
-                  </div>
-               </article>
-            `;
-            }).join("");
+                     <div class="ms-3"><span class="fs-6"></span></div>
+                  </div>`;
+               article.querySelector(".badge").textContent = feedText(item.tags?.[0], "Article");
+               article.querySelector("h3 a").textContent = feedText(item.title, "Untitled");
+               article.querySelector(".ms-2 a").textContent = feedText(item.author?.name, "Fillvisa Team");
+               article.querySelector(".ms-3 span").textContent = formatHumanDate(new Date(item.date_published));
+               article.querySelectorAll("a").forEach(link => setFeedLink(link, item.url, "https://blog.fillvisa.com"));
+               fragment.append(article);
+            });
+            container.replaceChildren(fragment);
          } catch (err) {
             console.error("Failed to load posts:", err);
             container.innerHTML = "<p>Unable to load recent posts.</p>";

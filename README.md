@@ -152,6 +152,10 @@ If you are interested in building with Fillvisa OS, learning more, or talking di
 
 
 
+## Third-party trademarks and assets
+
+The SimpleCitizen name, logo, and images included in this repository, including the [SimpleCitizen screenshot](assets/images/landings/sass-v3/simplecitizen.png), are excluded from this project's AGPL license. They remain the property of their respective owners. Their inclusion does not grant permission to reuse those trademarks or copyrighted materials.
+
 ## Custom services and commercial licensing
 
 Need help deploying, customizing, or integrating Fillvisa OS?
