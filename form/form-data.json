@@ -33,8 +33,7 @@
     "categories": ["pdf-form"],
     "slug": "g-1450",
     "pdf": "g-1450/fillvisa_g1450_acro.pdf",
-    "active": "true",
-    "plus": true
+    "active": "true"
   },
   {
     "title": "G-1650",
@@ -43,8 +42,7 @@
     "categories": ["pdf-form"],
     "slug": "g-1650",
     "pdf": "g-1650/fillvisa_g1650_acro.pdf",
-    "active": "true",
-    "plus": true
+    "active": "true"
   },
   {
     "title": "I-129F",
@@ -107,8 +105,7 @@
     "categories": ["pdf-form", "employment", "perm"],
     "slug": "eta-9089",
     "pdf": "",
-    "active": "true",
-    "plus": true
+    "active": "false"
   },
   {
     "title": "ETA-9141",
@@ -117,8 +114,7 @@
     "categories": ["pdf-form", "employment", "perm"],
     "slug": "eta-9141",
     "pdf": "",
-    "active": "true",
-    "plus": true
+    "active": "false"
   },
   {
     "title": "I-140",
@@ -127,8 +123,7 @@
     "categories": ["pdf-form", "employment", "perm", "green-card"],
     "slug": "i-140",
     "pdf": "",
-    "active": "true",
-    "plus": true
+    "active": "true"
   },
   {
     "title": "G-28",
@@ -137,8 +132,7 @@
     "categories": ["pdf-form", "employment", "perm"],
     "slug": "g-28",
     "pdf": "",
-    "active": "true",
-    "plus": true
+    "active": "true"
   },
   {
     "title": "I-907",
@@ -147,8 +141,7 @@
     "categories": ["pdf-form", "employment", "perm"],
     "slug": "i-907",
     "pdf": "",
-    "active": "true",
-    "plus": true
+    "active": "true"
   },
   {
     "title": "I-485",

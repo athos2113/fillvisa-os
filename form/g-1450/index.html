@@ -227,7 +227,8 @@
                   <div class="d-flex flex-row gap-4 justify-content-center">
                      <div class="cta-buttons mt-4 d-flex flex-column flex-md-row gap-4">
                         <div class="w-100 w-md-auto mb-2 mb-md-0 text-center">
-                           <a href="https://plus.fillvisa.com/" class="btn btn-primary btn-lg">Only Available on Plus</a>
+                           <button id="createNewBtn" type="button" class="btn btn-primary btn-lg">Start New Form</button>
+                           <button id="editBtn" type="button" class="btn btn-outline-primary btn-lg ms-md-3" style="display: none;">Edit Existing Form</button>
                         </div>
                      </div>
                   </div>
@@ -330,7 +331,7 @@
                      downloading.</p>
                </div>
                <div class="col-lg-auto">
-                  <a href="https://plus.fillvisa.com/" class="btn btn-primary btn-lg">Only Available on Plus</a>
+                  <button id="bottomCreateNewBtn" type="button" class="btn btn-primary btn-lg">Start New Form</button>
                </div>
             </div>
          </div>
@@ -576,6 +577,36 @@
    <script src="../../assets/js/vendors/intl-tel.js"></script>
    <script src="../../assets/js/utils.js"></script>
 
+   <script>
+      const formPrefix = "g1450-";
+      const validPrefix = "g1450Valid-";
+      const firstPage = "form.html";
+
+      const hasSavedData =
+         hasSavedVisaData(formPrefix) || hasSavedVisaData(validPrefix);
+
+      if (hasSavedData) {
+         document.getElementById("editBtn").style.display = "inline-block";
+      }
+
+      function startNewForm() {
+         if (hasSavedData) {
+            if (confirm("This will erase your current form responses. Continue?")) {
+               clearVisaData(formPrefix);
+               clearVisaData(validPrefix);
+               window.location.href = firstPage;
+            }
+         } else {
+            window.location.href = firstPage;
+         }
+      }
+
+      document.getElementById("createNewBtn").addEventListener("click", startNewForm);
+      document.getElementById("bottomCreateNewBtn").addEventListener("click", startNewForm);
+      document.getElementById("editBtn").addEventListener("click", () => {
+         window.location.href = firstPage;
+      });
+   </script>
 </body>
 
 </html>
