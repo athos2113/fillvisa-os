@@ -1,0 +1,145 @@
+(function(){
+'use strict';
+const {f,eq,heading,date,yn,address}=I129FBase.helpers;
+const other=eq('beneficiary_has_other_names','yes');
+const different=eq('beneficiary_mailing_same_physical','no');
+const second=eq('beneficiary_has_physical_2','yes');
+const employed=eq('beneficiary_has_employment','yes');
+const secondEmployer=d=>employed(d)&&d.beneficiary_has_employer_2==='yes';
+const marriedBefore=eq('beneficiary_previously_married','yes');
+const currentlyUS=d=>d.beneficiary_ever_in_us==='yes'&&d.beneficiary_currently_in_us==='yes';
+function numberedAddress(prefix,label,item,condition=()=>true,mailing=false){
+ const letters=mailing?{street:'b',unit:'c',number:'c',city:'d',state:'e',zip:'f',province:'g',postal:'h',country:'i'}:{street:'a',unit:'b',number:'b',city:'c',state:'d',zip:'e',province:'f',postal:'g',country:'h'};
+ return address(prefix,label,condition).map(field=>field.type==='heading'?field:{...field,label:item+'.'+letters[field.id.slice(prefix.length+1)]+'. '+field.label});
+}
+const children=eq('beneficiary_has_children','yes');
+const childSeparate=d=>children(d)&&d.beneficiary_child_1_resides_with==='no';
+const phone=v=>/^[+()\d .-]+$/.test(v)&&v.replace(/\D/g,'').length>=7&&v.replace(/\D/g,'').length<=15;
+function foreignAddress(prefix,label,item){
+ const letters={street:'a',unit:'b',number:'b',city:'c',province:'d',postal:'e',country:'f'};
+ return address(prefix,label,()=>true,true).map(field=>field.type==='heading'?field:{...field,label:item+'.'+letters[field.id.slice(prefix.length+1)]+'. '+field.label});
+}
+I129FBase.maps['beneficiary-info']=[
+ heading('beneficiary_heading','Part 2. Information About Your Beneficiary'),
+ f('beneficiary_lastname','1.a. Family name (last name)'),
+ f('beneficiary_firstname','1.b. Given name (first name)'),
+ f('beneficiary_middlename','1.c. Middle name (if any)',{required:false}),
+ f('beneficiary_anumber','2. A-Number (if any)',{required:false,maxLength:9,validate:v=>/^\d{7,9}$/.test(v),message:'Enter 7–9 digits without the A- prefix.'}),
+ f('beneficiary_ssn','3. U.S. Social Security Number (if any)',{required:false,maxLength:9,validate:v=>/^\d{9}$/.test(v),message:'Enter 9 digits without hyphens.'}),
+ date('beneficiary_dob','4. Date of birth'),
+ f('beneficiary_sex','5. Sex',{type:'radio',options:[['male','Male'],['female','Female']]}),
+ f('beneficiary_marital_status','6. Marital status',{type:'radio',options:[['single','Single'],['married','Married'],['divorced','Divorced'],['widowed','Widowed']]}),
+ f('beneficiary_birth_city','7. City/town/village of birth'),
+ f('beneficiary_birth_country','8. Country of birth'),
+ f('beneficiary_citizenship','9. Country of citizenship or nationality'),
+ heading('beneficiary_other_heading','Other Names Used'),
+ f('beneficiary_other_note','Provide all other names the beneficiary has ever used, including aliases, maiden names, and nicknames. Additional names will be included in Part 8.',{type:'note'}),
+ yn('beneficiary_has_other_names','Has the beneficiary ever used any other names?'),
+ f('beneficiary_other_lastname','10.a. Family name (last name)',{condition:other,required:false}),
+ f('beneficiary_other_firstname','10.b. Given name (first name)',{condition:other,required:false}),
+ f('beneficiary_other_middlename','10.c. Middle name (if any)',{condition:other,required:false}),
+ f('beneficiary_other_names_extra','Additional other names (if needed)',{type:'textarea',required:false,condition:other,reference:'Part 2, Items 10.a–10.c'}),
+ heading('beneficiary_mailing_heading','Mailing Address for Your Beneficiary'),
+ f('beneficiary_mailing_care_of','11.a. In care of name (if any)',{required:false}),
+ ...numberedAddress('beneficiary_mailing','Mailing address',11,()=>true,true).filter(f=>f.type!=='heading'),
+ heading('beneficiary_address_history_heading',"Your Beneficiary's Address History"),
+ f('beneficiary_address_history_note','Provide your beneficiary’s physical addresses for the last five years, whether inside or outside the United States. Provide the current address first if it differs from the mailing address. Use the additional-history box for further addresses and dates; these will be included in Part 8.',{type:'note'}),
+ yn('beneficiary_mailing_same_physical','Is the beneficiary’s current mailing address the same as their physical address?'),
+ ...numberedAddress('beneficiary_physical_1','Beneficiary’s Physical Address 1 (current address)',12,different),
+ date('beneficiary_physical_1_from','13.a. Date from (when the beneficiary began living at their current physical address)'),
+ f('beneficiary_physical_1_to','13.b. Date to',{readonly:true,derive:()=>'PRESENT'}),
+ yn('beneficiary_has_physical_2','Did the beneficiary live at another physical address during the last five years?'),
+ ...numberedAddress('beneficiary_physical_2','Beneficiary’s Physical Address 2',14,second),
+ date('beneficiary_physical_2_from','15.a. Date from',{condition:second}),
+ date('beneficiary_physical_2_to','15.b. Date to',{condition:second,after:'beneficiary_physical_2_from'}),
+ f('beneficiary_address_history_extra','Additional physical addresses and dates for the last five years (if needed)',{type:'textarea',required:false,reference:'Part 2, Items 12–15'}),
+ heading('beneficiary_employment_heading',"Your Beneficiary's Employment History"),
+ f('beneficiary_employment_note','Provide the beneficiary’s employment history for the last five years, whether inside or outside the United States. List current employment first. Use the additional-history box for further entries or an explanation of no employment; these will be included in Part 8.',{type:'note'}),
+ yn('beneficiary_has_employment','Has the beneficiary had any employment during the last five years?'),
+ f('beneficiary_employer_1_name','16. Full name of employer',{condition:employed}),
+ ...numberedAddress('beneficiary_employer_1','Beneficiary’s Employer 1 address',17,employed),
+ f('beneficiary_employer_1_occupation','18. Beneficiary’s occupation (specify)',{condition:employed}),
+ date('beneficiary_employer_1_from','19.a. Employment start date',{condition:employed}),
+ f('beneficiary_employer_1_current','Does the beneficiary currently work for this employer?',{type:'radio',options:[['yes','Yes'],['no','No']],condition:employed}),
+ date('beneficiary_employer_1_to','19.b. Employment end date',{condition:d=>employed(d)&&d.beneficiary_employer_1_current==='no',after:'beneficiary_employer_1_from'}),
+ f('beneficiary_employer_1_present_note','Employment end date: PRESENT.',{type:'note',condition:d=>employed(d)&&d.beneficiary_employer_1_current==='yes'}),
+ f('beneficiary_has_employer_2','Does the beneficiary have another employer to report for the last five years?',{type:'radio',options:[['yes','Yes'],['no','No']],condition:employed}),
+ f('beneficiary_employer_2_name','20. Full name of employer',{condition:secondEmployer}),
+ ...numberedAddress('beneficiary_employer_2','Beneficiary’s Employer 2 address',21,secondEmployer),
+ f('beneficiary_employer_2_occupation','22. Beneficiary’s occupation (specify)',{condition:secondEmployer}),
+ date('beneficiary_employer_2_from','23.a. Employment start date',{condition:secondEmployer}),
+ date('beneficiary_employer_2_to','23.b. Employment end date',{condition:secondEmployer,after:'beneficiary_employer_2_from'}),
+ f('beneficiary_employment_history_extra','Additional employment history or explanation of no employment during the last five years',{type:'textarea',required:false,requiredWhen:d=>d.beneficiary_has_employment==='no',reference:'Part 2, Items 16–23'}),
+ heading('beneficiary_parents_heading',"Information About Your Beneficiary's Parents"),
+ ...[1,2].flatMap(n=>{
+  const prefix='beneficiary_parent_'+n,start=n===1?24:29;
+  return [heading(prefix+'_heading',"Parent "+n+"'s Information"),
+   f(prefix+'_lastname',start+'.a. Family name (last name)'),
+   f(prefix+'_firstname',start+'.b. Given name (first name)'),
+   f(prefix+'_middlename',start+'.c. Middle name (if any)',{required:false}),
+   date(prefix+'_dob',(start+1)+'. Date of birth'),
+   f(prefix+'_sex',(start+2)+'. Sex',{type:'radio',options:[['male','Male'],['female','Female']]}),
+   f(prefix+'_birth_country',(start+3)+'. Country of birth'),
+   f(prefix+'_residence_city',(start+4)+'.a. City/town/village of residence'),
+   f(prefix+'_residence_country',(start+4)+'.b. Country of residence')];
+ }),
+ heading('beneficiary_other_information_heading','Other Information About Your Beneficiary'),
+ yn('beneficiary_previously_married','34. Has your beneficiary ever been previously married?'),
+ f('beneficiary_previous_marriage_note','Provide each prior spouse’s name and the date each marriage ended. Use the additional-history box for more than one prior spouse; these entries will be included in Part 8.',{type:'note',condition:marriedBefore}),
+ heading('beneficiary_previous_spouse_heading','Name of Previous Spouse',marriedBefore),
+ f('beneficiary_previous_spouse_lastname','35.a. Family name (last name)',{condition:marriedBefore}),
+ f('beneficiary_previous_spouse_firstname','35.b. Given name (first name)',{condition:marriedBefore}),
+ f('beneficiary_previous_spouse_middlename','35.c. Middle name (if any)',{required:false,condition:marriedBefore}),
+ date('beneficiary_previous_marriage_ended','36. Date marriage ended',{condition:marriedBefore}),
+ f('beneficiary_previous_marriages_extra','Additional previous spouses and dates each marriage ended (if needed)',{type:'textarea',required:false,condition:marriedBefore,reference:'Part 2, Items 35–36'}),
+ yn('beneficiary_ever_in_us','37. Has your beneficiary ever been in the United States?'),
+ f('beneficiary_currently_in_us','Is your beneficiary currently in the United States?',{type:'radio',options:[['yes','Yes'],['no','No']],condition:eq('beneficiary_ever_in_us','yes')}),
+ f('beneficiary_last_entry_as','38.a. He or she last entered as (for example, visitor, student, exchange alien, crewman, stowaway, temporary worker, without inspection)',{condition:currentlyUS}),
+ f('beneficiary_i94','38.b. I-94 Arrival-Departure Record Number (if any)',{condition:currentlyUS,required:false,maxLength:11,validate:v=>/^[A-Za-z0-9]{11}$/.test(v),message:'Enter 11 letters or digits.'}),
+ date('beneficiary_arrival_date','38.c. Date of arrival',{condition:currentlyUS}),
+ f('beneficiary_stay_expires','38.d. Date authorized stay expired or will expire, as shown on Form I-94 or I-95',{type:'date',condition:currentlyUS}),
+ f('beneficiary_passport_number','38.e. Passport number',{condition:currentlyUS,required:false}),
+ f('beneficiary_travel_document_number','38.f. Travel document number',{condition:currentlyUS,required:false}),
+ f('beneficiary_document_country','38.g. Country of issuance for passport or travel document',{condition:currentlyUS}),
+ f('beneficiary_document_expires','38.h. Expiration date for passport or travel document',{type:'date',condition:currentlyUS}),
+ yn('beneficiary_has_children','39. Does your beneficiary have any children?'),
+ heading('beneficiary_child_heading','Children of Beneficiary',children),
+ f('beneficiary_child_1_lastname','40.a. Family name (last name)',{condition:children}),
+ f('beneficiary_child_1_firstname','40.b. Given name (first name)',{condition:children}),
+ f('beneficiary_child_1_middlename','40.c. Middle name (if any)',{condition:children,required:false}),
+ f('beneficiary_child_1_birth_country','41. Country of birth',{condition:children}),
+ date('beneficiary_child_1_dob','42. Date of birth',{condition:children}),
+ f('beneficiary_child_1_resides_with','43. Does this child reside with your beneficiary?',{type:'radio',options:[['yes','Yes'],['no','No']],condition:children}),
+ ...numberedAddress('beneficiary_child_1_address','Child’s physical residence (if separate from the beneficiary)',44,childSeparate),
+ f('beneficiary_children_extra','Additional children: full names, countries of birth, dates of birth, whether they reside with the beneficiary, and separate physical addresses if applicable',{type:'textarea',required:false,condition:children,reference:'Part 2, Items 40–44'}),
+ ...numberedAddress('beneficiary_us_address','Address in the United States Where Your Beneficiary Intends to Live',45).filter(field=>!['beneficiary_us_address_province','beneficiary_us_address_postal','beneficiary_us_address_country'].includes(field.id)).map(field=>['beneficiary_us_address_state','beneficiary_us_address_zip'].includes(field.id)?{...field,required:true}:field),
+ f('beneficiary_us_telephone','46. Daytime telephone number',{type:'tel',validate:phone,message:'Enter a telephone number containing 7–15 digits.'}),
+ ...foreignAddress('beneficiary_abroad_address',"Your Beneficiary's Physical Address Abroad",47),
+ f('beneficiary_abroad_telephone','48. Daytime telephone number',{type:'tel',validate:phone,message:'Enter a telephone number containing 7–15 digits.'}),
+ heading('beneficiary_native_heading',"Your Beneficiary's Name and Address in His or Her Native Alphabet"),
+ f('beneficiary_native_lastname','49.a. Family name (last name)'),
+ f('beneficiary_native_firstname','49.b. Given name (first name)'),
+ f('beneficiary_native_middlename','49.c. Middle name (if any)',{required:false}),
+ ...foreignAddress('beneficiary_native_address','Address in native alphabet',50),
+ f('beneficiary_related','51. Is your fiancé(e) related to you?',{type:'radio',options:[['yes','Yes'],['no','No'],['na','N/A, beneficiary is my spouse']]}),
+ f('beneficiary_relationship','52. Nature and degree of relationship (for example, third cousin or maternal uncle)',{condition:eq('beneficiary_related','yes')}),
+ f('beneficiary_met_in_person','53. Have you and your fiancé(e) met in person during the two years immediately before filing this petition?',{type:'radio',options:[['yes','Yes'],['no','No'],['na','N/A, beneficiary is my spouse']]}),
+ f('meeting_yes_note','Describe the circumstances of your in-person meeting in Item 54. Attach evidence demonstrating that you were in each other’s physical presence during the required two-year period.',{type:'note',condition:eq('beneficiary_met_in_person','yes')}),
+ f('meeting_no_note','Explain your reasons for requesting an exemption from the in-person meeting requirement in Item 54 and provide evidence that you should be exempt. Refer to Part 2, Items 53–54 of the form instructions for information about this requirement.',{type:'note',condition:eq('beneficiary_met_in_person','no')}),
+ f('beneficiary_meeting_explanation','54. Circumstances of meeting or reasons for requesting an exemption',{type:'textarea',condition:d=>['yes','no'].includes(d.beneficiary_met_in_person),reference:'Part 2, Item 54'}),
+ heading('imb_heading','International Marriage Broker (IMB) Information'),
+ yn('met_through_imb','55. Did you meet your beneficiary through the services of an IMB?'),
+ f('imb_note','Provide the IMB’s contact information and website below. Attach a copy of the signed, written consent form the IMB obtained from your beneficiary authorizing release of their personal contact information to you.',{type:'note',condition:eq('met_through_imb','yes')}),
+ f('imb_name','56. IMB’s name (if any)',{required:false,condition:eq('met_through_imb','yes')}),
+ f('imb_lastname','57.a. Family name of IMB (last name)',{required:false,condition:eq('met_through_imb','yes')}),
+ f('imb_firstname','57.b. Given name of IMB (first name)',{required:false,condition:eq('met_through_imb','yes')}),
+ f('imb_organization','58. Organization name of IMB',{required:false,condition:eq('met_through_imb','yes')}),
+ f('imb_website','59. Website of IMB',{required:false,condition:eq('met_through_imb','yes')}),
+ ...foreignAddress('imb_address','IMB address',60).map(field=>({...field,condition:d=>d.met_through_imb==='yes'&&(!field.condition||field.condition(d)),...(field.id==='imb_address_country'?{validate:undefined}: {})})),
+ f('imb_telephone','61. Daytime telephone number',{type:'tel',condition:eq('met_through_imb','yes'),validate:phone,message:'Enter a telephone number containing 7–15 digits.'}),
+ heading('consular_heading','Consular Processing Information'),
+ f('consular_note','Your beneficiary will apply for a visa abroad at the U.S. Embassy or U.S. Consulate in the location below.',{type:'note'}),
+ f('consulate_city','62.a. City or town'),
+ f('consulate_country','62.b. Country')
+];
+})();
