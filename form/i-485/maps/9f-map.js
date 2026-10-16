@@ -16,8 +16,8 @@ const fields = [
     { id: "unlawful_present_details", label: "Question 74 Explanation", validate: () => true, message: "" },
 
     // 75
-    { id: "severe_traffick_yes", label: "Question 75", validate: () => document.getElementById("severe_traffick_yes").checked || document.getElementById("severe_traffick_no").checked, message: "Please select Yes or No." },
-    { id: "severe_traffick_no",  label: "Question 75", validate: () => document.getElementById("severe_traffick_yes").checked || document.getElementById("severe_traffick_no").checked, message: "" },
+    { id: "severe_traffick_yes", condition: () => document.getElementById("unlawful_present_yes").checked, label: "Question 75", validate: () => document.getElementById("severe_traffick_yes").checked || document.getElementById("severe_traffick_no").checked, message: "Please select Yes or No." },
+    { id: "severe_traffick_no", condition: () => document.getElementById("unlawful_present_yes").checked,  label: "Question 75", validate: () => document.getElementById("severe_traffick_yes").checked || document.getElementById("severe_traffick_no").checked, message: "" },
 
     // 76.a
     { id: "present_oneyear_yes", label: "Question 76.a", validate: () => document.getElementById("present_oneyear_yes").checked || document.getElementById("present_oneyear_no").checked, message: "Please select Yes or No." },

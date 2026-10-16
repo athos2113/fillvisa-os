@@ -1,3 +1,10 @@
+// As with the interpreter, blank means the applicant did not use a preparer.
+function hasPreparerData() {
+  if (typeof signatureBuffer !== "undefined" && signatureBuffer) return true;
+  return ["lastname", "firstname", "businessname", "telephone", "mobile", "email"]
+    .some(name => document.getElementById("preparer_" + name).value.trim() !== "");
+}
+
 const fields = [
 
   /* =====================================================
@@ -6,6 +13,8 @@ const fields = [
 
   {
     id: "preparer_lastname",
+    required: true,
+    condition: hasPreparerData,
     validate: v => v.trim() !== "",
     message:
       "Please enter the preparer’s family name (last name)."
@@ -13,6 +22,8 @@ const fields = [
 
   {
     id: "preparer_firstname",
+    required: true,
+    condition: hasPreparerData,
     validate: v => v.trim() !== "",
     message:
       "Please enter the preparer’s given name (first name)."
@@ -30,6 +41,8 @@ const fields = [
 
   {
     id: "preparer_telephone",
+    required: true,
+    condition: hasPreparerData,
     validate: v => v.trim() !== "",
     message:
       "Please provide the preparer’s daytime telephone number."

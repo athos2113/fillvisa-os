@@ -6,6 +6,7 @@ const fields = [
 
   {
     id: "number_children",
+    required: true,
     validate: v => v !== "" && Number(v) >= 0,
     message:
       "Please indicate the total number of living children."
@@ -17,6 +18,7 @@ const fields = [
 
   {
     id: "childone_lastname",
+    required: true,
     validate: v => v !== "",
     message:
       "If providing Child 1 information, last and first name are required."
@@ -24,6 +26,7 @@ const fields = [
 
   {
     id: "childone_firstname",
+    required: true,
     validate: v => v !== "",
     message:
       "If providing Child 1 information, last and first name are required."
@@ -49,6 +52,7 @@ const fields = [
 
   {
     id: "childtwo_lastname",
+    required: true,
     validate: v => v !== "",
     message:
       "If providing Child 2 information, last and first name are required."
@@ -56,6 +60,7 @@ const fields = [
 
   {
     id: "childtwo_firstname",
+    required: true,
     validate: v => v !== "",
     message:
       "If providing Child 2 information, last and first name are required."

@@ -9,6 +9,7 @@ const interpreterDataIds = [
 ];
 
 function hasInterpreterData() {
+  if (typeof signatureBuffer !== "undefined" && signatureBuffer) return true;
   return interpreterDataIds.some(id => (document.getElementById(id)?.value.trim() || "") !== "");
 }
 
@@ -20,6 +21,7 @@ const fields = [
 
   {
     id: "interpreter_lastname",
+    required: true,
     condition: hasInterpreterData,
     validate: v => v.trim() !== "",
     message: "Please enter the interpreter’s family name (last name)."
@@ -27,6 +29,7 @@ const fields = [
 
   {
     id: "interpreter_firstname",
+    required: true,
     condition: hasInterpreterData,
     validate: v => v.trim() !== "",
     message:
@@ -45,6 +48,7 @@ const fields = [
 
   {
     id: "interpreter_telephone",
+    required: true,
     condition: hasInterpreterData,
     validate: v => v.trim() !== "",
     message:
@@ -68,6 +72,7 @@ const fields = [
 
   {
     id: "interpreter_language",
+    required: true,
     condition: hasInterpreterData,
     validate: v => v.trim() !== "",
     message:

@@ -172,7 +172,7 @@ const fields = [
 
     // 29
     {
-        id: "spouse_traffick_known_five_yes",
+        id: "spouse_traffick_known_five_yes", condition: () => document.getElementById("spouse_traffick_illegal_yes").checked,
         label: "29. Knew benefit resulted from spouse/parent trafficking",
         validate: () =>
             document.getElementById("spouse_traffick_known_five_yes").checked ||
@@ -180,7 +180,7 @@ const fields = [
         message: "Please select Yes or No."
     },
     {
-        id: "spouse_traffick_known_five_no",
+        id: "spouse_traffick_known_five_no", condition: () => document.getElementById("spouse_traffick_illegal_yes").checked,
         label: "29. Knew benefit resulted from spouse/parent trafficking",
         validate: () =>
             document.getElementById("spouse_traffick_known_five_yes").checked ||
@@ -188,7 +188,7 @@ const fields = [
         message: ""
     },
     {
-        id: "spouse_traffick_known_five_details",
+        id: "spouse_traffick_known_five_details", condition: () => document.getElementById("spouse_traffick_illegal_yes").checked,
         label: "29. Explanation",
         validate: () => true,
         message: ""
@@ -340,7 +340,7 @@ const fields = [
 
     // 35b
     {
-        id: "served_foreign_violation_yes",
+        id: "served_foreign_violation_yes", condition: () => document.getElementById("served_foreign_yes").checked,
         label: "35b. Responsible for violations of religious freedoms",
         validate: () =>
             document.getElementById("served_foreign_violation_yes").checked ||
@@ -348,7 +348,7 @@ const fields = [
         message: "Please select Yes or No."
     },
     {
-        id: "served_foreign_violation_no",
+        id: "served_foreign_violation_no", condition: () => document.getElementById("served_foreign_yes").checked,
         label: "35b. Responsible for violations of religious freedoms",
         validate: () =>
             document.getElementById("served_foreign_violation_yes").checked ||
@@ -356,7 +356,7 @@ const fields = [
         message: ""
     },
     {
-        id: "served_foreign_violation_details",
+        id: "served_foreign_violation_details", condition: () => document.getElementById("served_foreign_yes").checked,
         label: "35b. Explanation",
         validate: () => true,
         message: ""
@@ -460,7 +460,7 @@ const fields = [
 
     // 40
     {
-        id: "spouse_traffick_known_yes",
+        id: "spouse_traffick_known_yes", condition: () => document.getElementById("spouse_traffick_yes").checked,
         label: "40. Knew benefit resulted from spouse/parent trafficking in persons",
         validate: () =>
             document.getElementById("spouse_traffick_known_yes").checked ||
@@ -468,7 +468,7 @@ const fields = [
         message: "Please select Yes or No."
     },
     {
-        id: "spouse_traffick_known_no",
+        id: "spouse_traffick_known_no", condition: () => document.getElementById("spouse_traffick_yes").checked,
         label: "40. Knew benefit resulted from spouse/parent trafficking in persons",
         validate: () =>
             document.getElementById("spouse_traffick_known_yes").checked ||
@@ -476,7 +476,7 @@ const fields = [
         message: ""
     },
     {
-        id: "spouse_traffick_known_details",
+        id: "spouse_traffick_known_details", condition: () => document.getElementById("spouse_traffick_yes").checked,
         label: "40. Explanation",
         validate: () => true,
         message: ""

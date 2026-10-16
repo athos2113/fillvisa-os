@@ -392,7 +392,7 @@ const fields = [
 
     // 20
     {
-        id: "foreign_residence_yes",
+        id: "foreign_residence_yes", condition: () => document.getElementById("j_nonimmigrant_yes").checked,
         label: "20. Complied with foreign residence requirement",
         validate: () =>
             document.getElementById("foreign_residence_yes").checked ||
@@ -400,7 +400,7 @@ const fields = [
         message: "Please select Yes or No."
     },
     {
-        id: "foreign_residence_no",
+        id: "foreign_residence_no", condition: () => document.getElementById("j_nonimmigrant_yes").checked,
         label: "20. Complied with foreign residence requirement",
         validate: () =>
             document.getElementById("foreign_residence_yes").checked ||
@@ -408,7 +408,7 @@ const fields = [
         message: ""
     },
     {
-        id: "foreign_residence_details",
+        id: "foreign_residence_details", condition: () => document.getElementById("j_nonimmigrant_yes").checked,
         label: "20. Foreign residence requirement – Explanation",
         validate: () => true,
         message: ""
@@ -416,7 +416,7 @@ const fields = [
 
     // 21
     {
-        id: "grant_waiver_yes",
+        id: "grant_waiver_yes", condition: () => document.getElementById("j_nonimmigrant_yes").checked && document.getElementById("foreign_residence_no").checked,
         label: "21. Granted waiver",
         validate: () =>
             document.getElementById("grant_waiver_yes").checked ||
@@ -424,7 +424,7 @@ const fields = [
         message: "Please select Yes or No."
     },
     {
-        id: "grant_waiver_no",
+        id: "grant_waiver_no", condition: () => document.getElementById("j_nonimmigrant_yes").checked && document.getElementById("foreign_residence_no").checked,
         label: "21. Granted waiver",
         validate: () =>
             document.getElementById("grant_waiver_yes").checked ||
@@ -432,7 +432,7 @@ const fields = [
         message: ""
     },
     {
-        id: "grant_waiver_details",
+        id: "grant_waiver_details", condition: () => document.getElementById("j_nonimmigrant_yes").checked && document.getElementById("foreign_residence_no").checked,
         label: "21. Granted waiver – Explanation",
         validate: () => true,
         message: ""

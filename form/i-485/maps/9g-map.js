@@ -29,6 +29,6 @@ const fields = [
     { id:"evade_training_yes", label:"Question 83", validate:()=>document.getElementById("evade_training_yes").checked || document.getElementById("evade_training_no").checked, message:"Please select Yes or No." },
     { id:"evade_training_no", label:"Question 83", validate:()=>document.getElementById("evade_training_yes").checked || document.getElementById("evade_training_no").checked, message:"" },
 
-    { id:"evade_training_text", label:"Question 84", validate:()=>true, message:"" }
+    { id:"evade_training_text", condition: () => document.getElementById("evade_training_yes").checked, label:"Question 84", validate:()=>true, message:"" }
 
 ];

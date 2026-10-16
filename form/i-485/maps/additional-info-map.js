@@ -10,7 +10,7 @@ const fields = [
 
   {
     id: "permanent_resident_city",
-    required: false,
+    required: true,
     validate: () =>
       !permanent_resident_yes.checked ||
       permanent_resident_city.value.trim() !== "",
@@ -19,7 +19,7 @@ const fields = [
 
   {
     id: "permanent_resident_country",
-    required: false,
+    required: true,
     validate: () =>
       !permanent_resident_yes.checked ||
       permanent_resident_country.value.trim() !== "",
@@ -28,7 +28,7 @@ const fields = [
 
   {
     id: "permanent_resident_decision",
-    required: false,
+    required: true,
     validate: () =>
       !permanent_resident_yes.checked ||
       permanent_resident_decision.value.trim() !== "",
@@ -37,7 +37,7 @@ const fields = [
 
   {
     id: "permanent_resident_decision_date",
-    required: false,
+    required: true,
     validate: () =>
       !permanent_resident_yes.checked ||
       permanent_resident_decision_date.value.trim() !== "",
@@ -114,8 +114,8 @@ const fields = [
   {
     id: "employer_additional_info",
     required: false,
-    validate: v => v.trim() !== "",
-    message: "Additional Info about current employer required."
+    validate: () => true,
+    message: ""
   },
 
   {

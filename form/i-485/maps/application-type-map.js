@@ -142,6 +142,7 @@ const fields = [
   // Principal applicant details (only if derivative)
   {
     id: "principal_lastname",
+    required: true,
     validate: v =>
       !i485_derivative.checked || v.trim() !== "",
     message: "Enter the principal applicant’s last name."
@@ -149,6 +150,7 @@ const fields = [
 
   {
     id: "principal_firstname",
+    required: true,
     validate: v =>
       !i485_derivative.checked || v.trim() !== "",
     message: "Enter the principal applicant’s first name."
@@ -168,6 +170,7 @@ const fields = [
 
   {
     id: "principal_dob",
+    required: true,
     validate: v =>
       !i485_derivative.checked || v !== "",
     message: "Enter the principal applicant’s date of birth."
