@@ -2426,6 +2426,17 @@
                   if (i485Data_9a.org_yes){
                      form.getCheckBox("org_yes").check();
 
+                     // Additional organizations beyond the two listed in Items 2–9.
+                     if (i485Data_9a.additional_organizations && i485Data_9a.additional_organizations.trim() !== "") {
+                        fillAdditionalInfo(
+                           form,
+                           "13", // Page number
+                           "9",  // Part number
+                           "1", // Item numbers
+                           i485Data_9a.additional_organizations
+                        );
+                     }
+
                      // Item 2-9
                      if (i485Data_9a.orgone_name) form.getTextField("orgone_name").setText(i485Data_9a.orgone_name);
                      if (i485Data_9a.orgone_city) form.getTextField("orgone_city").setText(i485Data_9a.orgone_city);

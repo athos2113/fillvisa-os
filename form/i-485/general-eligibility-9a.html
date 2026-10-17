@@ -555,6 +555,14 @@
                             </div>
                         </div>
 
+                        <div class="mb-3">
+                            <label class="form-label fw-bold" for="additional_organizations">Additional organizations (optional)</label>
+                            <div class="form-text mb-2" id="additional_organizations_help">
+                                If you were a member of more than two organizations, use this textarea to provide information about the additional organizations, including the details requested in Items 2–9. This information will appear in Part 14. Additional Information.
+                            </div>
+                            <textarea class="form-control" id="additional_organizations" rows="4" aria-describedby="additional_organizations_help"></textarea>
+                        </div>
+
                     </div>
 
 
@@ -1266,6 +1274,8 @@
                 orgtwo_fromdate:           document.getElementById("orgtwo_fromdate").value,
                 orgtwo_todate:             document.getElementById("orgtwo_todate").value,
 
+                additional_organizations: document.getElementById("additional_organizations").value,
+
                 // === Items 10–21 ===
                 denied_admission_yes:     document.getElementById("denied_admission_yes").checked,
                 denied_admission_no:      document.getElementById("denied_admission_no").checked,
@@ -1375,6 +1385,8 @@
         document.getElementById("orgtwo_org_involvement").value    = saved.orgtwo_org_involvement    || "";
         document.getElementById("orgtwo_fromdate").value           = saved.orgtwo_fromdate           || "";
         document.getElementById("orgtwo_todate").value             = saved.orgtwo_todate             || "";
+
+        document.getElementById("additional_organizations").value = saved.additional_organizations || "";
 
         // === Items 10–21: restore radios + conditional textareas ===
         const conditionalQuestions = [

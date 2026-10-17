@@ -11,6 +11,14 @@ function isOrgYes() {
 // ── Fields ───────────────────────────────────────────────────────────────────
 
 const fields = [
+    {
+        id: "additional_organizations",
+        label: "Additional organizations",
+        condition: () => isOrgYes(),
+        validate: () => true,
+        message: ""
+    },
+
 
     // =========================================================================
     // Item 1 — Org membership (required: one must be selected)

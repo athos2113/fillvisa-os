@@ -10,7 +10,7 @@ const server = http.createServer((req,res) => {
   if (!file.startsWith(root + path.sep)) { res.writeHead(403).end(); return; }
   fs.readFile(file,(error,data)=> {
     if(error) return res.writeHead(404).end();
-    res.setHeader('Content-Type', file.endsWith('.js')?'text/javascript':file.endsWith('.html')?'text/html':'application/octet-stream');
+    res.setHeader('Content-Type', file.endsWith('.js')?'text/javascript':file.endsWith('.html')?'text/html':file.endsWith('.css')?'text/css':'application/octet-stream');
     res.end(data);
   });
 });
@@ -24,6 +24,7 @@ const server = http.createServer((req,res) => {
    if (route.request().url().includes('unpkg.com/pdf-lib@')) return route.fulfill({path:require.resolve('pdf-lib/dist/pdf-lib.min.js'),contentType:'text/javascript'});
    return route.request().url().startsWith(origin)?route.continue():route.abort();
   });
+  page.on('console', message=>{if(message.type()==='error' && !message.text().includes('Failed to load resource')) console.error(message.text());});
   const errors=[]; page.on('pageerror',e=>errors.push(e.stack));
   page.on('dialog',d=>d.dismiss());
   async function open(name,section,saved) {
@@ -121,6 +122,37 @@ const server = http.createServer((req,res) => {
    return ['foreign_residence_yes','foreign_residence_no','grant_waiver_yes','grant_waiver_no'].map(id=>pdf.getForm().getCheckBox(id).isChecked());
   });
   assert.deepEqual(pdfAnswers,[false,false,false,false]);
+  // Additional organizations appear after Items 2–9 and are optional.
+  await open('general-eligibility-9a','9a');
+  assert.equal(await page.locator('#additional_organizations').isVisible(),false);
+  await change('org_yes');
+  assert.equal(await page.locator('#additional_organizations').isVisible(),true);
+  assert.equal(await page.evaluate(()=>validateFieldById('additional_organizations')),'');
+  assert.equal(await page.evaluate(()=>Boolean(document.getElementById('orgtwo_todate').compareDocumentPosition(document.getElementById('additional_organizations')) & Node.DOCUMENT_POSITION_FOLLOWING)),true);
+  const organizationText='Third organization: Community Club, London, UK. Volunteer member, 2018-2020.';
+  await change('additional_organizations',organizationText);
+  await page.waitForFunction(text=>JSON.parse(localStorage.getItem('i485-9a')).additional_organizations===text,organizationText);
+  await page.reload();
+  assert.equal(await page.locator('#additional_organizations').isVisible(),true);
+  assert.equal((await state('additional_organizations')).value,organizationText);
+  await page.goto(origin+'/form/i-485/download.html');
+  const additionalEntry=await page.evaluate(async()=>{
+   await fillForm();
+   const pdf=await PDFLib.PDFDocument.load(i485PreviewPdfBytes);
+   return ['pgno','ptno','itno','description'].map(key=>pdf.getForm().getTextField('additional_info_'+key+'_1').getText());
+  });
+  assert.deepEqual(additionalEntry,['13','9','2-9',organizationText]);
+  await page.goto(origin+'/form/i-485/general-eligibility-9a.html');
+  await change('org_no');
+  assert.equal(await page.locator('#additional_organizations').isVisible(),false);
+  assert.equal((await state('additional_organizations')).value,'');
+  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('i485-9a')).additional_organizations),'');
+  await page.goto(origin+'/form/i-485/download.html');
+  assert.equal(await page.evaluate(async()=>{
+   await fillForm();
+   const pdf=await PDFLib.PDFDocument.load(i485PreviewPdfBytes);
+   return pdf.getForm().getTextField('additional_info_description_1').getText() || '';
+  }),'');
   // Third-party widgets may fail offline; application errors must not be hidden.
   const appErrors=errors.filter(e=>!e.includes('Swiper')&&!e.includes('intlTelInput')&&!e.includes('scrollCue'));
   assert.deepEqual(appErrors,[]);
