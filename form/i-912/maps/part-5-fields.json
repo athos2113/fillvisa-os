@@ -1,0 +1,85 @@
+{
+  "pdf": "fillvisa_i912_acro.pdf",
+  "part": 5,
+  "fields": [
+    {
+      "name": "income_employment_employed",
+      "type": "checkbox"
+    },
+    {
+      "name": "income_employment_unemployed",
+      "type": "checkbox"
+    },
+    {
+      "name": "income_employment_retired",
+      "type": "checkbox"
+    },
+    {
+      "name": "income_employment_other",
+      "type": "checkbox"
+    },
+    {
+      "name": "income_employment_other_explanation",
+      "type": "text",
+      "multiline": true,
+      "overflow": "Part 10; preserve all text"
+    },
+    {
+      "name": "income_unemployment_benefits_yes",
+      "type": "checkbox"
+    },
+    {
+      "name": "income_unemployment_benefits_no",
+      "type": "checkbox"
+    },
+    {
+      "name": "income_unemployed_date",
+      "type": "text",
+      "format": "MM/DD/YYYY"
+    },
+    {
+      "name": "income_household_size",
+      "type": "text"
+    },
+    {
+      "name": "income_household_earners",
+      "type": "text"
+    },
+    {
+      "name": "income_head_of_household",
+      "type": "text"
+    },
+    {
+      "name": "income_annual_self",
+      "type": "text"
+    },
+    {
+      "name": "income_annual_family",
+      "type": "text"
+    },
+    {
+      "name": "income_annual_total",
+      "type": "text"
+    },
+    {
+      "name": "income_circumstances_changed_yes",
+      "type": "checkbox"
+    },
+    {
+      "name": "income_circumstances_changed_no",
+      "type": "checkbox"
+    },
+    {
+      "name": "income_circumstances_explanation",
+      "type": "text",
+      "multiline": true,
+      "overflow": "Part 10; preserve all text"
+    }
+  ],
+  "rules": {
+    "applicability": "Only include when basis_low_income is selected.",
+    "employment": "Select one PDF employment checkbox. Unemployment fields only apply when unemployed; other explanation only when Other is selected.",
+    "total": "Item 8 = Item 6 + Item 7; amounts in U.S. dollars.",
+    "explanation": "Item 9 explanation is required for Yes and allowed for No. Fill the provided PDF area first; send overflow to Part 10."
+  }
+}

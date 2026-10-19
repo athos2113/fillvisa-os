@@ -1,0 +1,120 @@
+{
+  "pdf": "fillvisa_i912_acro.pdf",
+  "page": 1,
+  "fields": [
+    {
+      "name": "basis_means_tested_benefit",
+      "type": "checkbox",
+      "part": 1,
+      "item": "1A"
+    },
+    {
+      "name": "basis_low_income",
+      "type": "checkbox",
+      "part": 1,
+      "item": "1B"
+    },
+    {
+      "name": "basis_financial_hardship",
+      "type": "checkbox",
+      "part": 1,
+      "item": "1C"
+    },
+    {
+      "name": "requestor_immigration_status",
+      "type": "text",
+      "part": 1,
+      "item": "2"
+    },
+    {
+      "name": "requestor_parent_legal_guardian",
+      "type": "checkbox",
+      "part": 2,
+      "item": "1"
+    },
+    {
+      "name": "requestor_lastname",
+      "type": "text",
+      "part": 2,
+      "item": "2"
+    },
+    {
+      "name": "requestor_firstname",
+      "type": "text",
+      "part": 2,
+      "item": "2"
+    },
+    {
+      "name": "requestor_middlename",
+      "type": "text",
+      "part": 2,
+      "item": "2"
+    },
+    {
+      "name": "requestor_other_1_lastname",
+      "type": "text",
+      "part": 2,
+      "item": "3"
+    },
+    {
+      "name": "requestor_other_1_firstname",
+      "type": "text",
+      "part": 2,
+      "item": "3"
+    },
+    {
+      "name": "requestor_other_1_middlename",
+      "type": "text",
+      "part": 2,
+      "item": "3"
+    },
+    {
+      "name": "requestor_other_2_lastname",
+      "type": "text",
+      "part": 2,
+      "item": "3"
+    },
+    {
+      "name": "requestor_other_2_firstname",
+      "type": "text",
+      "part": 2,
+      "item": "3"
+    },
+    {
+      "name": "requestor_other_2_middlename",
+      "type": "text",
+      "part": 2,
+      "item": "3"
+    },
+    {
+      "name": "requestor_anumber",
+      "type": "text",
+      "part": 2,
+      "item": "4",
+      "comb": true,
+      "maxLength": 9
+    },
+    {
+      "name": "requestor_uscis_account",
+      "type": "text",
+      "part": 2,
+      "item": "5",
+      "comb": true,
+      "maxLength": 12
+    }
+  ],
+  "additionalInformation": {
+    "source": "requestor_other_names_additional",
+    "page": 1,
+    "part": 2,
+    "item": 3,
+    "destination": "Part 10; PDF field names pending its screenshot"
+  },
+  "rules": {
+    "anumber": "Write the complete A-Number to requestor_anumber, a single 9-character comb text field. Pad 7–9 digits to 9 with leading zeros; leave empty when absent.",
+    "uscisAccount": "Write all 12 digits to requestor_uscis_account, a single 12-character comb text field, preserving leading zeros; leave empty when absent.",
+    "unitTypes": "Apt/Ste/Flr are PDF checkboxes.",
+    "state": "Web dropdown uses the supplied state options; write its two-letter value to a PDF text field.",
+    "signatures": "Reuse the I-130 signature-pad logic when signature sections are supplied."
+  }
+}

@@ -1,0 +1,275 @@
+{
+  "pdf": "fillvisa_i912_acro.pdf",
+  "page": 2,
+  "part": 4,
+  "item": 1,
+  "fields": [
+    {
+      "name": "benefit_1_fullname",
+      "type": "text",
+      "row": 1
+    },
+    {
+      "name": "benefit_1_relationship",
+      "type": "text",
+      "row": 1
+    },
+    {
+      "name": "benefit_1_agency",
+      "type": "text",
+      "row": 1
+    },
+    {
+      "name": "benefit_1_type",
+      "type": "text",
+      "row": 1
+    },
+    {
+      "name": "benefit_1_awarded_date",
+      "type": "text",
+      "row": 1,
+      "format": "MM/DD/YYYY"
+    },
+    {
+      "name": "benefit_1_expires_date",
+      "type": "text",
+      "row": 1,
+      "format": "MM/DD/YYYY"
+    },
+    {
+      "name": "benefit_2_fullname",
+      "type": "text",
+      "row": 2
+    },
+    {
+      "name": "benefit_2_relationship",
+      "type": "text",
+      "row": 2
+    },
+    {
+      "name": "benefit_2_agency",
+      "type": "text",
+      "row": 2
+    },
+    {
+      "name": "benefit_2_type",
+      "type": "text",
+      "row": 2
+    },
+    {
+      "name": "benefit_2_awarded_date",
+      "type": "text",
+      "row": 2,
+      "format": "MM/DD/YYYY"
+    },
+    {
+      "name": "benefit_2_expires_date",
+      "type": "text",
+      "row": 2,
+      "format": "MM/DD/YYYY"
+    },
+    {
+      "name": "benefit_3_fullname",
+      "type": "text",
+      "row": 3
+    },
+    {
+      "name": "benefit_3_relationship",
+      "type": "text",
+      "row": 3
+    },
+    {
+      "name": "benefit_3_agency",
+      "type": "text",
+      "row": 3
+    },
+    {
+      "name": "benefit_3_type",
+      "type": "text",
+      "row": 3
+    },
+    {
+      "name": "benefit_3_awarded_date",
+      "type": "text",
+      "row": 3,
+      "format": "MM/DD/YYYY"
+    },
+    {
+      "name": "benefit_3_expires_date",
+      "type": "text",
+      "row": 3,
+      "format": "MM/DD/YYYY"
+    },
+    {
+      "name": "benefit_4_fullname",
+      "type": "text",
+      "row": 4
+    },
+    {
+      "name": "benefit_4_relationship",
+      "type": "text",
+      "row": 4
+    },
+    {
+      "name": "benefit_4_agency",
+      "type": "text",
+      "row": 4
+    },
+    {
+      "name": "benefit_4_type",
+      "type": "text",
+      "row": 4
+    },
+    {
+      "name": "benefit_4_awarded_date",
+      "type": "text",
+      "row": 4,
+      "format": "MM/DD/YYYY"
+    },
+    {
+      "name": "benefit_4_expires_date",
+      "type": "text",
+      "row": 4,
+      "format": "MM/DD/YYYY"
+    },
+    {
+      "name": "benefit_5_fullname",
+      "type": "text",
+      "row": 5
+    },
+    {
+      "name": "benefit_5_relationship",
+      "type": "text",
+      "row": 5
+    },
+    {
+      "name": "benefit_5_agency",
+      "type": "text",
+      "row": 5
+    },
+    {
+      "name": "benefit_5_type",
+      "type": "text",
+      "row": 5
+    },
+    {
+      "name": "benefit_5_awarded_date",
+      "type": "text",
+      "row": 5,
+      "format": "MM/DD/YYYY"
+    },
+    {
+      "name": "benefit_5_expires_date",
+      "type": "text",
+      "row": 5,
+      "format": "MM/DD/YYYY"
+    },
+    {
+      "name": "benefit_6_fullname",
+      "type": "text",
+      "row": 6
+    },
+    {
+      "name": "benefit_6_relationship",
+      "type": "text",
+      "row": 6
+    },
+    {
+      "name": "benefit_6_agency",
+      "type": "text",
+      "row": 6
+    },
+    {
+      "name": "benefit_6_type",
+      "type": "text",
+      "row": 6
+    },
+    {
+      "name": "benefit_6_awarded_date",
+      "type": "text",
+      "row": 6,
+      "format": "MM/DD/YYYY"
+    },
+    {
+      "name": "benefit_6_expires_date",
+      "type": "text",
+      "row": 6,
+      "format": "MM/DD/YYYY"
+    },
+    {
+      "name": "benefit_7_fullname",
+      "type": "text",
+      "row": 7
+    },
+    {
+      "name": "benefit_7_relationship",
+      "type": "text",
+      "row": 7
+    },
+    {
+      "name": "benefit_7_agency",
+      "type": "text",
+      "row": 7
+    },
+    {
+      "name": "benefit_7_type",
+      "type": "text",
+      "row": 7
+    },
+    {
+      "name": "benefit_7_awarded_date",
+      "type": "text",
+      "row": 7,
+      "format": "MM/DD/YYYY"
+    },
+    {
+      "name": "benefit_7_expires_date",
+      "type": "text",
+      "row": 7,
+      "format": "MM/DD/YYYY"
+    },
+    {
+      "name": "benefit_8_fullname",
+      "type": "text",
+      "row": 8
+    },
+    {
+      "name": "benefit_8_relationship",
+      "type": "text",
+      "row": 8
+    },
+    {
+      "name": "benefit_8_agency",
+      "type": "text",
+      "row": 8
+    },
+    {
+      "name": "benefit_8_type",
+      "type": "text",
+      "row": 8
+    },
+    {
+      "name": "benefit_8_awarded_date",
+      "type": "text",
+      "row": 8,
+      "format": "MM/DD/YYYY"
+    },
+    {
+      "name": "benefit_8_expires_date",
+      "type": "text",
+      "row": 8,
+      "format": "MM/DD/YYYY"
+    }
+  ],
+  "additionalInformation": {
+    "source": "benefits_additional",
+    "page": 2,
+    "part": 4,
+    "item": 1,
+    "destination": "Part 10"
+  },
+  "rules": {
+    "applicability": "Include only when basis_means_tested_benefit is selected.",
+    "overflow": "Preserve long cell values using the Part 10 helper."
+  }
+}

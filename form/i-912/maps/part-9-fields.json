@@ -1,0 +1,113 @@
+{
+  "pdf": "fillvisa_i912_acro.pdf",
+  "part": 9,
+  "fields": [
+    {
+      "name": "preparer_lastname",
+      "type": "text"
+    },
+    {
+      "name": "preparer_firstname",
+      "type": "text"
+    },
+    {
+      "name": "preparer_business",
+      "type": "text"
+    },
+    {
+      "name": "preparer_street",
+      "type": "text"
+    },
+    {
+      "name": "preparer_apt",
+      "type": "checkbox",
+      "source": "preparer_unit_type",
+      "checkedWhen": "apt"
+    },
+    {
+      "name": "preparer_ste",
+      "type": "checkbox",
+      "source": "preparer_unit_type",
+      "checkedWhen": "ste"
+    },
+    {
+      "name": "preparer_flr",
+      "type": "checkbox",
+      "source": "preparer_unit_type",
+      "checkedWhen": "flr"
+    },
+    {
+      "name": "preparer_number",
+      "type": "text"
+    },
+    {
+      "name": "preparer_city",
+      "type": "text"
+    },
+    {
+      "name": "preparer_state",
+      "type": "text"
+    },
+    {
+      "name": "preparer_zip",
+      "type": "text"
+    },
+    {
+      "name": "preparer_province",
+      "type": "text"
+    },
+    {
+      "name": "preparer_postal",
+      "type": "text"
+    },
+    {
+      "name": "preparer_country",
+      "type": "text"
+    },
+    {
+      "name": "preparer_telephone",
+      "type": "text"
+    },
+    {
+      "name": "preparer_mobile",
+      "type": "text"
+    },
+    {
+      "name": "preparer_email",
+      "type": "text"
+    },
+    {
+      "name": "preparer_sign",
+      "type": "text",
+      "format": "Embed saved PNG in this regular PDF text field"
+    },
+    {
+      "name": "preparer_sign_date",
+      "type": "text",
+      "format": "MM/DD/YYYY"
+    },
+    {
+      "name": "preparer_not_attorney",
+      "type": "checkbox"
+    },
+    {
+      "name": "preparer_attorney",
+      "type": "checkbox"
+    },
+    {
+      "name": "preparer_representation_extends",
+      "type": "checkbox"
+    },
+    {
+      "name": "preparer_representation_not_extends",
+      "type": "checkbox"
+    }
+  ],
+  "rules": {
+    "applicability": "Exclude when requestor_used_preparer is false in Part 7.",
+    "state": "Web dropdown; PDF text field receives two-letter abbreviation.",
+    "units": "Apt, Ste, Flr are PDF checkboxes.",
+    "signature": "Optional PNG; date required when drawn.",
+    "representation": "Only fill representation choice when preparer_attorney is selected."
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "pdf": "fillvisa_i912_acro.pdf",
+  "part": 10,
+  "page": 8,
+  "fields": [
+    {
+      "name": "additional_lastname",
+      "type": "text"
+    },
+    {
+      "name": "additional_firstname",
+      "type": "text"
+    },
+    {
+      "name": "additional_middlename",
+      "type": "text"
+    },
+    {
+      "name": "additional_page_1",
+      "type": "text"
+    },
+    {
+      "name": "additional_part_1",
+      "type": "text"
+    },
+    {
+      "name": "additional_item_1",
+      "type": "text"
+    },
+    {
+      "name": "additional_description_1",
+      "type": "text",
+      "multiline": true
+    },
+    {
+      "name": "additional_page_2",
+      "type": "text"
+    },
+    {
+      "name": "additional_part_2",
+      "type": "text"
+    },
+    {
+      "name": "additional_item_2",
+      "type": "text"
+    },
+    {
+      "name": "additional_description_2",
+      "type": "text",
+      "multiline": true
+    },
+    {
+      "name": "additional_page_3",
+      "type": "text"
+    },
+    {
+      "name": "additional_part_3",
+      "type": "text"
+    },
+    {
+      "name": "additional_item_3",
+      "type": "text"
+    },
+    {
+      "name": "additional_description_3",
+      "type": "text",
+      "multiline": true
+    },
+    {
+      "name": "additional_page_4",
+      "type": "text"
+    },
+    {
+      "name": "additional_part_4",
+      "type": "text"
+    },
+    {
+      "name": "additional_item_4",
+      "type": "text"
+    },
+    {
+      "name": "additional_description_4",
+      "type": "text",
+      "multiline": true
+    },
+    {
+      "name": "additional_anumber",
+      "type": "text",
+      "comb": true,
+      "maxLength": 9
+    }
+  ],
+  "slots": "Slots 1–4 correspond to PDF Items 3–6."
+}

@@ -1,0 +1,132 @@
+{
+  "pdf": "fillvisa_i912_acro.pdf",
+  "page": 2,
+  "part": 3,
+  "item": 1,
+  "fields": [
+    {
+      "name": "application_1_fullname",
+      "type": "text",
+      "row": 1
+    },
+    {
+      "name": "application_1_anumber",
+      "type": "text",
+      "row": 1,
+      "comb": true,
+      "maxLength": 9
+    },
+    {
+      "name": "application_1_dob",
+      "type": "text",
+      "row": 1,
+      "format": "MM/DD/YYYY"
+    },
+    {
+      "name": "application_1_forms",
+      "type": "text",
+      "row": 1
+    },
+    {
+      "name": "application_2_fullname",
+      "type": "text",
+      "row": 2
+    },
+    {
+      "name": "application_2_anumber",
+      "type": "text",
+      "row": 2,
+      "comb": true,
+      "maxLength": 9
+    },
+    {
+      "name": "application_2_dob",
+      "type": "text",
+      "row": 2,
+      "format": "MM/DD/YYYY"
+    },
+    {
+      "name": "application_2_relationship",
+      "type": "text",
+      "row": 2
+    },
+    {
+      "name": "application_2_forms",
+      "type": "text",
+      "row": 2
+    },
+    {
+      "name": "application_3_fullname",
+      "type": "text",
+      "row": 3
+    },
+    {
+      "name": "application_3_anumber",
+      "type": "text",
+      "row": 3,
+      "comb": true,
+      "maxLength": 9
+    },
+    {
+      "name": "application_3_dob",
+      "type": "text",
+      "row": 3,
+      "format": "MM/DD/YYYY"
+    },
+    {
+      "name": "application_3_relationship",
+      "type": "text",
+      "row": 3
+    },
+    {
+      "name": "application_3_forms",
+      "type": "text",
+      "row": 3
+    },
+    {
+      "name": "application_4_fullname",
+      "type": "text",
+      "row": 4
+    },
+    {
+      "name": "application_4_anumber",
+      "type": "text",
+      "row": 4,
+      "comb": true,
+      "maxLength": 9
+    },
+    {
+      "name": "application_4_dob",
+      "type": "text",
+      "row": 4,
+      "format": "MM/DD/YYYY"
+    },
+    {
+      "name": "application_4_relationship",
+      "type": "text",
+      "row": 4
+    },
+    {
+      "name": "application_4_forms",
+      "type": "text",
+      "row": 4
+    },
+    {
+      "name": "applications_total_forms",
+      "type": "text"
+    }
+  ],
+  "additionalInformation": {
+    "source": "applications_additional",
+    "page": 2,
+    "part": 3,
+    "item": 1,
+    "destination": "Part 10"
+  },
+  "rules": {
+    "self": "First row relationship Self is preprinted; no PDF field needed.",
+    "anumber": "One comb text field per row. Pad 7–9 digits to 9; leave empty when absent.",
+    "total": "User-entered count of all forms, including additional entries.",
+    "overflow": "Long cell values must be preserved through the Part 10 filling helper."
+  }
+}

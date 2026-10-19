@@ -1,0 +1,53 @@
+{
+  "pdf": "fillvisa_i912_acro.pdf",
+  "part": 7,
+  "fields": [
+    {
+      "name": "requestor_statement_english",
+      "type": "checkbox"
+    },
+    {
+      "name": "requestor_statement_interpreter",
+      "type": "checkbox"
+    },
+    {
+      "name": "requestor_interpreter_language",
+      "type": "text"
+    },
+    {
+      "name": "requestor_used_preparer",
+      "type": "checkbox"
+    },
+    {
+      "name": "requestor_preparer_name",
+      "type": "text"
+    },
+    {
+      "name": "requestor_daytime_phone",
+      "type": "text"
+    },
+    {
+      "name": "requestor_mobile_phone",
+      "type": "text"
+    },
+    {
+      "name": "requestor_email",
+      "type": "text"
+    },
+    {
+      "name": "requestor_sign",
+      "type": "text",
+      "format": "PNG data URL from web canvas; embed image in PDF text field, not a digital-signature field"
+    },
+    {
+      "name": "requestor_sign_date",
+      "type": "text",
+      "format": "MM/DD/YYYY"
+    }
+  ],
+  "rules": {
+    "language": "Only fill for requestor_statement_interpreter.",
+    "preparer": "Only fill name when requestor_used_preparer is checked.",
+    "signature": "Optional drawing, transparent PNG. Date required when drawn; blank signature may be signed later."
+  }
+}

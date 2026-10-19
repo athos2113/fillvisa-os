@@ -1,0 +1,100 @@
+{
+  "pdf": "fillvisa_i912_acro.pdf",
+  "part": 8,
+  "fields": [
+    {
+      "name": "interpreter_lastname",
+      "type": "text"
+    },
+    {
+      "name": "interpreter_firstname",
+      "type": "text"
+    },
+    {
+      "name": "interpreter_business",
+      "type": "text"
+    },
+    {
+      "name": "interpreter_street",
+      "type": "text"
+    },
+    {
+      "name": "interpreter_apt",
+      "type": "checkbox",
+      "source": "interpreter_unit_type",
+      "checkedWhen": "apt"
+    },
+    {
+      "name": "interpreter_ste",
+      "type": "checkbox",
+      "source": "interpreter_unit_type",
+      "checkedWhen": "ste"
+    },
+    {
+      "name": "interpreter_flr",
+      "type": "checkbox",
+      "source": "interpreter_unit_type",
+      "checkedWhen": "flr"
+    },
+    {
+      "name": "interpreter_number",
+      "type": "text"
+    },
+    {
+      "name": "interpreter_city",
+      "type": "text"
+    },
+    {
+      "name": "interpreter_state",
+      "type": "text"
+    },
+    {
+      "name": "interpreter_zip",
+      "type": "text"
+    },
+    {
+      "name": "interpreter_province",
+      "type": "text"
+    },
+    {
+      "name": "interpreter_postal",
+      "type": "text"
+    },
+    {
+      "name": "interpreter_country",
+      "type": "text"
+    },
+    {
+      "name": "interpreter_telephone",
+      "type": "text"
+    },
+    {
+      "name": "interpreter_mobile",
+      "type": "text"
+    },
+    {
+      "name": "interpreter_email",
+      "type": "text"
+    },
+    {
+      "name": "interpreter_language",
+      "type": "text"
+    },
+    {
+      "name": "interpreter_sign",
+      "type": "text",
+      "format": "Embed saved PNG in this regular PDF text field"
+    },
+    {
+      "name": "interpreter_sign_date",
+      "type": "text",
+      "format": "MM/DD/YYYY"
+    }
+  ],
+  "rules": {
+    "applicability": "Exclude when Part 7 selects English without an interpreter.",
+    "state": "Web dropdown; PDF text field receives two-letter abbreviation.",
+    "units": "Apt, Ste, Flr are PDF checkboxes.",
+    "signature": "Optional PNG; date required when drawn."
+  }
+}

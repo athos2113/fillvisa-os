@@ -1,0 +1,68 @@
+{
+  "pdf": "fillvisa_i912_acro.pdf",
+  "page": 2,
+  "part": 2,
+  "fields": [
+    {
+      "name": "requestor_dob",
+      "type": "text",
+      "item": 6,
+      "format": "MM/DD/YYYY"
+    },
+    {
+      "name": "requestor_ssn",
+      "type": "text",
+      "part": 2,
+      "item": 7,
+      "comb": true,
+      "maxLength": 9
+    },
+    {
+      "name": "requestor_marital_single",
+      "type": "checkbox",
+      "item": 8
+    },
+    {
+      "name": "requestor_marital_married",
+      "type": "checkbox",
+      "item": 8
+    },
+    {
+      "name": "requestor_marital_divorced",
+      "type": "checkbox",
+      "item": 8
+    },
+    {
+      "name": "requestor_marital_widowed",
+      "type": "checkbox",
+      "item": 8
+    },
+    {
+      "name": "requestor_marital_annulled",
+      "type": "checkbox",
+      "item": 8
+    },
+    {
+      "name": "requestor_marital_separated",
+      "type": "checkbox",
+      "item": 8
+    },
+    {
+      "name": "requestor_marital_other",
+      "type": "checkbox",
+      "item": 8
+    },
+    {
+      "name": "requestor_marital_other_explanation",
+      "type": "text",
+      "item": 8,
+      "condition": "requestor_marital_other",
+      "multiline": true
+    }
+  ],
+  "rules": {
+    "ssn": "Write all 9 digits to requestor_ssn, a single 9-character comb text field, preserving leading zeros; leave empty when absent.",
+    "maritalStatus": "Web radios are mutually exclusive; PDF fields are checkboxes.",
+    "explanation": "Fill only when Other is selected. Route overflow to Part 10 with page 2, part 2, item 8."
+  }
+}

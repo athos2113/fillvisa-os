@@ -224,6 +224,15 @@
     "active": "true"
   },
   {
+    "title": "I-912",
+    "subtitle": "Request for Fee Waiver",
+    "description": "Use this form to request a fee waiver (or submit a written request) for certain immigration forms and services based on a demonstrated inability to pay.",
+    "categories": ["humanitarian", "pdf-form"],
+    "slug": "i-912",
+    "pdf": "",
+    "active": "true"
+  },
+  {
     "title": "N-400",
     "subtitle": "Naturalization Package",
     "description": "Permanent residents use Form N-400 (Application for Naturalization) to apply for U.S. citizenship through naturalization.",

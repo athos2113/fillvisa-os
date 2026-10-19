@@ -1,0 +1,106 @@
+{
+  "pdf": "fillvisa_i912_acro.pdf",
+  "part": 6,
+  "fields": [
+    {
+      "name": "hardship_explanation",
+      "type": "text",
+      "multiline": true,
+      "overflow": "Part 10"
+    },
+    {
+      "name": "hardship_asset_1_type",
+      "type": "text"
+    },
+    {
+      "name": "hardship_asset_1_value",
+      "type": "text"
+    },
+    {
+      "name": "hardship_asset_2_type",
+      "type": "text"
+    },
+    {
+      "name": "hardship_asset_2_value",
+      "type": "text"
+    },
+    {
+      "name": "hardship_asset_3_type",
+      "type": "text"
+    },
+    {
+      "name": "hardship_asset_3_value",
+      "type": "text"
+    },
+    {
+      "name": "hardship_assets_total",
+      "type": "text"
+    },
+    {
+      "name": "hardship_monthly_expenses",
+      "type": "text"
+    },
+    {
+      "name": "hardship_expense_rent_mortgage",
+      "type": "checkbox"
+    },
+    {
+      "name": "hardship_expense_food",
+      "type": "checkbox"
+    },
+    {
+      "name": "hardship_expense_utilities",
+      "type": "checkbox"
+    },
+    {
+      "name": "hardship_expense_care",
+      "type": "checkbox"
+    },
+    {
+      "name": "hardship_expense_insurance",
+      "type": "checkbox"
+    },
+    {
+      "name": "hardship_expense_loans_credit_cards",
+      "type": "checkbox"
+    },
+    {
+      "name": "hardship_expense_car_payment",
+      "type": "checkbox"
+    },
+    {
+      "name": "hardship_expense_commuting",
+      "type": "checkbox"
+    },
+    {
+      "name": "hardship_expense_medical",
+      "type": "checkbox"
+    },
+    {
+      "name": "hardship_expense_school",
+      "type": "checkbox"
+    },
+    {
+      "name": "hardship_expense_other",
+      "type": "checkbox"
+    },
+    {
+      "name": "hardship_expenses_other_explanation",
+      "type": "text",
+      "multiline": true,
+      "overflow": "Part 10"
+    }
+  ],
+  "additionalInformation": {
+    "source": "hardship_assets_additional",
+    "part": 6,
+    "item": 2,
+    "destination": "Part 10"
+  },
+  "rules": {
+    "applicability": "Only include when basis_financial_hardship is selected.",
+    "assetsTotal": "Three asset values plus hardship_assets_additional_value. Additional subtotal is web-only.",
+    "explanations": "Fill PDF explanation areas first; preserve overflow in Part 10.",
+    "other": "Fill other-expense explanation only when hardship_expense_other is selected."
+  }
+}
