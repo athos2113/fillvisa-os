@@ -1333,7 +1333,6 @@
             const errors = [];
 
             const primaryOccupation = document.getElementById("primaryOccupation").value;
-            const occupationExplain = document.getElementById("occupationExplain").value;
             const occupationOther = document.getElementById("occupationOtherText").value.trim();
 
             const employer = document.getElementById("employerNameEmp").value.trim();
@@ -1356,13 +1355,7 @@
                 errors.push("Primary Occupation is required.");
             }
 
-            // Dynamic logic
-            if (primaryOccupation === "N") {
-                if (occupationExplain === "") {
-                    errors.push("Explain your unemployment situation.");
-                }
-            }
-
+            // The explanation for Not Employed is optional.
             if (primaryOccupation === "O") {
                 if (occupationOther === "") {
                     errors.push("Other Occupation (specify) is required.");
@@ -1370,6 +1363,7 @@
             }
 
             if (
+                primaryOccupation !== "N" &&
                 primaryOccupation !== "H" &&
                 primaryOccupation !== "RT" &&
                 primaryOccupation !== ""
