@@ -65,17 +65,28 @@ Available now:
 - AR-11: Aliens Change of Address Card.
 - DS-160: Online Nonimmigrant Visa Application.
 - G-1145: E-Notification of Application/Petition Acceptance.
-- I-90: Green Card Renewal/Replacement Package.
-- I-130: Immigrant Visa Petition Package.
+- G-1450: Authorization for Credit Card Transactions
+- G-1650: Authorization for ACH Transactions
+- G-28: Notice of Entry of Appearance
+- I-129: Petition for a Nonimmigrant Worker
+- I-129F: K-1 Visa Petition Package
+- I-130: Immigrant Visa Petition Package
+- I-130A: Supplemental Information for Spouse Beneficiary
+- I-140: Immigrant Petition for Alien Workers
 - I-485: Adjustment of Status Package.
+- I-539: Application to Extend/Change Nonimmigrant Status
 - I-765: Employment Authorization Package.
 - I-864: Immigrant Affidavit of Support Package.
+- I-90: Green Card Renewal/Replacement Package.
+- I-907: Request for Premium Processing Service
+- I-912: Request for Fee Waiver
 - N-400: Naturalization Package.
+
 
 Coming soon:
 
-- I-129F: K-1 Visa Petition Package.
-- I-130A: Supplemental Information for Spouse Beneficiary.
+- ETA-9089: Application for Permanent Employment Certification
+- ETA-9141: Application for Prevailing Wage Determination
 - I-131: Travel Document Package.
 - I-131A: Carrier Documentation Package.
 - I-134: Non-immigrant Support Package.
