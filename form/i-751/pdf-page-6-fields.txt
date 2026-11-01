@@ -1,0 +1,18 @@
+I-751 PDF Page 6 field names
+
+TEXT FIELDS:
+petitioner_interpreter_language — 1.b. Language in which the interpreter read the petition to you
+petitioner_preparer_name — 2. Name of the preparer
+petitioner_telephone — 3. Petitioner’s Daytime Telephone Number
+petitioner_mobile — 4. Petitioner’s Mobile Telephone Number (if any)
+petitioner_email — 5. Petitioner’s Email Address (if any)
+petitioner_asc_name — Your full name for the acknowledgment
+
+CHECKBOXES:
+petitioner_statement_english — 1.a. I can read and understand English, and have read and understand every question and instruction on this petition, as well as my answer to every question. I have read and understand the Acknowledgement of Appointment at USCIS Application Support Center.
+petitioner_statement_interpreter — 1.b. The interpreter named in Part 9 has also read to me every question and instruction on this petition, as well as my answer to every question, in a language in which I am fluent. I understand every question and instruction on this petition as translated to me by my interpreter, and have provided complete, true, and correct responses in the language indicated below. The interpreter named in Part 9 has also read the Acknowledgement of Appointment at USCIS Application Support Center to me, in the language in which I am fluent, and I understand this ASC Acknowledgement as read to me by my interpreter.
+petitioner_used_preparer — I have requested the services of and consented to a preparer preparing this petition for me.
+petitioner_preparer_is_attorney — Yes
+petitioner_preparer_not_attorney — No
+
+petitioner_asc_name is the name blank in the ASC acknowledgment, not a signature field.

@@ -1,0 +1,29 @@
+I-751 PDF Page 8 field names
+
+TEXT FIELDS:
+spouse_asc_name — Your full name for the acknowledgment
+spouse_sign — 6.a. Spouse’s or Individual’s Signature
+spouse_sign_date — 6.b. Date of Signature
+interpreter_lastname — 1.a. Interpreter’s Family Name (Last Name)
+interpreter_firstname — 1.b. Interpreter’s Given Name (First Name)
+interpreter_business — 2. Interpreter’s Business or Organization Name (if any)
+interpreter_street — 3.a. Street Number and Name
+interpreter_number — Unit Number
+interpreter_city — 3.c. City or Town
+interpreter_state — 3.d. State
+interpreter_zip — 3.e. ZIP Code
+interpreter_province — 3.f. Province (if applicable)
+interpreter_postal — 3.g. Postal Code (if applicable)
+interpreter_country — 3.h. Country
+interpreter_telephone — 4. Interpreter’s Daytime Telephone Number
+interpreter_email — 5. Interpreter’s Email Address (if any)
+
+CHECKBOXES:
+interpreter_apt — Apt.
+interpreter_ste — Ste.
+interpreter_flr — Flr.
+
+spouse_sign: regular PDF text field used as the signature-image placement target.
+spouse_asc_name: name blank in the acknowledgment, not a signature.
+spouse_sign_date: MM/DD/YYYY. interpreter_state: two-letter abbreviation.
+has_interpreter is web-only; no PDF field needed.

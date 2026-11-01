@@ -1,0 +1,75 @@
+I-751 PDF Page 2 field names
+
+TEXT FIELDS (state and height remain text fields in the PDF):
+mailing_careof — 15.a. In Care Of Name (if any)
+mailing_street — 15.b. Street Number and Name
+mailing_number — Unit Number
+mailing_city — 15.d. City or Town
+mailing_state — 15.e. State
+mailing_zip — 15.f. ZIP Code
+physical_careof — 17.a. In Care Of Name (if any)
+physical_street — 17.b. Street Number and Name
+physical_number — Unit Number
+physical_city — 17.d. City or Town
+physical_state — 17.e. State
+physical_zip — 17.f. ZIP Code
+height_feet — 3. Height — Feet
+height_inches — 3. Height — Inches
+weight_pounds_1 — First weight digit
+weight_pounds_2 — Second weight digit
+weight_pounds_3 — Third weight digit
+
+CHECKBOXES:
+mailing_apt — Apt.
+mailing_ste — Ste.
+mailing_flr — Flr.
+physical_different_yes — Yes
+physical_different_no — No
+physical_apt — Apt.
+physical_ste — Ste.
+physical_flr — Flr.
+removal_proceedings_yes — Yes
+removal_proceedings_no — No
+paid_other_yes — Yes
+paid_other_no — No
+criminal_history_yes — Yes
+criminal_history_no — No
+different_marriage_yes — Yes
+different_marriage_no — No
+other_addresses_yes — Yes
+other_addresses_no — No
+government_abroad_yes — Yes
+government_abroad_no — No
+ethnicity_hispanic — Hispanic or Latino
+ethnicity_not_hispanic — Not Hispanic or Latino
+race_white — White
+race_asian — Asian
+race_black — Black or African American
+race_american_indian — American Indian or Alaska Native
+race_pacific_islander — Native Hawaiian or Other Pacific Islander
+eye_color_black — Black
+eye_color_blue — Blue
+eye_color_brown — Brown
+eye_color_gray — Gray
+eye_color_green — Green
+eye_color_hazel — Hazel
+eye_color_maroon — Maroon
+eye_color_pink — Pink
+eye_color_unknown — Unknown/Other
+hair_color_bald — Bald (No hair)
+hair_color_black — Black
+hair_color_blond — Blond
+hair_color_brown — Brown
+hair_color_gray — Gray
+hair_color_red — Red
+hair_color_sandy — Sandy
+hair_color_white — White
+hair_color_unknown — Unknown/Other
+
+WEB-ONLY TEXTAREAS (custom Part 11 output):
+criminal_history_extra — Page 2, Part 1, Item 20
+address_history_extra — Page 2, Part 1, Item 22
+
+Weight uses three separate text fields, right-aligned with unused leading boxes left blank.
+State dropdowns store two-letter abbreviations.
+Unit choices and yes/no choices map to separate PDF checkboxes.

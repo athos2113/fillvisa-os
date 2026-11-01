@@ -1,0 +1,9 @@
+I-751 PDF Page 10 field names
+
+TEXT FIELDS:
+preparer_sign — 8.a. Preparer’s Signature
+preparer_sign_date — 8.b. Date of Signature (MM/DD/YYYY)
+
+Use a regular PDF text field for preparer_sign as the signature-image placement target, matching the other signature sections.
+Signature is optional; its date is required when a signature is drawn.
+No checkbox fields are needed on this page.

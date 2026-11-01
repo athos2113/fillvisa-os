@@ -1,0 +1,21 @@
+I-751 PDF Page 7 field names
+
+TEXT FIELDS:
+petitioner_sign — 6.a. Petitioner’s Signature
+petitioner_sign_date — 6.b. Date of Signature
+spouse_interpreter_language — 1.b. Language in which the interpreter read the petition to you
+spouse_preparer_name — 2. Name of the preparer
+spouse_telephone — 3. Spouse’s or Individual’s Daytime Telephone Number
+spouse_mobile — 4. Spouse’s or Individual’s Mobile Telephone Number (if any)
+spouse_email — 5. Spouse’s or Individual’s Email Address (if any)
+
+CHECKBOXES:
+spouse_statement_english — 1.a. I can read and understand English, and have read and understand every question and instruction on this petition, as well as the petitioner’s answer to every question. I have read and understand the Acknowledgement of Appointment at USCIS Application Support Center.
+spouse_statement_interpreter — 1.b. The interpreter named in Part 9 has read to me every question and instruction on this petition, as well as the petitioner’s answer to every question, in a language in which I am fluent. I understand every question and instruction on this petition as translated to me by my interpreter, and have provided complete, true, and correct responses in the language indicated above. The interpreter named in Part 9 has also read the Acknowledgement of Appointment at USCIS Application Support Center to me, in the language in which I am fluent, and I understand this ASC Acknowledgement as read to me by my interpreter.
+spouse_used_preparer — I have requested the services of and consented to a preparer preparing this petition for me.
+spouse_preparer_is_attorney — Yes
+spouse_preparer_not_attorney — No
+
+petitioner_sign: use a regular PDF text field as the signature-image placement target, matching I-130A.
+petitioner_sign_date: MM/DD/YYYY.
+complete_spouse_part is web-only; no PDF field needed.

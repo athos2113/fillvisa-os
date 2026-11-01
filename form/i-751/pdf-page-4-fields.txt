@@ -1,0 +1,83 @@
+I-751 PDF Page 4 field names
+
+All dates: MM/DD/YYYY. State dropdowns map to PDF text fields.
+Use one text field across each A-Number digit grid.
+
+CHILD 1
+Text fields:
+child_1_physical_street — 6.a. Street Number and Name
+child_1_physical_number — Unit Number
+child_1_physical_city — 6.c. City or Town
+child_1_physical_state — 6.d. State
+child_1_physical_zip — 6.e. ZIP Code
+child_1_physical_province — 6.f. Province (if applicable)
+child_1_physical_postal — 6.g. Postal Code (if applicable)
+child_1_physical_country — 6.h. Country
+Checkboxes:
+child_1_physical_apt — Apt.
+child_1_physical_ste — Ste.
+child_1_physical_flr — Flr.
+
+CHILD 2
+Text fields:
+child_2_lastname — 7.a. Family Name (Last Name)
+child_2_firstname — 7.b. Given Name (First Name)
+child_2_middlename — 7.c. Middle Name (if any)
+child_2_dob — 8. Date of Birth
+child_2_a_number — 9. A-Number (if any)
+child_2_physical_street — 12.a. Street Number and Name
+child_2_physical_number — Unit Number
+child_2_physical_city — 12.c. City or Town
+child_2_physical_state — 12.d. State
+child_2_physical_zip — 12.e. ZIP Code
+child_2_physical_province — 12.f. Province (if applicable)
+child_2_physical_postal — 12.g. Postal Code (if applicable)
+child_2_physical_country — 12.h. Country
+Checkboxes:
+child_2_living_with_you_yes — Yes
+child_2_living_with_you_no — No
+child_2_applying_with_you_yes — Yes
+child_2_applying_with_you_no — No
+child_2_physical_apt — Apt.
+child_2_physical_ste — Ste.
+child_2_physical_flr — Flr.
+
+CHILD 3
+Text fields:
+child_3_lastname — 13.a. Family Name (Last Name)
+child_3_firstname — 13.b. Given Name (First Name)
+child_3_middlename — 13.c. Middle Name (if any)
+child_3_dob — 14. Date of Birth
+child_3_a_number — 15. A-Number (if any)
+child_3_physical_street — 18.a. Street Number and Name
+child_3_physical_number — Unit Number
+child_3_physical_city — 18.c. City or Town
+child_3_physical_state — 18.d. State
+child_3_physical_zip — 18.e. ZIP Code
+child_3_physical_province — 18.f. Province (if applicable)
+child_3_physical_postal — 18.g. Postal Code (if applicable)
+child_3_physical_country — 18.h. Country
+Checkboxes:
+child_3_living_with_you_yes — Yes
+child_3_living_with_you_no — No
+child_3_applying_with_you_yes — Yes
+child_3_applying_with_you_no — No
+child_3_physical_apt — Apt.
+child_3_physical_ste — Ste.
+child_3_physical_flr — Flr.
+
+CHILD 4
+Text fields:
+child_4_lastname — 19.a. Family Name (Last Name)
+child_4_firstname — 19.b. Given Name (First Name)
+child_4_middlename — 19.c. Middle Name (if any)
+child_4_dob — 20. Date of Birth
+child_4_a_number — 21. A-Number (if any)
+Checkboxes:
+child_4_living_with_you_yes — Yes
+child_4_living_with_you_no — No
+child_4_applying_with_you_yes — Yes
+child_4_applying_with_you_no — No
+
+has_child_2, has_child_3 and has_child_4 are web-only visibility controls; no PDF fields needed.
+Child 4 physical address is not on Page 4 and will be added from the next screenshot.

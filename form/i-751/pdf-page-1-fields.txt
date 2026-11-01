@@ -1,0 +1,40 @@
+I-751 PDF Page 1 field names
+
+Text fields (dates must be filled as MM/DD/YYYY; identifiers are single text fields spanning all digit boxes):
+attorney_bar — Attorney State Bar Number (if applicable)
+attorney_uscis — Attorney or Accredited Representative USCIS Online Account Number (if any)
+lastname — 1.a. Family Name (Last Name)
+firstname — 1.b. Given Name (First Name)
+middlename — 1.c. Middle Name (if any)
+other_1_lastname — 2.a. Family Name (Last Name)
+other_1_firstname — 2.b. Given Name (First Name)
+other_1_middlename — 2.c. Middle Name
+other_2_lastname — 3.a. Family Name (Last Name)
+other_2_firstname — 3.b. Given Name (First Name)
+other_2_middlename — 3.c. Middle Name
+dob — 4. Date of Birth
+birth_country — 5. Country of Birth
+citizenship_country — 6. Country of Citizenship or Nationality (provide all that apply)
+a_number — 7. Alien Registration Number (A-Number) (if any)
+ssn — 8. U.S. Social Security Number (if any)
+uscis_number — 9. USCIS Online Account Number (if any)
+marriage_date — 11. Date of Marriage
+marriage_place — 12. Place of Marriage
+marriage_ended_date — 13. If the marriage through which you gained conditional residence has ended, provide the date it ended (date of divorce or date of death)
+resident_expiry_date — 14. Conditional Residence Expires On
+
+Checkboxes:
+g28_attached — Form G-28 is attached
+marital_status_single — single
+marital_status_married — married
+marital_status_divorced — divorced
+marital_status_widowed — widowed
+
+Web-only controls:
+has_attorney — controls attorney block visibility
+other_names_extra — textarea, custom PDF Part 11 output for Part 1, Items 2–3
+
+Do not create fields for USCIS Use Only.
+Apt/Ste/Flr will map to separate PDF checkboxes when address fields are added.
+State will be a PDF text field; its web dropdown will store the requested two-letter abbreviation.
+Signature fields will use the I-130A signature-pad pattern when supplied.

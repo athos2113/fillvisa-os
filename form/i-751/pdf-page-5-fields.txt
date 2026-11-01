@@ -1,0 +1,53 @@
+I-751 PDF Page 5 fields
+
+TEXT FIELDS:
+child_4_physical_street — 24.a. Street Number and Name
+child_4_physical_number — Unit Number
+child_4_physical_city — 24.c. City or Town
+child_4_physical_state — 24.d. State
+child_4_physical_zip — 24.e. ZIP Code
+child_4_physical_province — 24.f. Province (if applicable)
+child_4_physical_postal — 24.g. Postal Code (if applicable)
+child_4_physical_country — 24.h. Country
+child_5_lastname — 25.a. Family Name (Last Name)
+child_5_firstname — 25.b. Given Name (First Name)
+child_5_middlename — 25.c. Middle Name (if any)
+child_5_dob — 26. Date of Birth
+child_5_a_number — 27. A-Number (if any)
+child_5_physical_street — 30.a. Street Number and Name
+child_5_physical_number — Unit Number
+child_5_physical_city — 30.c. City or Town
+child_5_physical_state — 30.d. State
+child_5_physical_zip — 30.e. ZIP Code
+child_5_physical_province — 30.f. Province (if applicable)
+child_5_physical_postal — 30.g. Postal Code (if applicable)
+child_5_physical_country — 30.h. Country
+accommodation_hearing_details — 4.a. Describe the requested accommodation for each person. If requesting a sign-language interpreter, indicate which language (for example, American Sign Language).
+accommodation_vision_details — 4.b. Describe the requested accommodation for each person who is blind or has low vision.
+accommodation_other_details — 4.c. Describe the nature of the disability and/or impairment and the accommodation requested for each person.
+
+CHECKBOXES:
+child_4_physical_apt — Apt.
+child_4_physical_ste — Ste.
+child_4_physical_flr — Flr.
+child_5_living_with_you_yes — Yes
+child_5_living_with_you_no — No
+child_5_applying_with_you_yes — Yes
+child_5_applying_with_you_no — No
+child_5_physical_apt — Apt.
+child_5_physical_ste — Ste.
+child_5_physical_flr — Flr.
+accommodation_you_yes — Yes
+accommodation_you_no — No
+accommodation_spouse_yes — Yes
+accommodation_spouse_no — No
+accommodation_children_yes — Yes
+accommodation_children_no — No
+accommodation_hearing — 4.a. I am deaf or hard of hearing.
+accommodation_vision — 4.b. I am blind or have low vision.
+accommodation_other — 4.c. I have another type of disability and/or impairment.
+
+Accommodation detail fields are multiline PDF text fields.
+Dates: MM/DD/YYYY. States: two-letter abbreviations. Use one field across A-Number digit boxes.
+Web-only: has_child_5, has_more_children, children_extra.
+children_extra is reserved for custom Part 11 output: Page 5, Part 5, Items 25–30.

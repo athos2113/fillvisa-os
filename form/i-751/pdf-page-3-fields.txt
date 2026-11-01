@@ -1,0 +1,52 @@
+I-751 PDF Page 3 field names
+Dates: MM/DD/YYYY. Use one text field across each boxed SSN or A-Number.
+State is a PDF text field containing the selected two-letter abbreviation.
+
+BASIS-FOR-PETITION
+Text fields:
+Checkboxes:
+joint_filing_spouse — 1.a. My spouse.
+joint_filing_parent_spouse — 1.b. My parent’s spouse because I am unable to be included in a joint petition filed by my parent and my parent’s spouse.
+waiver_deceased — 1.c. My spouse is deceased.
+waiver_divorce — 1.d. My marriage was entered in good faith, but the marriage was terminated through divorce or annulment.
+waiver_spouse_abuse — 1.e. I entered the marriage in good faith, and, during the marriage, I was battered, or was the subject of extreme cruelty, by my U.S. citizen or lawful permanent resident spouse.
+waiver_parent_spouse_abuse — 1.f. My parent entered the marriage in good faith, and, during the marriage, I was battered, or was subjected to extreme cruelty, by my parent’s U.S. citizen or lawful permanent resident spouse or by my conditional resident parent.
+waiver_hardship — 1.g. The termination of my status and removal from the United States would result in an extreme hardship.
+
+SPOUSE-DETAILS
+Text fields:
+spouse_lastname — 2.a. Family Name (Last Name)
+spouse_firstname — 2.b. Given Name (First Name)
+spouse_middlename — 2.c. Middle Name (if any)
+spouse_dob — 3. Date of Birth
+spouse_ssn — 4. U.S. Social Security Number (if any)
+spouse_a_number — 5. A-Number (if any)
+spouse_physical_street — 6.a. Street Number and Name
+spouse_physical_number — Unit Number
+spouse_physical_city — 6.c. City or Town
+spouse_physical_state — 6.d. State
+spouse_physical_zip — 6.e. ZIP Code
+spouse_physical_province — 6.f. Province (if applicable)
+spouse_physical_postal — 6.g. Postal Code (if applicable)
+spouse_physical_country — 6.h. Country
+Checkboxes:
+spouse_relationship_spouse — 1.a. Spouse or Former Spouse
+spouse_relationship_parent_spouse — 1.b. Parent’s Spouse or Former Spouse
+spouse_physical_apt — Apt.
+spouse_physical_ste — Ste.
+spouse_physical_flr — Flr.
+
+CHILDREN-INFO
+Text fields:
+child_1_lastname — 1.a. Family Name (Last Name)
+child_1_firstname — 1.b. Given Name (First Name)
+child_1_middlename — 1.c. Middle Name (if any)
+child_1_dob — 2. Date of Birth
+child_1_a_number — 3. A-Number (if any)
+Checkboxes:
+child_1_living_with_you_yes — Yes
+child_1_living_with_you_no — No
+child_1_applying_with_you_yes — Yes
+child_1_applying_with_you_no — No
+
+Web-only: filing_type selects joint or waiver mode; has_children controls child fields. Neither needs a PDF field.

@@ -1,0 +1,33 @@
+I-751 PDF Page 9 field names
+
+TEXT FIELDS:
+interpreter_language — I certify that I am fluent in English and the following language, which is the same language provided in Part 7, Item 1.b.
+interpreter_sign — 6.a. Interpreter’s Signature
+interpreter_sign_date — 6.b. Date of Signature
+preparer_lastname — 1.a. Preparer’s Family Name (Last Name)
+preparer_firstname — 1.b. Preparer’s Given Name (First Name)
+preparer_business — 2. Preparer’s Business or Organization Name (if any)
+preparer_street — 3.a. Street Number and Name
+preparer_number — Unit Number
+preparer_city — 3.c. City or Town
+preparer_state — 3.d. State
+preparer_zip — 3.e. ZIP Code
+preparer_province — 3.f. Province (if applicable)
+preparer_postal — 3.g. Postal Code (if applicable)
+preparer_country — 3.h. Country
+preparer_telephone — 4. Preparer’s Daytime Telephone Number
+preparer_fax — 5. Preparer’s Fax Number (if any)
+preparer_email — 6. Preparer’s Email Address (if any)
+
+CHECKBOXES:
+preparer_apt — Apt.
+preparer_ste — Ste.
+preparer_flr — Flr.
+preparer_statement_not_attorney — 7.a. I am not an attorney or accredited representative but have prepared this petition on behalf of the petitioner and with the petitioner’s consent.
+preparer_statement_attorney — 7.b. I am an attorney or accredited representative and my representation of the petitioner in this case extends or does not extend beyond preparation of this petition, as indicated below.
+preparer_representation_extends — Extends beyond preparation of this petition.
+preparer_representation_not_extends — Does not extend beyond preparation of this petition.
+
+interpreter_sign: regular PDF text field used as the signature-image placement target.
+interpreter_sign_date: MM/DD/YYYY. preparer_state: two-letter abbreviation.
+has_preparer is web-only; no PDF field needed.
