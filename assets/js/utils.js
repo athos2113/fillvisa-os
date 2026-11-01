@@ -27,7 +27,7 @@ function displayFillvisaOsFooterVersion() {
   document.querySelectorAll("footer .col-lg-3.col-12 .me-7").forEach(footerColumn => {
     const heading = footerColumn.querySelector("h4");
     const description = Array.from(footerColumn.querySelectorAll("p")).find(paragraph =>
-      paragraph.textContent.includes("Free, privacy-first tools")
+      paragraph.textContent.includes("privacy-first tools")
     );
 
     if (!heading || heading.textContent.trim() !== "Fillvisa" || !description) return;

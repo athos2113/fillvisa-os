@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="464" height="580" viewBox="0 0 464 580" fill="none" role="img" aria-labelledby="approval-title approval-description">
+  <title id="approval-title">Immigration form approval stamp animation</title>
+  <desc id="approval-description">A hand lowers a rubber stamp onto an illustrated immigration form, presses it, and lifts away to reveal red APPROVED ink. The illustration loops every six seconds on a transparent background. Reduced motion displays the stamped document without movement.</desc>
+  <defs>
+    <style>
+      .stamping-hand { animation: stamp-press 6s cubic-bezier(.42,0,.22,1) infinite; }
+      .approval-reveal { animation: ink-reveal 6s linear infinite; }
+      @keyframes stamp-press {
+        0%, 13% { transform: translate(12px,-72px); }
+        29% { transform: translate(-60px,10px); }
+        33% { transform: translate(-62px,13px); }
+        38% { transform: translate(-60px,10px); }
+        55%, 88% { transform: translate(30px,-85px); }
+        100% { transform: translate(12px,-72px); }
+      }
+      @keyframes ink-reveal {
+        0%, 29% { opacity: 0; }
+        32%, 87% { opacity: 1; }
+        96%, 100% { opacity: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .stamping-hand { animation: none; transform: translate(30px,-85px); }
+        .approval-reveal { animation: none; opacity: 1; }
+      }
+    </style>
+    <clipPath id="frontPageClip"><rect width="191" height="307"/></clipPath>
+    <clipPath id="backPageClip"><path d="M37 193L219 129L317 413L173 470Z"/></clipPath>
+  </defs>
+
+  <!-- Sheet beneath the main application -->
+  <g id="underlying-form">
+    <path d="M37 193L219 129L317 413L173 470Z" fill="#F7B6E5"/>
+    <g clip-path="url(#backPageClip)" transform="translate(43 202) rotate(-22)" opacity=".95">
+      <rect x="10" y="10" width="160" height="39" fill="#C88CE9"/>
+      <path d="M13 61q4-7 8-4t7-2t8-2m-23 12h80m-80 7h103m-103 18h135m-135 7h144m-144 7h113" stroke="#512746" stroke-width="1.4" fill="none"/>
+      <path d="M13 130h150v14H13z" fill="#C78EE8"/>
+      <path d="M13 155h140m-140 10h126m-126 12h139" stroke="#5C3558" stroke-width="1.3"/>
+    </g>
+  </g>
+
+  <!-- Passport behind and to the right of the paperwork -->
+  <g id="passport">
+    <path d="M333.4 79.5L413.5 83.6L405.7 190L334.9 187.4Z" fill="#86508E"/>
+    <path d="M303.5 96.4L383.4 92.8L385 202.8L305.2 205.6Z" fill="#44264B"/>
+    <g transform="rotate(-2 344 145)" stroke="#FBE8F7" fill="none" stroke-width="1.1">
+      <circle cx="344.3" cy="152.5" r="22.6"/>
+      <ellipse cx="344.3" cy="152.5" rx="11" ry="22.6"/>
+      <path d="M344.3 129.9v45.2M322 152.5h44.6M326.5 138.5c11.5 4.6 24.4 4.8 35.6 0M326.2 166.3c11.7-4.7 24.4-4.7 36 0"/>
+      <rect x="334.7" y="185" width="18.1" height="11.7" stroke-width="1.4"/>
+      <path d="M334.7 190.5h18.1"/>
+    </g>
+    <text x="310" y="121" transform="rotate(-2.4 310 121)" fill="#FFE6F7" font-family="Arial Narrow, Arial, Helvetica, sans-serif" font-stretch="condensed" font-size="13.3" font-weight="300" letter-spacing=".6">PASSPORT</text>
+  </g>
+
+  <!-- Front form, angled exactly as a physical page -->
+  <g id="main-form" transform="translate(59 164) rotate(-16)">
+    <rect width="191" height="307" fill="#FED8F1"/>
+    <g clip-path="url(#frontPageClip)">
+      <rect x="11" y="10" width="170" height="30" fill="#C989E9"/>
+      <text x="17" y="32" font-family="Arial, Helvetica, sans-serif" font-size="20.5" letter-spacing="2.2" font-weight="300" fill="#492A50" textLength="155" lengthAdjust="spacingAndGlyphs">IMMIGRATION</text>
+
+      <!-- Intro form handwriting -->
+      <g stroke="#542B4E" stroke-width="1.55" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 53l3-7 2 6 4-5 3 5 4-7 3 6 4-5 2 4 4-6 3 5 4-3 3 2 4-5 3 2 4-3"/>
+        <path d="M14 63h117M14 70h116" stroke-width="1.05"/>
+        <path d="M14 75l3-6 3 5 4-6 3 6 4-5 3 3 5-4 3 5 5-4 3 2"/>
+        <path d="M143 53l3-7 3 6 4-5 3 4 4-6 4 4 4-5 4 4 5-3"/>
+        <path d="M143 61h35M147 71h30" stroke-width="1.05"/>
+      </g>
+      <g id="form-fields" transform="translate(0 -13)">
+      <!-- Applicant image and details -->
+      <rect x="14" y="95" width="40" height="35" fill="#F8B7E7"/>
+      <circle cx="34" cy="108" r="7.3" fill="#CB8BEA"/>
+      <path d="M18 130q0-15 16-15t17 15z" fill="#C78BE9"/>
+      <g stroke="#542B4E" stroke-width="1.65" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M63 99l4-7 3 8 4-5 3 3 5-7 4 9 4-6 4 4 4-7 4 6 4-4"/>
+        <path d="M62 113h118M62 122h96" stroke-width="1.08"/>
+        <path d="M72 139l3-7 3 5 4-8 4 6 4-6 4 4 4-4 3 5 4-4 4 2 4-4 5 5 5-4"/>
+        <path d="M143 139l4-7 4 3 4-6 4 5 4-5 4 2 4-6 4 3"/>
+      </g>
+      <rect x="57" y="131" width="10" height="10" fill="#C58AEB"/>
+      <rect x="124" y="131" width="9" height="10" fill="#C58AEB"/>
+
+      <g id="lower-fields" transform="translate(0 -11)">
+      <!-- Highlight stripe above pink details area -->
+      <rect x="14" y="151" width="166" height="12" fill="#BF87E5"/>
+      <path d="M17 157l3-5 3 4 4-5 4 4 4-6 4 5 4-6 4 4 4-5 4 5 4-7 4 4 5-6 4 4 5-5 4 3" fill="none" stroke="#543052" stroke-width="1.45" stroke-linecap="round"/>
+      <rect x="14" y="163" width="166" height="56" fill="#FFB7E8"/>
+      <g fill="#C68BE8">
+        <rect x="19" y="175" width="8" height="9"/>
+        <rect x="19" y="194" width="8" height="9"/>
+        <rect x="120" y="175" width="9" height="10"/>
+        <rect x="120" y="193" width="9" height="10"/>
+      </g>
+      <g fill="none" stroke="#56304F" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.55">
+        <path d="M34 179l3-5 3 4 4-6 4 4 4-6 4 5 4-7 4 5 4-5 4 4 5-4 4 2"/>
+        <path d="M34 193l3-7 4 4 4-5 4 5 4-6 4 4 4-6 4 7 4-3 4 2"/>
+        <path d="M136 179l3-6 4 4 4-6 3 4 5-5 4 4 4-5 4 3"/>
+        <path d="M136 195l3-5 4 3 4-5 4 4 4-6 4 4 4-4 4 2"/>
+      </g>
+      <!-- Second thick section header -->
+      <rect x="14" y="224" width="166" height="13" fill="#B983E2"/>
+      <path d="M19 230l3-5 3 4 4-6 4 4 4-6 4 5 4-5 4 3 5-4 4 5 4-7 4 4 5-5 4 3 4-4 4 2" fill="none" stroke="#56314F" stroke-width="1.5"/>
+      <rect x="14" y="237" width="166" height="28" fill="#FFB7E8"/>
+      <path d="M24 250H169M24 259H169" fill="none" stroke="#512C4A" stroke-width="1.15"/>
+
+      </g>
+      </g>
+      <!-- Small signatures near the lower end of paper -->
+      <g stroke="#51284B" stroke-linecap="round" fill="none">
+        <path d="M20 286h50M20 298q5-9 6-4t4 5 8-7 4 5 5-5" stroke-width="1.35"/>
+        <path d="M42 300h33" stroke-width="1.2"/>
+        <path d="M142 292h32M147 301l28-1" stroke-width="1.2"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Red approved ink on the document; ink is independent of the stamp -->
+  <g class="approval-reveal">
+  <g id="approved-ink" transform="rotate(-57 245 365)">
+    <text x="201" y="367" fill="#BB3941" font-family="Arial Narrow, Impact, Arial, sans-serif" font-weight="700" font-size="15.8" letter-spacing="-0.5" textLength="93" lengthAdjust="spacingAndGlyphs">APPROVED</text>
+  </g>
+
+  </g>
+
+  <g class="stamping-hand">
+  <!-- Rubber stamp under the hand -->
+  <g id="rubber-stamp">
+    <path d="M265 379L327.7 299.5L350.9 316.5L286.7 397.8Z" fill="#874357"/>
+    <path d="M327.7 299.5l23.2 17-13.3 12.5-20.6-14Z" fill="#A14F65"/>
+    <path d="M286.7 397.8L265 379L279.1 362.2L300.5 379.8Z" fill="#703D52"/>
+    <path d="M292 337.8L318 317.1L331 334.6L308.5 357.2q-6.8 6.9-11.8 1.9Z" fill="#492B3E"/>
+  </g>
+
+  <!-- Arm, glove-less hand, shirt cuff, and suit sleeve -->
+  <g id="hand-and-arm">
+    <path d="M289.2 332.2l12.3-12.3 17.7 16.2-2.8-18.7 10-6.1 11.5 18.4-4.8-14.8 11.4-6.1 8.6 19.6-3.1-13.9 11.1-2.2 8.5 34.2 2.6 36.5 7.9 16.1-52.5 38.2-14.8-27.2-8.7-25.3-10.8-17.1-6.1-15.5 4.1-5.1 4.9 5.2-10.9-18.1Z" fill="#F07497"/>
+    <!-- Refine contour to preserve individual folded fingers -->
+    <path d="M302.1 322.9l16.4 16.3M316.6 317.7l12.8 15M334.1 315.4l8 13.1" stroke="#5B2946" stroke-width="1.45" stroke-linecap="round"/>
+    <path d="M321.1 416l49.8-37.7 9.3 18.3-49.7 38.3Z" fill="#FFE6F7"/>
+    <path d="M376.1 386.5L600 792H486L320.6 431.6Z" fill="#44264B"/>
+    <path d="M382 399L464 550" stroke="#533057" stroke-width="1" opacity=".3"/>
+  </g>
+  </g>
+</svg>

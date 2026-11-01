@@ -1,0 +1,239 @@
+[
+  {
+    "title": "Marriage-Based Green Card Application",
+    "subtitle": "For eligible applicants living inside the United States who want to apply for a green card through their U.S. citizen or lawful permanent resident spouse.",
+    "slug": "marriage-based-green-card",
+    "forms": [
+      "i-130",
+      "i-130a",
+      "i-485",
+      "i-864"
+    ],
+    "active": true
+  },
+  {
+    "title": "Petition By Spouse Application",
+    "subtitle": "For U.S. citizens and lawful permanent residents petitioning for a spouse, with next steps for applicants inside or outside the United States.",
+    "slug": "petition-by-spouse",
+    "forms": [
+      "i-130",
+      "i-130a",
+      "i-864"
+    ],
+    "active": true
+  },
+  {
+    "title": "Removal of Conditions Application",
+    "subtitle": "For eligible conditional permanent residents seeking to remove the conditions on their two-year green card obtained through marriage.",
+    "slug": "removal-of-conditions",
+    "forms": [
+      "i-751"
+    ],
+    "active": true
+  },
+  {
+    "title": "Citizenship Application",
+    "subtitle": "For eligible lawful permanent residents seeking U.S. citizenship through naturalization.",
+    "slug": "citizenship",
+    "forms": [
+      "n-400"
+    ],
+    "active": true
+  },
+  {
+    "title": "EB-1A Extraordinary Ability Application",
+    "subtitle": "For individuals with sustained national or international acclaim in the sciences, arts, education, business, or athletics seeking an employment-based green card.",
+    "slug": "eb-1a",
+    "forms": [
+      "i-140"
+    ],
+    "active": true
+  },
+  {
+    "title": "EB-1B Outstanding Professor or Researcher Application",
+    "subtitle": "For internationally recognized professors and researchers with qualifying experience and a U.S. employer offering an eligible teaching or permanent research position.",
+    "slug": "eb-1b",
+    "forms": [
+      "i-140"
+    ],
+    "active": true
+  },
+  {
+    "title": "EB-1C Multinational Manager or Executive Application",
+    "subtitle": "For managers and executives with qualifying employment abroad seeking an employment-based green card through a related U.S. employer.",
+    "slug": "eb-1c",
+    "forms": [
+      "i-140"
+    ],
+    "active": true
+  },
+  {
+    "title": "EB-2 National Interest Waiver (NIW) Application",
+    "subtitle": "For advanced-degree professionals and individuals with exceptional ability seeking an employment-based green card through a waiver of the job offer and labor certification requirements in the U.S. national interest.",
+    "slug": "eb-2-niw",
+    "forms": [
+      "i-140",
+      "eta-9089"
+    ],
+    "active": true
+  },
+  {
+    "title": "EB-2 Employer-Sponsored Green Card Application",
+    "subtitle": "For advanced-degree professionals and individuals with exceptional ability pursuing a green card through a U.S. employer, generally with PERM labor certification.",
+    "slug": "eb-2",
+    "forms": [
+      "eta-9141",
+      "eta-9089",
+      "i-140"
+    ],
+    "active": true
+  },
+  {
+    "title": "EB-3 Employer-Sponsored Green Card Application",
+    "subtitle": "For skilled workers, professionals, and other workers pursuing a green card through a permanent U.S. job offer, generally with PERM labor certification.",
+    "slug": "eb-3",
+    "forms": [
+      "eta-9141",
+      "eta-9089",
+      "i-140"
+    ],
+    "active": true
+  },
+  {
+    "title": "Employment-Based Green Card Application",
+    "subtitle": "For eligible applicants inside the United States with an approved I-140 and an available visa seeking employment-based adjustment of status; includes guidance for eligible concurrent filings and family members.",
+    "slug": "employment-based-adjustment-of-status",
+    "forms": [
+      "i-485",
+      "i-765",
+      "i-131",
+      "i-864"
+    ],
+    "active": true
+  },
+  {
+    "title": "H-1B Specialty Occupation Application",
+    "subtitle": "For workers with a qualifying specialty occupation offer from a U.S. employer, including applicable cap registration, LCA, and I-129 petition steps.",
+    "slug": "h-1b",
+    "forms": [
+      "i-129"
+    ],
+    "active": true
+  },
+  {
+    "title": "O-1 Extraordinary Ability or Achievement Application",
+    "subtitle": "For individuals with extraordinary ability or achievement pursuing temporary U.S. work through an eligible employer or agent under O-1A or O-1B.",
+    "slug": "o-1",
+    "forms": [
+      "i-129"
+    ],
+    "active": true
+  },
+  {
+    "title": "Fiancé-Petitioned K-1 Visa Application",
+    "subtitle": "For foreign fiancés of U.S. citizens planning to enter the United States to marry their petitioning partner within 90 days of admission.",
+    "slug": "k-1",
+    "forms": [
+      "i-129f",
+      "usa-ds160",
+      "i-134"
+    ],
+    "active": true
+  },
+  {
+    "title": "Employment Authorization Document Application",
+    "subtitle": "For eligible first-time and renewal applicants preparing Form I-765 to request employment authorization or an Employment Authorization Document.",
+    "slug": "employment-authorization-document",
+    "forms": [
+      "i-765"
+    ],
+    "active": true
+  },
+  {
+    "title": "Travel Document Application",
+    "subtitle": "For eligible applicants seeking advance parole, a reentry permit, or a refugee travel document using Form I-131.",
+    "slug": "travel-document",
+    "forms": [
+      "i-131"
+    ],
+    "active": true
+  },
+  {
+    "title": "Extension of Status Application",
+    "subtitle": "For eligible nonimmigrants seeking additional time in the United States, with guidance on I-539 filings and student or exchange program extensions.",
+    "slug": "extension-of-status",
+    "forms": [
+      "i-539"
+    ],
+    "active": true
+  },
+  {
+    "title": "Parent-Petitioned Consular Green Card Application",
+    "subtitle": "For eligible unmarried children under 21 living outside the United States who are sponsored by a U.S. citizen or lawful permanent resident parent.",
+    "slug": "parent-petitioned-consular-green-card",
+    "forms": [
+      "i-130",
+      "i-864",
+      "i-864a"
+    ],
+    "active": true
+  },
+  {
+    "title": "Parent-Petitioned AOS Green Card Application",
+    "subtitle": "For eligible unmarried children under 21 living inside the United States who seek adjustment of status through a U.S. citizen or lawful permanent resident parent.",
+    "slug": "parent-petitioned-aos-green-card",
+    "forms": [
+      "i-130",
+      "i-485",
+      "i-864",
+      "i-864a",
+      "i-765",
+      "i-131"
+    ],
+    "active": true
+  },
+  {
+    "title": "Child-Petitioned Consular Green Card Application",
+    "subtitle": "For eligible parents living outside the United States seeking permanent residence through sponsorship by their U.S. citizen child age 21 or older.",
+    "slug": "child-petitioned-consular-green-card",
+    "forms": [
+      "i-130",
+      "i-864",
+      "i-864a"
+    ],
+    "active": true
+  },
+  {
+    "title": "Child-Petitioned AOS Green Card Application",
+    "subtitle": "For eligible parents living inside the United States seeking adjustment of status through sponsorship by their U.S. citizen child age 21 or older.",
+    "slug": "child-petitioned-aos-green-card",
+    "forms": [
+      "i-130",
+      "i-485",
+      "i-864",
+      "i-864a",
+      "i-765",
+      "i-131"
+    ],
+    "active": true
+  },
+  {
+    "title": "Green Card Renewal Application",
+    "subtitle": "For eligible permanent residents renewing an expired or expiring 10-year green card, or replacing a lost, stolen, damaged, or incorrect card.",
+    "slug": "green-card-renewal",
+    "forms": [
+      "i-90"
+    ],
+    "active": true
+  },
+  {
+    "title": "DACA Renewal Application",
+    "subtitle": "For eligible DACA recipients seeking renewal of deferred action and associated work authorization. Initial requests cannot currently be granted under court restrictions.",
+    "slug": "daca-renewal",
+    "forms": [
+      "i-821d",
+      "i-765"
+    ],
+    "active": true
+  }
+]
