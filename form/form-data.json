@@ -6,7 +6,8 @@
     "categories": ["pdf-form"],
     "slug": "ar-11",
     "pdf": "ar-11/fillvisa_ar11_acro.pdf",
-    "active": "true"
+    "active": "true",
+    "editionDate": "11/02/22"
   },
   {
     "title": "DS-160",
@@ -24,7 +25,8 @@
     "categories": ["adoption", "pdf-form"],
     "slug": "g-1145",
     "pdf": "g-1145/fillvisa_g1145_acro.pdf",
-    "active": "true"
+    "active": "true",
+    "editionDate": "09/26/14"
   },
   {
     "title": "G-1450",
@@ -33,7 +35,8 @@
     "categories": ["pdf-form"],
     "slug": "g-1450",
     "pdf": "g-1450/fillvisa_g1450_acro.pdf",
-    "active": "true"
+    "active": "true",
+    "editionDate": "02/06/26"
   },
   {
     "title": "G-1650",
@@ -42,7 +45,8 @@
     "categories": ["pdf-form"],
     "slug": "g-1650",
     "pdf": "g-1650/fillvisa_g1650_acro.pdf",
-    "active": "true"
+    "active": "true",
+    "editionDate": "06/03/25"
   },
   {
     "title": "I-129",
@@ -51,7 +55,8 @@
     "categories": ["employment", "pdf-form"],
     "slug": "i-129",
     "pdf": "",
-    "active": "true"
+    "active": "true",
+    "editionDate": "09/09/26"
   },
   {
     "title": "I-129F",
@@ -60,7 +65,8 @@
     "categories": ["adoption", "pdf-form", "family", "green-card"],
     "slug": "i-129f",
     "pdf": "pdf/ar-11.pdf",
-    "active": "true"
+    "active": "true",
+    "editionDate": "01/20/25"
   },
   {
     "title": "I-130",
@@ -69,7 +75,8 @@
     "categories": ["pdf-form", "family", "green-card"],
     "slug": "i-130",
     "pdf": "",
-    "active": "true"
+    "active": "true",
+    "editionDate": "04/01/24"
   },
   {
     "title": "I-130A",
@@ -78,7 +85,8 @@
     "categories": ["pdf-form", "family", "green-card"],
     "slug": "i-130a",
     "pdf": "",
-    "active": "true"
+    "active": "true",
+    "editionDate": "04/01/24"
   },
   {
     "title": "I-131",
@@ -87,7 +95,8 @@
     "categories": ["pdf-form", "employment", "family", "green-card"],
     "slug": "i-131",
     "pdf": "",
-    "active": "false"
+    "active": "false",
+    "editionDate": "01/20/25"
   },
   {
     "title": "I-131A",
@@ -96,7 +105,8 @@
     "categories": ["pdf-form", "employment", "family", "green-card"],
     "slug": "i-131a",
     "pdf": "",
-    "active": "false"
+    "active": "false",
+    "editionDate": "01/20/25"
   },
   {
     "title": "I-134",
@@ -105,7 +115,8 @@
     "categories": ["pdf-form", "adoption", "family"],
     "slug": "i-134",
     "pdf": "",
-    "active": "false"
+    "active": "false",
+    "editionDate": "01/20/25"
   },
   {
     "title": "ETA-9089",
@@ -132,7 +143,8 @@
     "categories": ["pdf-form", "employment", "perm", "green-card"],
     "slug": "i-140",
     "pdf": "",
-    "active": "true"
+    "active": "true",
+    "editionDate": "06/07/24"
   },
   {
     "title": "G-28",
@@ -141,7 +153,8 @@
     "categories": ["pdf-form", "employment", "perm"],
     "slug": "g-28",
     "pdf": "",
-    "active": "true"
+    "active": "true",
+    "editionDate": "09/17/18"
   },
   {
     "title": "I-907",
@@ -150,7 +163,8 @@
     "categories": ["pdf-form", "employment", "perm"],
     "slug": "i-907",
     "pdf": "",
-    "active": "true"
+    "active": "true",
+    "editionDate": "04/01/24"
   },
   {
     "title": "I-485",
@@ -159,7 +173,8 @@
     "categories": ["pdf-form", "green-card"],
     "slug": "i-485",
     "pdf": "i-485/fillvisa_i-485-acro.pdf",
-    "active": "true"
+    "active": "true",
+    "editionDate": "09/18/26"
   },
   {
     "title": "I-539",
@@ -168,7 +183,8 @@
     "categories": ["pdf-form"],
     "slug": "i-539",
     "pdf": "",
-    "active": "true"
+    "active": "true",
+    "editionDate": "09/15/26"
   },
   {
     "title": "I-751",
@@ -177,7 +193,8 @@
     "categories": ["pdf-form", "green-card"],
     "slug": "i-751",
     "pdf": "",
-    "active": "true"
+    "active": "true",
+    "editionDate": "04/01/24"
   },
   {
     "title": "I-765",
@@ -185,7 +202,8 @@
     "description": "Eligible individuals use Form I-765 (Application for Employment Authorization) to obtain an initial, renewal, or replacement Employment Authorization Document (EAD), also known as a work permit.",
     "categories": ["pdf-form", "employment", "family", "green-card"],
     "slug": "i-765",
-    "active": "true"
+    "active": "true",
+    "editionDate": "08/21/25"
   },
   {
     "title": "I-821D",
@@ -194,7 +212,8 @@
     "categories": ["humanitarian", "pdf-form"],
     "slug": "i-821d",
     "pdf": "",
-    "active": "false"
+    "active": "false",
+    "editionDate": ""
   },
   {
     "title": "I-864",
@@ -203,7 +222,8 @@
     "categories": [],
     "slug": "i-864",
     "pdf": "",
-    "active": "true"
+    "active": "true",
+    "editionDate": "08/24/26"
   },
   {
     "title": "I-864A",
@@ -212,7 +232,8 @@
     "categories": [],
     "slug": "i-864a",
     "pdf": "",
-    "active": "false"
+    "active": "false",
+    "editionDate": ""
   },
   {
     "title": "I-90",
@@ -221,7 +242,8 @@
     "categories": ["green-card", "pdf-form"],
     "slug": "i-90",
     "pdf": "i-90/fillvisa_i90_acro.pdf",
-    "active": "true"
+    "active": "true",
+    "editionDate": "01/20/25"
   },
   {
     "title": "I-912",
@@ -230,7 +252,8 @@
     "categories": ["humanitarian", "pdf-form"],
     "slug": "i-912",
     "pdf": "",
-    "active": "true"
+    "active": "true",
+    "editionDate": "07/22/25"
   },
   {
     "title": "N-400",
@@ -239,7 +262,8 @@
     "categories": ["pdf-form", "citizenship-naturalization"],
     "slug": "n-400",
     "pdf": "n-400/fillvisa_n-400-acro.pdf",
-    "active": "true"
+    "active": "true",
+    "editionDate": "01/20/25"
   },
   {
     "title": "N-565",
@@ -248,7 +272,8 @@
     "categories": ["pdf-form", "citizenship-naturalization"],
     "slug": "n-565",
     "pdf": "",
-    "active": "false"
+    "active": "false",
+    "editionDate": ""
   },
   {
     "title": "N-600",
@@ -257,6 +282,7 @@
     "categories": ["pdf-form", "adoption", "citizenship-naturalization"],
     "slug": "n-600",
     "pdf": "",
-    "active": "false"
+    "active": "false",
+    "editionDate": ""
   }
 ]

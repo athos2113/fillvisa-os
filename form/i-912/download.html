@@ -475,7 +475,8 @@
 <h2 class="h5">Review your PDF</h2>
 <iframe id="pdfPreviewFrame" title="Completed I-912 PDF preview" style="width:100%;height:750px;border:1px solid #ddd;"></iframe>
 <div class="border-top mt-4 pt-4">
-<div class="text-center"><button type="button" id="downloadPdfBtn" class="btn btn-success btn-lg radiate" disabled><i class="bi bi-download me-2" aria-hidden="true"></i>Download PDF</button></div>
+<div class="text-center"><p class="small text-body-secondary mb-3" data-form-edition="i-912" hidden>PDF edition: <time></time></p>
+<button type="button" id="downloadPdfBtn" class="btn btn-success btn-lg radiate" disabled><i class="bi bi-download me-2" aria-hidden="true"></i>Download PDF</button></div>
 <div id="reviewInvite"></div>
 </div>
 </section>
@@ -859,6 +860,7 @@
       });
       // Show FillvisaReviewInvite only after PDF output is successfully generated.
    </script>
+   <script src="../../assets/js/form-edition.js"></script>
 </body>
 
 </html>
