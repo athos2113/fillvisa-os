@@ -10,6 +10,15 @@
     "editionDate": "11/02/22"
   },
   {
+    "title": "Custom Form Builder",
+    "subtitle": "Create Your Own Forms",
+    "description": "Build custom forms for client intake, questionnaires, and other workflows. Add your own questions, fill out forms online, and download completed PDFs. Free to use, no account required.",
+    "categories": ["web-form"],
+    "slug": "build",
+    "pdf": "",
+    "active": "true"
+  },
+  {
     "title": "DS-160",
     "subtitle": "Online Nonimmigrant Visa Application",
     "description": "Travelers applying for a temporary U.S. visa must complete Form DS-160 online. It collects key personal and travel details and is submitted electronically before the visa interview.",
