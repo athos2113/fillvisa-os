@@ -1482,13 +1482,13 @@
 
             // If any errors, block submission
             if (errors.length > 0) {
-                alert("Please fix the following issues:\n\n" + errors.join("\n"));
+                i485Alert("Please fix the following issues:\n\n" + errors.join("\n"));
                 return;
             }
 
             // === Form is correct ===
             localStorage.setItem("i485Valid-9g", "true");
-            alert("✅ Form validated successfully.");
+            i485Alert("✅ Form validated successfully.");
             updateSidebarStatus()
             updateMobileNavStatus();
 
@@ -1538,6 +1538,8 @@
 
 
     <script src="maps/conditional-fields.js" data-section="9g"></script>
+   <script src="i18n-adapter.js"></script>
+   <script src="../../assets/js/i18n.js" data-locales="./locales/"></script>
 </body>
 
 </html>

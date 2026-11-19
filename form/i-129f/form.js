@@ -1,3 +1,5 @@
+// UI translation only; schema labels and stored values stay in English.
+function i129fTranslate(text) { return window.FillvisaI18n?.t(text) ?? text; }
 /* Form rendering, conditional validation and local persistence for base parts. */
 (function(){
 'use strict';
@@ -44,7 +46,7 @@ function render(page,container,setup){
   const item=controls.get(f.id);if(!item||item.wrap.hidden||!item.inputs.length)return '';
   const value=data[f.id]||'';
   let message=B.error(f,value,data,setup);
-  if(!message){const bad=item.inputs.find(i=>!i.validity.valid);if(bad)message=bad.validationMessage;}
+  if(!message){const bad=item.inputs.find(i=>!i.validity.valid);if(bad)message=bad.type==='email'?'Enter a valid email address.':bad.type==='number'?'Enter a valid number within the allowed range.':bad.type==='date'?'Enter a valid date.':'Enter a valid value.';}
   const valid=!message&&!!String(value).trim();
   item.inputs.forEach(i=>{i.classList.toggle('is-valid',valid);i.classList.toggle('is-invalid',!!message);i.setAttribute('aria-invalid',String(!!message));});
   item.feedback.textContent=message;item.feedback.style.display=message?'block':'none';
@@ -122,7 +124,7 @@ function review(container,setup){
   const data=B.values(fields,read('i129f-'+page),setup);const list=el('dl',null,'mt-3');
   fields.filter(f=>Object.hasOwn(data,f.id)&&data[f.id]).forEach(f=>{
    const val=f.type==='signature'?'Signature added':f.type==='checkboxes'?f.options.filter(([v])=>data[f.id].split(',').includes(v)).map(([,label])=>label).join('; '):f.options?(f.options.find(([v])=>v===data[f.id])||['',data[f.id]])[1]:data[f.id];
-   list.append(el('dt',f.label),el('dd',val));
+   const answer=el('dd',val);answer.setAttribute('translate','no');list.append(el('dt',f.label),answer);
   });section.append(list);const edit=el('a','Edit this section');edit.href=page+'.html';section.append(edit);container.append(section);
  });
 }

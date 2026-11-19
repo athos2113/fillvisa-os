@@ -469,7 +469,7 @@
          </aside>
          <div class="col-lg-8 col-xl-9">
             <div class="card p-4 p-md-5">
-               <p id="stepLabel" class="text-primary small mb-2"></p>
+               <nav aria-label="Breadcrumb"><ol class="breadcrumb mb-4"><li id="stepLabel" class="breadcrumb-item active" aria-current="page"></li></ol></nav>
                <h1 class="h2">Preview and Download</h1>
                <p class="small text-body-secondary">Form I-129F</p>
                <div id="downloadGate" aria-live="polite"></div>
@@ -767,12 +767,12 @@
             const sections = {};
             for (const id of ['info-about-you', 'beneficiary-info', 'other-info', 'bio-info', 'petitioner-info', 'interpreter-info', 'preparer-info']) {
                const data = JSON.parse(localStorage.getItem('i129f-' + id) || '{}');
-               if (!data || typeof data !== 'object' || Array.isArray(data)) throw new Error('Saved answers could not be read. Revisit ' + id + '.');
+               if (!data || typeof data !== 'object' || Array.isArray(data)) throw new Error(i129fTranslate('Saved answers could not be read. Revisit this section:') + ' ' + i129fTranslate(I129FPages.parts[id][0]) + '.');
                sections[id] = data;
                for (const field of I129FBase.maps[id]) {
                   const value = field.derive ? field.derive(data, {}) : String(data[field.id] ?? '');
                   const error = I129FBase.error(field, value, data, {});
-                  if (error) throw new Error(field.label + ': ' + error);
+                  if (error) throw new Error(i129fTranslate(field.label) + ': ' + i129fTranslate(error));
                }
             }
             const response = await fetch('fillvisa_i-129f_acro.pdf');
@@ -785,7 +785,7 @@
             document.getElementById('pdfPreviewSection').hidden = false;
             document.getElementById('downloadPdfBtn').disabled = false;
          } catch (error) {
-            if (run === generation) { resetPreview(); alert('Unable to create PDF: ' + error.message); }
+            if (run === generation) { resetPreview(); alert(i129fTranslate('Unable to create PDF:') + ' ' + i129fTranslate(error.message)); }
          } finally {
             generating = false;
             button.textContent = 'Preview PDF';
@@ -844,5 +844,6 @@
       });
    </script>
    <script src="../../assets/js/form-edition.js"></script>
+   <script src="../../assets/js/i18n.js" data-locales="./locales/"></script>
 </body>
 </html>

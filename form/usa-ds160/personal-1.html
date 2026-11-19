@@ -1378,7 +1378,7 @@
    <script>
       document.getElementById("copyEmbedBtn").addEventListener("click", () => {
          navigator.clipboard.writeText(document.getElementById("embedCode").innerText);
-         alert("✅ Embed code copied!");
+         ds160Alert("✅ Embed code copied!");
       });
    </script>
 
@@ -1604,12 +1604,12 @@
 
          if (isValid) {
             localStorage.setItem("formValid-1", "true");
-            alert("✅ Form validated successfully.");
+            ds160Alert("✅ Form validated successfully.");
             updateSidebarStatus()
             updateMobileNavStatus();
             // window.location.href = "personal-2.html"; // optional
          } else {
-            alert("❌ Please fill all required fields before proceeding.");
+            ds160Alert("❌ Please fill all required fields before proceeding.");
          }
       }
    </script>
@@ -1656,6 +1656,8 @@
    </script>
 
 
+   <script src="i18n-adapter.js"></script>
+   <script src="../../assets/js/i18n.js" data-locales="./locales/"></script>
 </body>
 
 </html>

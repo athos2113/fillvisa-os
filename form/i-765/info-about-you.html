@@ -41,15 +41,15 @@
 
 
    <!-- Primary Meta Tags -->
-   <title>Form I-765 â€“ Page 2: Information About You | Fillvisa</title>
+   <title>Form I-765 – Page 2: Information About You | Fillvisa</title>
    <meta name="description"
-      content="Continue filling Form I-765 (Application for Employment Authorization) with Fillvisa. Page 2 collects your personal details such as name, date of birth, address, and identifying information. Complete it online â€” private, secure, and completely free.">
+      content="Continue filling Form I-765 (Application for Employment Authorization) with Fillvisa. Page 2 collects your personal details such as name, date of birth, address, and identifying information. Complete it online — private, secure, and completely free.">
    <meta name="keywords"
       content="Form I-765 page 2, information about you I-765, I-765 personal info, EAD application form, work permit USA, USCIS I-765, employment authorization document, Fillvisa, fill I-765 online, free immigration form filler, secure visa form, browser-based USCIS application">
    <meta name="robots" content="index, follow">
 
    <!-- Open Graph / Facebook -->
-   <meta property="og:title" content="Form I-765 â€“ Page 2: Information About You | Fillvisa">
+   <meta property="og:title" content="Form I-765 – Page 2: Information About You | Fillvisa">
    <meta property="og:description"
       content="Enter your personal details for USCIS Form I-765, including name, date of birth, and address. Fillvisa is private, browser-based, and 100% free.">
    <meta property="og:url" content="https://fillvisa.com/form/i-765/info-about-you">
@@ -58,9 +58,9 @@
 
    <!-- Twitter -->
    <meta name="twitter:card" content="summary_large_image">
-   <meta name="twitter:title" content="Form I-765 â€“ Page 2: Information About You | Fillvisa">
+   <meta name="twitter:title" content="Form I-765 – Page 2: Information About You | Fillvisa">
    <meta name="twitter:description"
-      content="Complete the 'Information About You' section of Form I-765 â€” private, secure, and free with Fillvisa.">
+      content="Complete the 'Information About You' section of Form I-765 — private, secure, and free with Fillvisa.">
    <!-- <meta name="twitter:image" content="https://fillvisa.com/assets/og/i-765-info-about-you.jpg"> -->
 
    <!-- Canonical -->
@@ -702,7 +702,7 @@
                             <input type="text" class="form-control" id="incare_of_name" name="incare_of_name">
 
                             <div class="valid-feedback">Looks good!</div>
-                            <div class="invalid-feedback">Please enter the â€œIn Care Ofâ€ name if applicable.</div>
+                            <div class="invalid-feedback">Please enter the “In Care Of” name if applicable.</div>
 
                         </div>
 
@@ -1729,7 +1729,7 @@
 
                             <div class="alert alert-warning mb-0">
                                 <strong>NOTE:</strong>
-                                If you answered â€œYesâ€ to Item Number 30, refer to
+                                If you answered “Yes” to Item Number 30, refer to
                                 <strong>
                                     Special Filing Instructions for Those With Pending Asylum Applications
                                 </strong>
@@ -1827,7 +1827,7 @@
 
                             <div class="alert alert-warning mb-0">
                                 <strong>NOTE:</strong>
-                                If you answered â€œYesâ€ to Item Number 31.b, refer to
+                                If you answered “Yes” to Item Number 31.b, refer to
                                 <strong>
                                     Employment-Based Nonimmigrant Categories, Items 8.-9.
                                 </strong>
@@ -1858,7 +1858,7 @@
 
     <a href="https://tally.so/r/q45je8" target="_blank" class="floating-help rounded">
       <span class="label">Something not right?</span>
-      â—
+      ❗
     </a>
 
     <footer class="pt-7">
@@ -2162,7 +2162,7 @@
         autosaveToast.id = "autosave-toast";
         autosaveToast.style.cssText =
             "display:none; position:fixed; bottom:30px; right:30px; background:#d1e7dd; color:#0f5132; padding:12px 20px; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.15); z-index:1000;";
-        autosaveToast.innerText = "âœ… Autosaved";
+        autosaveToast.innerText = "✅ Autosaved";
         document.body.appendChild(autosaveToast);
 
         function showAutosaveToast() {
@@ -2585,12 +2585,12 @@
 
                 radio.classList.remove("is-valid", "is-invalid");
 
-                // Invalid â†’ show red on all options
+                // Invalid → show red on all options
                 if (!isValid) {
                     radio.classList.add("is-invalid");
                 }
 
-                // Valid â†’ show green only on selected option
+                // Valid → show green only on selected option
                 else if (radio.checked) {
                     radio.classList.add("is-valid");
                 }
@@ -2721,8 +2721,8 @@
                 clearTimeout(debounceTimer);
                 debounceTimer = setTimeout(() => {
                     saveFormToLocalStorage();
-                    updateSidebarStatus(); // Update âœ… status after autosave
-                    updateMobileNavStatus(); // Update âœ… status after autosave
+                    updateSidebarStatus(); // Update ✅ status after autosave
+                    updateMobileNavStatus(); // Update ✅ status after autosave
                 }, 700);
             });
 
@@ -2735,8 +2735,8 @@
                 clearTimeout(debounceTimer);
                 debounceTimer = setTimeout(() => {
                     saveFormToLocalStorage();
-                    updateSidebarStatus(); // Update âœ… status after autosave
-                    updateMobileNavStatus(); // Update âœ… status after autosave
+                    updateSidebarStatus(); // Update ✅ status after autosave
+                    updateMobileNavStatus(); // Update ✅ status after autosave
                 }, 700);
             });
         });
@@ -2764,13 +2764,13 @@
 
             // If any errors, block submission
             if (errors.length > 0) {
-                alert("Please fix the following issues:\n\n" + errors.join("\n"));
+                i765Alert("Please fix the following issues:\n\n" + errors.join("\n"));
                 return;
             }
 
             // === Form is correct ===
             localStorage.setItem("i765Valid-2", "true");
-            alert("âœ… Form validated successfully.");
+            i765Alert("✅ Form validated successfully.");
             updateSidebarStatus()
             updateMobileNavStatus();
 
@@ -2784,11 +2784,11 @@
                 const page = el.getAttribute("data-page");
                 const isValid = localStorage.getItem(`i765Valid-${page}`) === "true";
 
-                // Remove existing âœ…
-                el.textContent = el.textContent.replace(" âœ…", "");
+                // Remove existing ✅
+                el.textContent = el.textContent.replace(" ✅", "");
 
                 if (isValid) {
-                    el.textContent += " âœ…";
+                    el.textContent += " ✅";
                 }
             });
         }
@@ -2807,18 +2807,20 @@
                 const page = option.dataset.page;
                 if (!page) return;
 
-                // Remove existing âœ…
-                option.textContent = option.textContent.replace(" âœ…", "");
+                // Remove existing ✅
+                option.textContent = option.textContent.replace(" ✅", "");
 
                 const isValid = localStorage.getItem(`i765Valid-${page}`) === "true";
                 if (isValid) {
-                    option.textContent += " âœ…";
+                    option.textContent += " ✅";
                 }
             });
         }
     </script>
 
 
+    <script src="i18n-adapter.js"></script>
+    <script src="../../assets/js/i18n.js" data-locales="./locales/"></script>
 </body>
 
 </html>

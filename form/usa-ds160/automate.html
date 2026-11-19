@@ -107,7 +107,7 @@
     <!-- Primary Meta Tags -->
     <title>Form DS-160: Automate Your DS-160 Application | Fillvisa</title>
     <meta name="description"
-        content="Automatically complete your DS-160 U.S. visa application with Fillvisa. Page 14 helps you review and generate a mapped DS-160 form instantly â€” private, secure, and completely free.">
+        content="Automatically complete your DS-160 U.S. visa application with Fillvisa. Page 14 helps you review and generate a mapped DS-160 form instantly — private, secure, and completely free.">
     <meta name="keywords"
         content="DS-160, automate DS-160, auto fill DS-160 form, DS-160 automation, Fillvisa, online DS-160, free visa form filler, secure visa application, DS-160 PDF generator, browser-based visa form">
     <meta name="robots" content="index, follow">
@@ -115,7 +115,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content="Form DS-160: Automate Your DS-160 Application | Fillvisa">
     <meta property="og:description"
-        content="Generate your DS-160 form automatically with Fillvisaâ€™s secure online autofill tool. Private, browser-based, and 100% free.">
+        content="Generate your DS-160 form automatically with Fillvisa’s secure online autofill tool. Private, browser-based, and 100% free.">
     <meta property="og:url" content="https://fillvisa.com/form/usa-ds160/automate">
     <meta property="og:type" content="website">
     <!-- <meta property="og:image" content="https://fillvisa.com/assets/og/ds160-automate.jpg"> -->
@@ -124,7 +124,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Form DS-160: Automate Your DS-160 Application | Fillvisa">
     <meta name="twitter:description"
-        content="Instantly auto-fill and generate your DS-160 visa form with Fillvisa â€” private, secure, and free.">
+        content="Instantly auto-fill and generate your DS-160 visa form with Fillvisa — private, secure, and free.">
     <!-- <meta name="twitter:image" content="https://fillvisa.com/assets/og/ds160-automate.jpg"> -->
 
     <!-- Canonical -->
@@ -1517,7 +1517,7 @@
                 ? entries.map(function (entry) {
                     return `
                         <div class="ds160-preview-key">${escapeDs160Html(humanizeDs160Key(entry.key))}</div>
-                        <div class="ds160-preview-value">${escapeDs160Html(formatDs160Value(entry.value))}</div>
+                        <div class="ds160-preview-value" translate="no">${escapeDs160Html(formatDs160Value(entry.value))}</div>
                     `;
                 }).join("")
                 : `<div class="text-body-secondary">No saved answers found for this section.</div>`;
@@ -1534,7 +1534,7 @@
         }
 
         function buildDs160PreviewDocument(sections) {
-            return `<!doctype html>
+            return ds160PreviewDocument(`<!doctype html>
                 <html lang="en">
                 <head>
                     <meta charset="utf-8">
@@ -1563,7 +1563,7 @@
                                         ${entries.map(function (entry) {
                                             return `
                                                 <dt>${escapeDs160Html(humanizeDs160Key(entry.key))}</dt>
-                                                <dd>${escapeDs160Html(formatDs160Value(entry.value))}</dd>
+                                                <dd translate="no">${escapeDs160Html(formatDs160Value(entry.value))}</dd>
                                             `;
                                         }).join("")}
                                     </dl>
@@ -1572,7 +1572,7 @@
                         `;
                     }).join("")}
                 </body>
-                </html>`;
+                </html>`);
         }
 
         function flattenDs160Data(value, prefix = "") {
@@ -1655,6 +1655,7 @@
                 }
             }
 
+            pre.setAttribute("translate", "no");
             pre.textContent = JSON.stringify(mergedData, null, 2);
             pre.style.display = "block";
         };
@@ -6417,6 +6418,8 @@
 
 
 
+   <script src="i18n-adapter.js"></script>
+   <script src="../../assets/js/i18n.js" data-locales="./locales/"></script>
 </body>
 
 </html>

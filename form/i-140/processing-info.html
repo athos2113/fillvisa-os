@@ -1191,6 +1191,7 @@
         </svg>
     </div>
     <!-- Libs JS -->
+    <script src="i18n-adapter.js"></script>
     <script src="../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../assets/libs/simplebar/dist/simplebar.min.js"></script>
     <script src="../../assets/libs/headhesive/dist/headhesive.min.js"></script>
@@ -1688,13 +1689,13 @@
 
             // If any errors, block submission
             if (errors.length > 0) {
-                alert("Please fix the following issues:\n\n" + errors.join("\n"));
+                i140Alert("Please fix the following issues:\n\n" + errors.join("\n"));
                 return;
             }
 
             // === Form is correct ===
             localStorage.setItem("i140Valid-4", "true");
-            alert("✅ Form validated successfully.");
+            i140Alert("✅ Form validated successfully.");
             updateSidebarStatus()
             updateMobileNavStatus();
 
@@ -1709,7 +1710,7 @@
                 const isValid = localStorage.getItem(`i140Valid-${page}`) === "true";
 
                 // Remove existing ✅
-                el.textContent = el.textContent.replace(" ✅", "");
+                el.textContent = (el.dataset.navigationLabel ||= el.textContent).replace(" ✅", "");
 
                 if (isValid) {
                     el.textContent += " ✅";
@@ -1732,7 +1733,7 @@
                 if (!page) return;
 
                 // Remove existing ✅
-                option.textContent = option.textContent.replace(" ✅", "");
+                option.textContent = (option.dataset.navigationLabel ||= option.textContent).replace(" ✅", "");
 
                 const isValid = localStorage.getItem(`i140Valid-${page}`) === "true";
                 if (isValid) {
@@ -1744,6 +1745,7 @@
 
 
    <script src="../../assets/js/utils.js"></script>
+    <script src="../../assets/js/i18n.js" data-locales="./locales/"></script>
 </body>
 
 </html>

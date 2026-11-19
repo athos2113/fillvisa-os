@@ -41,15 +41,15 @@
 
 
     <!-- Primary Meta Tags -->
-    <title>Form DS-160 â€“ Page 7: Passport Information | Fillvisa</title>
+    <title>Form DS-160 – Page 7: Passport Information | Fillvisa</title>
     <meta name="description"
-        content="Provide your passport details in Page 7 of the DS-160 U.S. visa application. Enter your passport number, issuance, and expiration details online with Fillvisa â€” private, secure, and completely free.">
+        content="Provide your passport details in Page 7 of the DS-160 U.S. visa application. Enter your passport number, issuance, and expiration details online with Fillvisa — private, secure, and completely free.">
     <meta name="keywords"
         content="DS-160 page 7, passport information DS-160, passport details DS-160, U.S. visa form, Fillvisa, fill DS-160 online, secure visa form filler, free visa application, browser-based DS-160 form, passport section DS-160">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="Form DS-160 â€“ Page 7: Passport Information | Fillvisa">
+    <meta property="og:title" content="Form DS-160 – Page 7: Passport Information | Fillvisa">
     <meta property="og:description"
         content="Enter your passport details for the DS-160 visa form. Fillvisa is private, browser-based, and 100% free.">
     <meta property="og:url" content="https://fillvisa.com/form/usa-ds160/passport">
@@ -58,9 +58,9 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Form DS-160 â€“ Page 7: Passport Information | Fillvisa">
+    <meta name="twitter:title" content="Form DS-160 – Page 7: Passport Information | Fillvisa">
     <meta name="twitter:description"
-        content="Complete the Passport Information section of your DS-160 form â€” private, secure, and free with Fillvisa.">
+        content="Complete the Passport Information section of your DS-160 form — private, secure, and free with Fillvisa.">
     <!-- <meta name="twitter:image" content="https://fillvisa.com/assets/og/ds160-passport.jpg"> -->
 
     <!-- Canonical -->
@@ -1576,7 +1576,7 @@
 
     <a href="https://tally.so/r/q45je8" target="_blank" class="floating-help rounded">
       <span class="label">Something not right?</span>
-      â—
+      ❗
     </a>
 
    <footer class="pt-7">
@@ -1954,7 +1954,7 @@
         autosaveToast.id = "autosave-toast";
         autosaveToast.style.cssText =
             "display:none; position:fixed; bottom:30px; right:30px; background:#d1e7dd; color:#0f5132; padding:12px 20px; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.15); z-index:1000;";
-        autosaveToast.innerText = "âœ… Autosaved";
+        autosaveToast.innerText = "✅ Autosaved";
         document.body.appendChild(autosaveToast);
 
         function showAutosaveToast() {
@@ -2041,7 +2041,7 @@
             // === Passport Section ===
             const passportTypeEl = document.getElementById("passportType");
             passportTypeEl.value = saved.passportType || "";
-            passportTypeEl.dispatchEvent(new Event("change")); // ðŸ” Triggers passportType logic
+            passportTypeEl.dispatchEvent(new Event("change")); // 🔁 Triggers passportType logic
 
             document.getElementById("passportExplain").value = saved.passportExplain || "";
             document.getElementById("passportNumber").value = saved.passportNumber || "";
@@ -2085,7 +2085,7 @@
             document.getElementById("lostPassportCountry").value = saved.lostPassportCountry || "";
             document.getElementById("lostPassportExplanation").value = saved.lostPassportExplanation || "";
 
-            // ðŸ” Re-trigger toggles for dynamic fields
+            // 🔁 Re-trigger toggles for dynamic fields
             ["bookNumberDoesNotApply", "noExpiry", "lostDoNotKnow"].forEach(id => {
                 const el = document.getElementById(id);
                 if (el && el.checked) el.dispatchEvent(new Event("change"));
@@ -2118,8 +2118,8 @@
                 clearTimeout(debounceTimer);
                 debounceTimer = setTimeout(() => {
                     saveFormToLocalStorage();
-                    updateSidebarStatus(); // Update âœ… status after autosave
-                    updateMobileNavStatus(); // Update âœ… status after autosave
+                    updateSidebarStatus(); // Update ✅ status after autosave
+                    updateMobileNavStatus(); // Update ✅ status after autosave
                 }, 700);
             });
 
@@ -2230,13 +2230,13 @@
 
             // === Final Result ===
             if (errors.length > 0) {
-                alert("Please fix the following issues:\n\n" + errors.join("\n"));
+                ds160Alert("Please fix the following issues:\n\n" + errors.join("\n"));
                 return;
             }
 
             // === Form is correct ===
             localStorage.setItem("formValid-7", "true");
-            alert("âœ… Form validated successfully.");
+            ds160Alert("✅ Form validated successfully.");
             updateSidebarStatus();
             updateMobileNavStatus();
         }
@@ -2249,11 +2249,11 @@
                 const page = el.getAttribute("data-page");
                 const isValid = localStorage.getItem(`formValid-${page}`) === "true";
 
-                // Remove existing âœ…
-                el.textContent = el.textContent.replace(" âœ…", "");
+                // Remove existing ✅
+                el.textContent = el.textContent.replace(" ✅", "");
 
                 if (isValid) {
-                    el.textContent += " âœ…";
+                    el.textContent += " ✅";
                 }
             });
         }
@@ -2273,12 +2273,12 @@
                 const page = option.dataset.page;
                 if (!page) return;
 
-                // Remove existing âœ…
-                option.textContent = option.textContent.replace(" âœ…", "");
+                // Remove existing ✅
+                option.textContent = option.textContent.replace(" ✅", "");
 
                 const isValid = localStorage.getItem(`formValid-${page}`) === "true";
                 if (isValid) {
-                    option.textContent += " âœ…";
+                    option.textContent += " ✅";
                 }
             });
         }
@@ -2287,6 +2287,8 @@
 
 
 
+   <script src="i18n-adapter.js"></script>
+   <script src="../../assets/js/i18n.js" data-locales="./locales/"></script>
 </body>
 
 </html>

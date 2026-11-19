@@ -103,6 +103,7 @@
 
 
    <link rel="stylesheet" href="../../assets/css/site-navbar.css?v=1">
+    <script src="../../assets/js/i18n.js" defer></script>
 </head>
 
 <body>
@@ -1754,7 +1755,7 @@
             if (!isValid) {
                 el.classList.remove("is-valid");
                 el.classList.add("is-invalid");
-                return config.message || "This field is invalid.";
+                return window.FillvisaI18n?.t(config.message || "This field is invalid.") ?? (config.message || "This field is invalid.");
             }
 
             el.classList.remove("is-invalid");
@@ -1824,7 +1825,7 @@
 
             // If any errors, block submission
             if (errors.length > 0) {
-                alert("Please fix the following issues:\n\n" + errors.join("\n"));
+                alert((window.FillvisaI18n?.t("Please fix the following issues:") ?? "Please fix the following issues:") + "\n\n" + errors.join("\n"));
                 return;
             }
 
@@ -1838,7 +1839,7 @@
             localStorage.setItem("ar11Valid", "true");
             localStorage.setItem("ar11Submitted", "true"); //NEW
 
-            alert("✅ Form validated successfully.");
+            alert(window.FillvisaI18n?.t("✅ Form validated successfully.") ?? "✅ Form validated successfully.");
 
             updateGeneratePdfButton();
         }
@@ -2000,7 +2001,7 @@
 
         function downloadPreviewedPdf() {
             if (!ar11PreviewPdfBytes) {
-                alert("Please preview your PDF before downloading.");
+                alert(window.FillvisaI18n?.t("Please preview your PDF before downloading.") ?? "Please preview your PDF before downloading.");
                 return;
             }
 

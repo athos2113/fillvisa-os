@@ -32,7 +32,7 @@ function summary(parent){
 function navigation(){
  const active=route(state);nav.replaceChildren();
  active.forEach(id=>{let validated=false;try{validated=(id==='setup'||!!I129Base.maps[id])&&localStorage.getItem('i129Valid-'+id)==='true';}catch(e){}
- const a=element('a',parts[id][0]+(validated?' \u2705':''),'list-group-item list-group-item-action'+(id===page?' active':''));a.href=href(id);if(validated)a.setAttribute('aria-label',parts[id][0]+' - Validated');if(id===page)a.setAttribute('aria-current','step');nav.append(a);});
+ const a=element('a',parts[id][0],'list-group-item list-group-item-action'+(id===page?' active':''));a.href=href(id);if(validated)a.append(element('span',' \u2705'));if(validated)a.setAttribute('aria-label',parts[id][0]+' - Validated');if(id===page)a.setAttribute('aria-current','step');nav.append(a);});
  document.getElementById('routeLabel').textContent=classifications[state.classification]||'Choose a classification';
  const index=active.indexOf(page);
  document.getElementById('stepLabel').textContent=index<0?'Section not selected':`Step ${index+1} of ${active.length}`;
@@ -104,7 +104,7 @@ function setupFeedback(form){
    const bad=active&&!input.validity.valid,good=active&&!bad&&!!input.value.trim();
    input.classList.toggle('is-invalid',bad);input.classList.toggle('is-valid',good);
    input.setAttribute('aria-invalid',String(bad));
-   invalid.textContent=bad?input.validationMessage:'';invalid.style.display=bad?'block':'none';
+   invalid.textContent=bad?I129Forms.validationMessage(input):'';invalid.style.display=bad?'block':'none';
    valid.textContent=good?'Looks good.':'';valid.style.display=good?'block':'none';
    if(input.disabled)touched.delete(input);
   });
@@ -160,7 +160,7 @@ else if(!route(state).includes(page)){
 } else if(page==='additional') {
  const entries=I129Forms.explanations(state);
  content.append(element('p','Explanations are collected beside their related questions. Edit the original answer to change an entry.'));
- entries.forEach(entry=>{const card=element('section',null,'border rounded p-3 mb-3');card.append(element('h2',entry.reference,'h5'),element('p',entry.value));content.append(card);});
+ entries.forEach(entry=>{const card=element('section',null,'border rounded p-3 mb-3');const answer=element('p',entry.value);answer.setAttribute('translate','no');card.append(element('h2',entry.reference,'h5'),answer);content.append(card);});
  if(!entries.length)content.append(element('p','No related explanations have been entered yet.'));
 } else {
  content.append(element('p','Section outline - individual fields will be added next.','text-body-secondary'));

@@ -1948,11 +1948,11 @@
 
          if (isValid) {
             localStorage.setItem("formValid-2", "true");
-            alert("✅ Form validated successfully.");
+            ds160Alert("✅ Form validated successfully.");
             updateSidebarStatus();
             updateMobileNavStatus();
          } else {
-            alert("❌ Please fill all required fields before proceeding.");
+            ds160Alert("❌ Please fill all required fields before proceeding.");
          }
       }
    </script>
@@ -2004,6 +2004,8 @@
 
 
 
+   <script src="i18n-adapter.js"></script>
+   <script src="../../assets/js/i18n.js" data-locales="./locales/"></script>
 </body>
 
 </html>

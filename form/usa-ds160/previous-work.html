@@ -43,16 +43,16 @@
 
 
     <!-- Primary Meta Tags -->
-    <title>Form DS-160 â€“ Page 11: Previous Work, Education & Training Information | Fillvisa</title>
+    <title>Form DS-160 – Page 11: Previous Work, Education & Training Information | Fillvisa</title>
     <meta name="description"
-        content="Provide your previous work, education, and training history in Page 11 of the DS-160 U.S. visa application. Complete this section online with Fillvisa â€” private, secure, and completely free.">
+        content="Provide your previous work, education, and training history in Page 11 of the DS-160 U.S. visa application. Complete this section online with Fillvisa — private, secure, and completely free.">
     <meta name="keywords"
         content="DS-160 page 11, previous work information DS-160, education history DS-160, training history DS-160, employment history DS-160, Fillvisa, fill DS-160 online, free visa form filler, secure visa application, browser-based DS-160">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:title"
-        content="Form DS-160 â€“ Page 11: Previous Work, Education & Training Information | Fillvisa">
+        content="Form DS-160 – Page 11: Previous Work, Education & Training Information | Fillvisa">
     <meta property="og:description"
         content="Enter your previous employment, education, and training details for the DS-160 visa form. Fillvisa is private, browser-based, and 100% free.">
     <meta property="og:url" content="https://fillvisa.com/form/usa-ds160/previous-work">
@@ -62,9 +62,9 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title"
-        content="Form DS-160 â€“ Page 11: Previous Work, Education & Training Information | Fillvisa">
+        content="Form DS-160 – Page 11: Previous Work, Education & Training Information | Fillvisa">
     <meta name="twitter:description"
-        content="Complete the Previous Work, Education & Training section of your DS-160 form â€” private, secure, and free with Fillvisa.">
+        content="Complete the Previous Work, Education & Training section of your DS-160 form — private, secure, and free with Fillvisa.">
     <!-- <meta name="twitter:image" content="https://fillvisa.com/assets/og/ds160-previous-work.jpg"> -->
 
     <!-- Canonical -->
@@ -1516,7 +1516,7 @@
 
     <a href="https://tally.so/r/q45je8" target="_blank" class="floating-help rounded">
       <span class="label">Something not right?</span>
-      â—
+      ❗
     </a>
 
    <footer class="pt-7">
@@ -1844,7 +1844,7 @@
         autosaveToast.id = "autosave-toast";
         autosaveToast.style.cssText =
             "display:none; position:fixed; bottom:30px; right:30px; background:#d1e7dd; color:#0f5132; padding:12px 20px; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.15); z-index:1000;";
-        autosaveToast.innerText = "âœ… Autosaved";
+        autosaveToast.innerText = "✅ Autosaved";
         document.body.appendChild(autosaveToast);
 
         function showAutosaveToast() {
@@ -2052,8 +2052,8 @@
                 clearTimeout(debounceTimer);
                 debounceTimer = setTimeout(() => {
                     saveFormToLocalStorage();
-                    updateSidebarStatus(); // Update âœ… status after autosave
-                    updateMobileNavStatus(); // Update âœ… status after autosave
+                    updateSidebarStatus(); // Update ✅ status after autosave
+                    updateMobileNavStatus(); // Update ✅ status after autosave
                 }, 700);
             });
 
@@ -2197,12 +2197,12 @@
 
             // === Final Result ===
             if (errors.length > 0) {
-                alert("Please fix the following issues:\n\n" + errors.join("\n"));
+                ds160Alert("Please fix the following issues:\n\n" + errors.join("\n"));
                 return;
             }
 
             localStorage.setItem("formValid-11", "true");
-            alert("âœ… Form validated successfully.");
+            ds160Alert("✅ Form validated successfully.");
             updateSidebarStatus();
             updateMobileNavStatus();
         }
@@ -2215,11 +2215,11 @@
                 const page = el.getAttribute("data-page");
                 const isValid = localStorage.getItem(`formValid-${page}`) === "true";
 
-                // Remove existing âœ…
-                el.textContent = el.textContent.replace(" âœ…", "");
+                // Remove existing ✅
+                el.textContent = el.textContent.replace(" ✅", "");
 
                 if (isValid) {
-                    el.textContent += " âœ…";
+                    el.textContent += " ✅";
                 }
             });
         }
@@ -2239,12 +2239,12 @@
                 const page = option.dataset.page;
                 if (!page) return;
 
-                // Remove existing âœ…
-                option.textContent = option.textContent.replace(" âœ…", "");
+                // Remove existing ✅
+                option.textContent = option.textContent.replace(" ✅", "");
 
                 const isValid = localStorage.getItem(`formValid-${page}`) === "true";
                 if (isValid) {
-                    option.textContent += " âœ…";
+                    option.textContent += " ✅";
                 }
             });
         }
@@ -2255,6 +2255,8 @@
 
 
 
+   <script src="i18n-adapter.js"></script>
+   <script src="../../assets/js/i18n.js" data-locales="./locales/"></script>
 </body>
 
 </html>

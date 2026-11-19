@@ -41,15 +41,15 @@
 
 
     <!-- Primary Meta Tags -->
-    <title>Form DS-160 â€“ Page 13: Security & Background Information | Fillvisa</title>
+    <title>Form DS-160 – Page 13: Security & Background Information | Fillvisa</title>
     <meta name="description"
-        content="Answer the security and background questions in Page 13 of the DS-160 U.S. visa application. Complete this section online with Fillvisa â€” private, secure, and completely free.">
+        content="Answer the security and background questions in Page 13 of the DS-160 U.S. visa application. Complete this section online with Fillvisa — private, secure, and completely free.">
     <meta name="keywords"
         content="DS-160 page 13, security information DS-160, background questions DS-160, U.S. visa application, Fillvisa, fill DS-160 online, free visa form filler, secure visa form, DS-160 background check, browser-based DS-160">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="Form DS-160 â€“ Page 13: Security & Background Information | Fillvisa">
+    <meta property="og:title" content="Form DS-160 – Page 13: Security & Background Information | Fillvisa">
     <meta property="og:description"
         content="Complete the security and background information section of your DS-160 visa form online. Fillvisa is private, browser-based, and 100% free.">
     <meta property="og:url" content="https://fillvisa.com/form/usa-ds160/security-info">
@@ -58,9 +58,9 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Form DS-160 â€“ Page 13: Security & Background Information | Fillvisa">
+    <meta name="twitter:title" content="Form DS-160 – Page 13: Security & Background Information | Fillvisa">
     <meta name="twitter:description"
-        content="Complete the Security & Background section of your DS-160 form â€” private, secure, and free with Fillvisa.">
+        content="Complete the Security & Background section of your DS-160 form — private, secure, and free with Fillvisa.">
     <!-- <meta name="twitter:image" content="https://fillvisa.com/assets/og/ds160-security-info.jpg"> -->
 
     <!-- Canonical -->
@@ -659,16 +659,16 @@
 
                     <!--Disimissing -->
                     <div class="alert alert-warning alert-dismissible fade show mb-0 p-4 my-3" role="alert">
-                        <strong>Important:</strong> These security answers are locked to <b>â€œNoâ€</b> to avoid accidental
+                        <strong>Important:</strong> These security answers are locked to <b>“No”</b> to avoid accidental
                         rejections.
-                        If your truthful answer is â€œYes,â€ stop and donâ€™t submitâ€”complete this part on the official site
+                        If your truthful answer is “Yes,” stop and don’t submit—complete this part on the official site
                         or contact support.
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
 
 
                     <a href="#submitButton" class="btn btn-primary my-5">
-                        â¬‡ï¸ Go to bottom
+                        ⬇️ Go to bottom
                     </a>
 
 
@@ -1449,7 +1449,7 @@
 
     <a href="https://tally.so/r/q45je8" target="_blank" class="floating-help rounded">
       <span class="label">Something not right?</span>
-      â—
+      ❗
     </a>
 
    <footer class="pt-7">
@@ -1871,7 +1871,7 @@
             };
 
             localStorage.setItem("formData-13", JSON.stringify(formData));
-            console.log("ðŸ’¾ Saved to localStorage:", formData);
+            console.log("💾 Saved to localStorage:", formData);
 
 
 
@@ -1879,7 +1879,7 @@
 
             // === Form is correct, submit form ===
             localStorage.setItem("formValid-13", "true");
-            alert("âœ… Form validated successfully.");
+            ds160Alert("✅ Form validated successfully.");
             updateSidebarStatus();
             updateMobileNavStatus();
         }
@@ -1892,11 +1892,11 @@
                 const page = el.getAttribute("data-page");
                 const isValid = localStorage.getItem(`formValid-${page}`) === "true";
 
-                // Remove existing âœ…
-                el.textContent = el.textContent.replace(" âœ…", "");
+                // Remove existing ✅
+                el.textContent = el.textContent.replace(" ✅", "");
 
                 if (isValid) {
-                    el.textContent += " âœ…";
+                    el.textContent += " ✅";
                 }
             });
         }
@@ -1916,12 +1916,12 @@
                 const page = option.dataset.page;
                 if (!page) return;
 
-                // Remove existing âœ…
-                option.textContent = option.textContent.replace(" âœ…", "");
+                // Remove existing ✅
+                option.textContent = option.textContent.replace(" ✅", "");
 
                 const isValid = localStorage.getItem(`formValid-${page}`) === "true";
                 if (isValid) {
-                    option.textContent += " âœ…";
+                    option.textContent += " ✅";
                 }
             });
         }
@@ -1932,15 +1932,17 @@
         const savedData = localStorage.getItem("formData-13");
         if (savedData) {
             const formData = JSON.parse(savedData);
-            console.log("ðŸ“ Loaded from localStorage:", formData);
+            console.log("📝 Loaded from localStorage:", formData);
         } else {
-            console.log("âš ï¸ No formData-13 found in localStorage");
+            console.log("⚠️ No formData-13 found in localStorage");
         }
     </script>
 
 
 
 
+   <script src="i18n-adapter.js"></script>
+   <script src="../../assets/js/i18n.js" data-locales="./locales/"></script>
 </body>
 
 </html>

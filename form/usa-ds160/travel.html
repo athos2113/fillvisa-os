@@ -2860,12 +2860,12 @@
             }
 
             if (missingFields.length > 0) {
-                alert("Please fill in the following required fields:\n\n" + missingFields.join("\n"));
+                ds160Alert("Please fill in the following required fields:\n\n" + missingFields.join("\n"));
                 return;
             }
 
             localStorage.setItem("formValid-3", "true");
-            alert("✅ Form validated successfully.");
+            ds160Alert("✅ Form validated successfully.");
             updateSidebarStatus();
             updateMobileNavStatus();
         }
@@ -2918,6 +2918,8 @@
 
 
 
+   <script src="i18n-adapter.js"></script>
+   <script src="../../assets/js/i18n.js" data-locales="./locales/"></script>
 </body>
 
 </html>

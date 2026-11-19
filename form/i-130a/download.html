@@ -457,7 +457,7 @@
    </header>
 
    <main class="container py-5">
-      <div class="mb-4"><a href="index.html">Form I-130A</a> <span class="text-body-secondary">/ Preview and download</span></div>
+      <nav aria-label="breadcrumb" class="mb-4"><ol class="breadcrumb mb-0"><li class="breadcrumb-item"><a href="index.html">Form I-130A</a></li><li class="breadcrumb-item active" aria-current="page">Preview and download</li></ol></nav>
       <div id="storageNotice" class="alert alert-warning" role="alert" hidden>Browser storage is unavailable or the saved setup could not be read. Enable storage to save and continue.</div>
       <div class="row g-4">
          <aside class="col-lg-4 col-xl-3">
@@ -751,6 +751,7 @@
          document.getElementById('downloadPdfBtn').disabled = true;
       }
       async function fillForm() {
+         const t = text => window.FillvisaI18n?.t(text) ?? text;
          const button = document.getElementById('generatePdfBtn');
          button.disabled = true;
          resetPreview();
@@ -760,7 +761,7 @@
                sections[id] = JSON.parse(localStorage.getItem('i130a-' + id) || '{}');
                for (const field of I130ABase.maps[id]) {
                   const error = I130ABase.error(field, sections[id][field.id] || '', sections[id], {});
-                  if (error) throw new Error(field.label + ': ' + error);
+                  if (error) throw new Error(t(field.label) + ': ' + t(error));
                }
             }
             const response = await fetch('fillvisa_i-130a_acro.pdf');
@@ -772,7 +773,7 @@
             document.getElementById('downloadPdfBtn').disabled = false;
          } catch (error) {
             resetPreview();
-            alert('Unable to create PDF: ' + error.message);
+            alert(t('Unable to create PDF:') + ' ' + t(error.message));
          } finally { renderDownloadGate(); }
       }
       document.getElementById('downloadPdfBtn').addEventListener('click', () => {
@@ -824,5 +825,6 @@
       });
    </script>
    <script src="../../assets/js/form-edition.js"></script>
+   <script src="../../assets/js/i18n.js" data-locales="./locales/"></script>
 </body>
 </html>

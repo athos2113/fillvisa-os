@@ -879,6 +879,7 @@
       </svg>
    </div>
 
+   <script src="i18n-adapter.js"></script>
    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
    <script src="../../assets/libs/simplebar/dist/simplebar.min.js"></script>
    <script src="../../assets/libs/headhesive/dist/headhesive.min.js"></script>
@@ -1196,13 +1197,13 @@
          });
 
          if (errors.length > 0) {
-            alert("Please fix the following issues:\n\n" + errors.join("\n"));
+            i907Alert("Please fix the following issues:\n\n" + errors.join("\n"));
             return;
          }
 
          saveFormToLocalStorage();
          localStorage.setItem("i907Valid-3", "true");
-         alert("\u2705 Form validated successfully.");
+         i907Alert("\u2705 Form validated successfully.");
          updateSidebarStatus();
          updateMobileNavStatus();
       }
@@ -1214,7 +1215,7 @@
             const page = el.getAttribute("data-page");
             const isValid = localStorage.getItem(`i907Valid-${page}`) === "true";
 
-            el.textContent = el.textContent.replace(" \u2705", "");
+            el.textContent = (el.dataset.navigationLabel ||= el.textContent).replace(" \u2705", "");
 
             if (isValid) {
                el.textContent += " \u2705";
@@ -1235,7 +1236,7 @@
             const page = option.dataset.page;
             if (!page) return;
 
-            option.textContent = option.textContent.replace(" \u2705", "");
+            option.textContent = (option.dataset.navigationLabel ||= option.textContent).replace(" \u2705", "");
 
             const isValid = localStorage.getItem(`i907Valid-${page}`) === "true";
             if (isValid) {
@@ -1247,6 +1248,7 @@
       window.addEventListener("DOMContentLoaded", updateMobileNavStatus);
    </script>
    <script src="../../assets/js/utils.js"></script>
+   <script src="../../assets/js/i18n.js" data-locales="./locales/"></script>
 </body>
 
 </html>

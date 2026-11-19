@@ -950,6 +950,7 @@
         </svg>
     </div>
     <!-- Libs JS -->
+    <script src="i18n-adapter.js"></script>
     <script src="../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../assets/libs/simplebar/dist/simplebar.min.js"></script>
     <script src="../../assets/libs/headhesive/dist/headhesive.min.js"></script>
@@ -1009,7 +1010,7 @@
                 const page = el.getAttribute("data-page");
                 const isValid = localStorage.getItem(`i140Valid-${page}`) === "true";
 
-                el.textContent = el.textContent.replace(" \u2705", "");
+                el.textContent = (el.dataset.navigationLabel ||= el.textContent).replace(" \u2705", "");
 
                 if (isValid) {
                     el.textContent += " \u2705";
@@ -1030,7 +1031,7 @@
                 const page = option.dataset.page;
                 if (!page) return;
 
-                option.textContent = option.textContent.replace(" \u2705", "");
+                option.textContent = (option.dataset.navigationLabel ||= option.textContent).replace(" \u2705", "");
 
                 const isValid = localStorage.getItem(`i140Valid-${page}`) === "true";
                 if (isValid) {
@@ -1134,7 +1135,7 @@
                     if (typeof fillForm === "function") {
                         fillForm();
                     } else {
-                        alert("fillForm() not defined yet.");
+                        i140Alert("fillForm() not defined yet.");
                     }
                 });
 
@@ -1269,7 +1270,7 @@
 
         function downloadI140PreviewedPdf() {
             if (!i140PreviewPdfBytes) {
-                alert("Please preview the PDF before downloading.");
+                i140Alert("Please preview the PDF before downloading.");
                 return;
             }
 
@@ -1859,6 +1860,7 @@
 
    <script src="../../assets/js/utils.js"></script>
    <script src="../../assets/js/form-edition.js"></script>
+    <script src="../../assets/js/i18n.js" data-locales="./locales/"></script>
 </body>
 
 </html>

@@ -939,6 +939,7 @@
       </svg>
    </div>
 
+   <script src="i18n-adapter.js"></script>
    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
    <script src="../../assets/libs/simplebar/dist/simplebar.min.js"></script>
    <script src="../../assets/libs/headhesive/dist/headhesive.min.js"></script>
@@ -1139,9 +1140,17 @@
          }
 
          const regionLabel = povertyGuidelineRegionLabels[evaluation.region] || "48 contiguous states and D.C.";
-         detail.textContent =
-            `Household size ${evaluation.householdSize}, region ${regionLabel}: highest saved Part 6 income is ${formatCurrency(evaluation.highestIncome)} and the guideline threshold is ${formatCurrency(evaluation.threshold)}. ` +
-            (part7CanBeSkipped ? "Part 7 can be skipped." : "Part 7 should be completed if assets are needed to qualify.");
+         // Separate translatable copy from calculated amounts; preserve the displayed values.
+         const amount = value => {
+            const span = document.createElement("span");
+            span.setAttribute("translate", "no");
+            span.textContent = value;
+            return span;
+         };
+         detail.replaceChildren("Household size ", amount(String(evaluation.householdSize)),
+            ", region ", regionLabel, ": highest saved Part 6 income is ", amount(formatCurrency(evaluation.highestIncome)),
+            " and the guideline threshold is ", amount(formatCurrency(evaluation.threshold)), ". ",
+            part7CanBeSkipped ? "Part 7 can be skipped." : "Part 7 should be completed if assets are needed to qualify.");
       }
 
       function getFormData() {
@@ -1268,13 +1277,13 @@
          }
 
          if (errors.length > 0) {
-            alert("Please fix the following issues:\n\n" + errors.join("\n"));
+            i864Alert("Please fix the following issues:\n\n" + errors.join("\n"));
             return;
          }
 
          saveFormToLocalStorage();
          localStorage.setItem("i864Valid-7", "true");
-         alert(part7CanBeSkipped ? "\u2705 Part 7 marked complete because it can be skipped." : "\u2705 Form validated successfully.");
+         i864Alert(part7CanBeSkipped ? "\u2705 Part 7 marked complete because it can be skipped." : "\u2705 Form validated successfully.");
          updateSidebarStatus();
          updateMobileNavStatus();
       }
@@ -1288,7 +1297,7 @@
             const page = el.getAttribute("data-page");
             const isValid = localStorage.getItem(`i864Valid-${page}`) === "true";
 
-            el.textContent = el.textContent.replace(" \u2705", "");
+            el.textContent = (el.dataset.navigationLabel ||= el.textContent).replace(" \u2705", "");
 
             if (isValid) {
                el.textContent += " \u2705";
@@ -1307,7 +1316,7 @@
             const page = option.dataset.page;
             if (!page) return;
 
-            option.textContent = option.textContent.replace(" \u2705", "");
+            option.textContent = (option.dataset.navigationLabel ||= option.textContent).replace(" \u2705", "");
 
             const isValid = localStorage.getItem(`i864Valid-${page}`) === "true";
             if (isValid) {
@@ -1316,6 +1325,7 @@
          });
       }
    </script>
+   <script src="../../assets/js/i18n.js" data-locales="./locales/"></script>
 </body>
 
 </html>

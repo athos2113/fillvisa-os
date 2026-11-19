@@ -4,6 +4,9 @@
    const form = document.getElementById('sectionForm');
    const part = Number(form.dataset.part);
    const controls = [...form.querySelectorAll('input[id], textarea[id], select[id]')];
+   // Keep validation sources stable when the displayed labels change language.
+   const sourceLabels = new Map(controls.map(el => [el, (el.labels?.[0]?.textContent.trim() || el.id).replace(/\s+/g, ' ')]));
+   const sourceQuestions = new Map(controls.map(el => [el, (el.closest('fieldset')?.querySelector('legend')?.textContent.trim() || el.name || '').replace(/\s+/g, ' ')]));
    const status = document.getElementById('saveStatus');
    let storageReady = true;
    const autosaveToast = document.createElement('div');
@@ -49,17 +52,17 @@
       }
       let error = '';
       const row = el.closest('[data-application-row], [data-benefit-row]');
-      const label = (row ? 'Row ' + (row.dataset.applicationRow || row.dataset.benefitRow) + ' — ' : '') + (el.labels?.[0]?.textContent.trim() || el.id);
+      const label = (row ? 'Row ' + (row.dataset.applicationRow || row.dataset.benefitRow) + ' — ' : '') + sourceLabels.get(el);
       if (I912Flow.basisIds.includes(el.id)) {
          if (!I912Flow.basisIds.some(id => data()[id])) error = 'Select at least one basis for your request.';
       } else if (el.type === 'radio') {
-         if (controls.some(input => input.type === 'radio' && input.name === el.name && input.required && !input.disabled) && !controls.some(input => input.type === 'radio' && input.name === el.name && input.checked)) error = 'Select an answer for: ' + (el.closest('fieldset')?.querySelector('legend')?.textContent.trim() || el.name);
+         if (controls.some(input => input.type === 'radio' && input.name === el.name && input.required && !input.disabled) && !controls.some(input => input.type === 'radio' && input.name === el.name && input.checked)) error = 'Select an answer for: ' + sourceQuestions.get(el);
       } else if (el.required && !el.value.trim()) error = label + ' is required.';
       else if (!el.validity.valid) {
          error = el.id === 'requestor_anumber' ? 'A-Number must contain 7–9 digits, without the A prefix.'
             : el.id === 'requestor_uscis_account' ? 'USCIS Online Account Number must contain exactly 12 digits.'
             : el.id === 'requestor_ssn' ? 'U.S. Social Security Number must contain exactly 9 digits, or be left blank.'
-            : label + ': ' + el.validationMessage;
+            : 'Enter a valid value for: ' + label;
       }
       el.classList.toggle('is-invalid', !!error);
       el.classList.toggle('is-valid', !error);
@@ -191,7 +194,7 @@
       conditionalFields();
       const errors = [...new Set(controls.map(validateField).filter(Boolean))];
       if (errors.length) {
-         alert('Please fix the following issues:\n\n' + errors.join('\n'));
+         i912Alert('Please fix the following issues:\n\n' + errors.join('\n'));
          controls.find(el => el.classList.contains('is-invalid'))?.focus();
          return;
       }
@@ -202,7 +205,7 @@
             location.href = I912Flow.next(part, basis());
          } else {
             status.textContent = 'Saved. The remaining Part 2 questions will be added from the next PDF page.';
-            alert('✓ Information validated and saved. Part 2 continues on the next PDF page.');
+            i912Alert('✓ Information validated and saved. Part 2 continues on the next PDF page.');
          }
       } catch (error) { report(error); }
    });

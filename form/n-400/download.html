@@ -1178,7 +1178,7 @@
                   if (typeof fillForm === "function") {
                      fillForm();
                   } else {
-                     alert("⚠️ fillForm() not defined yet.");
+                     n400Alert("⚠️ fillForm() not defined yet.");
                   }
                });
 
@@ -1346,7 +1346,7 @@
 
       function downloadN400PreviewedPdf() {
          if (!n400PreviewPdfBytes) {
-            alert("Please preview the PDF before downloading.");
+            n400Alert("Please preview the PDF before downloading.");
             return;
          }
 
@@ -3623,6 +3623,8 @@
 
 
    <script src="../../assets/js/form-edition.js"></script>
+   <script src="i18n-adapter.js"></script>
+   <script src="../../assets/js/i18n.js" data-locales="./locales/"></script>
 </body>
 
 </html>

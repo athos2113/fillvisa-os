@@ -3646,13 +3646,13 @@
 
             // === Final Result ===
             if (errors.length > 0) {
-                alert("Please fix the following issues:\n\n" + errors.join("\n"));
+                ds160Alert("Please fix the following issues:\n\n" + errors.join("\n"));
                 return;
             }
 
             // === Form is correct ===
             localStorage.setItem("formValid-14", "true");
-            alert("✅ Form validated successfully.");
+            ds160Alert("✅ Form validated successfully.");
             updateSidebarStatus();
             updateMobileNavStatus();
         }
@@ -3706,6 +3706,8 @@
 
 
 
+   <script src="i18n-adapter.js"></script>
+   <script src="../../assets/js/i18n.js" data-locales="./locales/"></script>
 </body>
 
 </html>

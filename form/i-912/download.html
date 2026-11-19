@@ -722,6 +722,7 @@
    <script src="../../assets/js/vendors/intl-tel.js"></script>
    <script src="../../assets/js/utils.js"></script>
 
+   <script src="i18n-adapter.js"></script>
    <script src="workflow.js"></script>
    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
    <script src="fill-pdf.js?v=editable-signatures-4"></script>
@@ -757,7 +758,7 @@
             showPdfPreview(await I912Pdf.build(await response.arrayBuffer(), sections));
          } catch (error) {
             resetPreview();
-            alert("Unable to create PDF: " + error.message);
+            alert(i912Translate("Unable to create PDF:") + " " + i912Translate(error.message));
          } finally { renderDownloadPage(); }
       }
 
@@ -861,6 +862,7 @@
       // Show FillvisaReviewInvite only after PDF output is successfully generated.
    </script>
    <script src="../../assets/js/form-edition.js"></script>
+   <script src="../../assets/js/i18n.js" data-locales="./locales/"></script>
 </body>
 
 </html>

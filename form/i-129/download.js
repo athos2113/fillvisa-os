@@ -48,7 +48,7 @@ function render(container,setup){
   revoke();frame.removeAttribute('src');open.removeAttribute('href');panel.hidden=true;download.disabled=true;list.replaceChildren();
   try{
    const packet=getPacket();
-   packet.selectedSections.forEach(id=>{const li=el('li');const link=el('a',I129Flow.parts[id][0]);link.href=id+'.html';li.append(link);const issue=packet.issues.find(x=>x.page===id);li.append(document.createTextNode(issue?' — '+issue.message:' — Validated'));list.append(li);});
+   packet.selectedSections.forEach(id=>{const li=el('li');const link=el('a',I129Flow.parts[id][0]);link.href=id+'.html';li.append(link);const issue=packet.issues.find(x=>x.page===id);li.append(document.createTextNode(' — '),el('span',issue?issue.message:'Validated'));list.append(li);});
    const implemented=typeof root.fillForm==='function';
    preview.disabled=busy||packet.issues.length>0||!implemented;
    status.textContent=!implemented?'PDF generation is not connected yet. Your selected sections are listed below; preview and download will become available when PDF filling is implemented.':packet.issues.length?'Complete and validate the listed sections before previewing.':'Ready to preview the base petition and selected E or Trade Agreement supplement. H Classification pages are supported; H data/fee, L, O/P, Q-1 and R-1 supplement pages are supported; Attachment-1 is supported for additional named beneficiaries.';

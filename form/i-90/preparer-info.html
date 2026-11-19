@@ -1158,6 +1158,7 @@
       </svg>
    </div>
    <!-- Libs JS -->
+   <script src="i18n-adapter.js"></script>
    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
    <script src="../../assets/libs/simplebar/dist/simplebar.min.js"></script>
    <script src="../../assets/libs/headhesive/dist/headhesive.min.js"></script>
@@ -1231,7 +1232,7 @@
       // autosaveToast.id = "autosave-toast";
       // autosaveToast.style.cssText =
       //    "display:none; position:fixed; bottom:30px; right:30px; background:#d1e7dd; color:#0f5132; padding:12px 20px; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.15); z-index:1000;";
-      // autosaveToast.innerText = "âœ… Autosaved";
+      // autosaveToast.innerText = "✅ Autosaved";
       // document.body.appendChild(autosaveToast);
 
       // function showAutosaveToast() {
@@ -1343,7 +1344,7 @@
          // document.getElementById("rep_extends").checked = saved.rep_extends;
          // document.getElementById("rep_not_extends").checked = saved.rep_not_extends;
 
-         // // âœ… Apply toggle on load
+         // // ✅ Apply toggle on load
          // toggleAttorneySection();
 
 
@@ -1554,13 +1555,13 @@
 
       //    // If any errors, block submission
       //    if (errors.length > 0) {
-      //       alert("Please fix the following issues:\n\n" + errors.join("\n"));
+      //       i90Alert("Please fix the following issues:\n\n" + errors.join("\n"));
       //       return;
       //    }
 
       //    // === Form is correct ===
       //    localStorage.setItem("i90Valid-7", "true");
-      //    alert("âœ… Form validated successfully.");
+      //    i90Alert("✅ Form validated successfully.");
       //    updateSidebarStatus()
       //    updateMobileNavStatus();
       // }
@@ -1957,13 +1958,13 @@
          });
 
          if (errors.length > 0) {
-            alert("Please fix the following issues:\n\n" + errors.join("\n"));
+            i90Alert("Please fix the following issues:\n\n" + errors.join("\n"));
             return;
          }
 
          saveFormToLocalStorage();
          localStorage.setItem("i90Valid-7", "true");
-         alert("✅ Form validated successfully.");
+         i90Alert("✅ Form validated successfully.");
          updateSidebarStatus()
          updateMobileNavStatus();
       }
@@ -1977,7 +1978,7 @@
             const isValid = localStorage.getItem(`i90Valid-${page}`) === "true";
 
             // Remove existing ✅
-            el.textContent = el.textContent.replace(" ✅", "");
+            el.textContent = (el.dataset.navigationLabel ||= el.textContent).replace(" ✅", "");
 
             if (isValid) {
                el.textContent += " ✅";
@@ -2000,7 +2001,7 @@
             if (!page) return;
 
             // Remove existing ✅
-            option.textContent = option.textContent.replace(" ✅", "");
+            option.textContent = (option.dataset.navigationLabel ||= option.textContent).replace(" ✅", "");
 
             const isValid = localStorage.getItem(`i90Valid-${page}`) === "true";
             if (isValid) {
@@ -2011,6 +2012,7 @@
    </script>
 
 
+   <script src="../../assets/js/i18n.js" data-locales="./locales/"></script>
 </body>
 
 </html>

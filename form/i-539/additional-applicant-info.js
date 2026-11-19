@@ -104,7 +104,7 @@ function validateFieldById(id) {
 
 function updateNavigationStatus() {
    document.querySelectorAll("[data-page]").forEach(element => {
-      const label = element.textContent.replace(/ \u2705$/, "");
+      const label = element.dataset.navigationLabel ||= element.textContent.replace(/ \u2705$/, "");
       const valid = localStorage.getItem(`${validPrefix}${element.dataset.page}`) === "true";
       element.textContent = label + (valid ? " \u2705" : "");
    });
@@ -121,7 +121,7 @@ function saveFormToLocalStorage(validated = false) {
       return true;
    } catch (error) {
       autosaveToast.style.display = "none";
-      alert("Your browser could not save these changes. Allow browser storage and try again before leaving this page.");
+      i539Alert("Your browser could not save these changes. Allow browser storage and try again before leaving this page.");
       return false;
    }
 }
@@ -152,10 +152,10 @@ function submitForm(event) {
    const errors = [...new Set(fields.map(field => validateFieldById(field.id)).filter(Boolean))];
    if (!saveFormToLocalStorage(errors.length === 0)) return;
    if (errors.length) {
-      alert("Please fix the following issues:\n\n" + errors.join("\n"));
+      i539Alert("Please fix the following issues:\n\n" + errors.join("\n"));
       applicantForm.querySelector(".is-invalid")?.focus();
    } else {
-      alert("\u2705 Form validated successfully.");
+      i539Alert("\u2705 Form validated successfully.");
    }
 }
 
@@ -184,7 +184,7 @@ function loadFormFromLocalStorage() {
       updateNavigationStatus();
    } catch (error) {
       toggleConditionalSections();
-      alert("Saved responses could not be loaded. Check browser storage before editing; the saved record has not been cleared.");
+      i539Alert("Saved responses could not be loaded. Check browser storage before editing; the saved record has not been cleared.");
    }
 }
 

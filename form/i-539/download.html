@@ -885,6 +885,7 @@
       </svg>
    </div>
 
+   <script src="i18n-adapter.js"></script>
    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
    <script src="../../assets/libs/simplebar/dist/simplebar.min.js"></script>
    <script src="../../assets/libs/headhesive/dist/headhesive.min.js"></script>
@@ -1005,7 +1006,7 @@
 
       function downloadI539PreviewedPdf() {
          if (!i539PreviewPdfBytes) {
-            alert("Please preview your PDF before downloading.");
+            i539Alert("Please preview your PDF before downloading.");
             return;
          }
 
@@ -1279,7 +1280,7 @@
             showI539PdfPreview(await pdfDoc.save());
          } catch (error) {
             if (typeof catchError === "function") catchError(error);
-            else alert(error.message || "Unable to generate the PDF preview. Please try again.");
+            else i539Alert(error.message || "Unable to generate the PDF preview. Please try again.");
          } finally {
             setI539PreviewButtonReady();
          }
@@ -1413,6 +1414,7 @@
       });
    </script>
    <script src="../../assets/js/form-edition.js"></script>
+   <script src="../../assets/js/i18n.js" data-locales="./locales/"></script>
 </body>
 
 </html>

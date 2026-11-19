@@ -1259,7 +1259,7 @@
                   if (typeof fillForm === "function") {
                      fillForm();
                   } else {
-                     alert("⚠️ fillForm() not defined yet.");
+                     i485Alert("⚠️ fillForm() not defined yet.");
                   }
                });
 
@@ -1410,7 +1410,7 @@
 
       function downloadI485PreviewedPdf() {
          if (!i485PreviewPdfBytes) {
-            alert("Please preview the PDF before downloading.");
+            i485Alert("Please preview the PDF before downloading.");
             return;
          }
 
@@ -4467,6 +4467,8 @@
 
 
    <script src="../../assets/js/form-edition.js"></script>
+   <script src="i18n-adapter.js"></script>
+   <script src="../../assets/js/i18n.js" data-locales="./locales/"></script>
 </body>
 
 </html>

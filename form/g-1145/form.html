@@ -100,6 +100,7 @@
 
 
    <link rel="stylesheet" href="../../assets/css/site-navbar.css?v=1">
+   <script src="../../assets/js/i18n.js" defer></script>
 </head>
 
 <body>
@@ -1134,7 +1135,7 @@
          if (!isValid) {
             el.classList.remove("is-valid");
             el.classList.add("is-invalid");
-            return config.message || "This field is invalid.";
+            return window.FillvisaI18n?.t(config.message || "This field is invalid.") ?? (config.message || "This field is invalid.");
          }
 
          el.classList.remove("is-invalid");
@@ -1204,13 +1205,13 @@
 
          // If any errors, block submission
          if (errors.length > 0) {
-            alert("Please fix the following issues:\n\n" + errors.join("\n"));
+            alert((window.FillvisaI18n?.t("Please fix the following issues:") ?? "Please fix the following issues:") + "\n\n" + errors.join("\n"));
             return;
          }
 
          // Form is correct
          localStorage.setItem("g1145Valid", "true");
-         alert("✅ Form validated successfully.");
+         alert(window.FillvisaI18n?.t("✅ Form validated successfully.") ?? "✅ Form validated successfully.");
          updateGeneratePdfButton();
       }
    </script>
@@ -1380,7 +1381,7 @@
 
       function downloadG1145PreviewedPdf() {
          if (!g1145PreviewPdfBytes) {
-            alert("Please preview the PDF before downloading.");
+            alert(window.FillvisaI18n?.t("Please preview the PDF before downloading.") ?? "Please preview the PDF before downloading.");
             return;
          }
 

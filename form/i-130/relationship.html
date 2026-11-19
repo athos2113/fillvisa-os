@@ -1099,13 +1099,13 @@
          });
 
          if (errors.length > 0) {
-            alert("Please fix the following issues:\n\n" + errors.join("\n"));
+            i130Alert("Please fix the following issues:\n\n" + errors.join("\n"));
             return;
          }
 
          saveFormToLocalStorage();
          localStorage.setItem("i130Valid-1", "true");
-         alert("\u2705 Form validated successfully.");
+         i130Alert("\u2705 Form validated successfully.");
          updateSidebarStatus();
          updateMobileNavStatus();
       }
@@ -1151,6 +1151,8 @@
 
       window.addEventListener("DOMContentLoaded", updateMobileNavStatus);
    </script>
+   <script src="i18n-adapter.js"></script>
+   <script src="../../assets/js/i18n.js" data-locales="./locales/"></script>
 </body>
 
 </html>

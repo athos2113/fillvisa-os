@@ -1035,7 +1035,7 @@
 
       function downloadI765PreviewedPdf() {
          if (!i765PreviewPdfBytes) {
-            alert("Please preview your PDF before downloading.");
+            i765Alert("Please preview your PDF before downloading.");
             return;
          }
 
@@ -1533,7 +1533,7 @@
             if (typeof fillForm === "function") {
                fillForm();
             } else {
-               alert("fillForm() not defined yet.");
+               i765Alert("fillForm() not defined yet.");
             }
          });
 
@@ -1599,6 +1599,8 @@
       window.addEventListener("DOMContentLoaded", updateMobileNavStatus);
    </script>
    <script src="../../assets/js/form-edition.js"></script>
+    <script src="i18n-adapter.js"></script>
+    <script src="../../assets/js/i18n.js" data-locales="./locales/"></script>
 </body>
 
 </html>

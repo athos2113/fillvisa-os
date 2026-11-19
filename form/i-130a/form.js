@@ -44,7 +44,7 @@ function render(page,container,setup){
   const item=controls.get(f.id);if(!item||item.wrap.hidden||!item.inputs.length)return '';
   const value=data[f.id]||'';
   let message=B.error(f,value,data,setup);
-  if(!message){const bad=item.inputs.find(i=>!i.validity.valid);if(bad)message=bad.validationMessage;}
+  if(!message){const bad=item.inputs.find(i=>!i.validity.valid);if(bad)message=validationMessage(bad);}
   const valid=!message&&!!String(value).trim();
   item.inputs.forEach(i=>{i.classList.toggle('is-valid',valid);i.classList.toggle('is-invalid',!!message);i.setAttribute('aria-invalid',String(!!message));});
   item.feedback.textContent=message;item.feedback.style.display=message?'block':'none';
@@ -64,8 +64,9 @@ function render(page,container,setup){
    const wrap=el(f.type==='heading'?'h2':'p',f.label,f.type==='heading'?'h4 mt-5 mb-3':'alert alert-light border');
    wrap.style.whiteSpace='pre-line';form.append(wrap);controls.set(f.id,{wrap,inputs:[],feedback:el('div')});return;
   }
-  const wrap=el(['radio','checkboxes'].includes(f.type)?'fieldset':'div',null,'mb-4');const caption=el(['radio','checkboxes'].includes(f.type)?'legend':'label',f.label+(f.required?' *':''),'form-label fs-6');
+  const wrap=el(['radio','checkboxes'].includes(f.type)?'fieldset':'div',null,'mb-4');const caption=el(['radio','checkboxes'].includes(f.type)?'legend':'label',f.label,'form-label fs-6');
   if(!['radio','checkboxes'].includes(f.type))caption.htmlFor=f.id;
+  if(f.required)caption.append(el('span',' *'));
   wrap.append(caption);const inputs=[];let reset=null;const feedback=el('div',null,'invalid-feedback'),success=el('div',null,'valid-feedback');feedback.id=f.id+'_error';success.id=f.id+'_valid';
   function update(value){data[f.id]=value;conditions();save();touched.add(f.id);fields.filter(x=>attempted||touched.has(x.id)).forEach(check);}
   if(['radio','checkboxes'].includes(f.type)){
@@ -122,9 +123,19 @@ function review(container,setup){
   const data=B.values(fields,read('i130a-'+page),setup);const list=el('dl',null,'mt-3');
   fields.filter(f=>Object.hasOwn(data,f.id)&&data[f.id]).forEach(f=>{
    const val=f.type==='signature'?'Signature added':f.type==='checkboxes'?f.options.filter(([v])=>data[f.id].split(',').includes(v)).map(([,label])=>label).join('; '):f.options?(f.options.find(([v])=>v===data[f.id])||['',data[f.id]])[1]:data[f.id];
-   list.append(el('dt',f.label),el('dd',val));
+   const answer=el('dd');
+   if(f.type==='checkboxes'){f.options.filter(([v])=>data[f.id].split(',').includes(v)).forEach(([,label],index)=>{if(index)answer.append('; ');answer.append(el('span',label));});}
+   else{answer.textContent=val;if(!f.options&&f.type!=='signature')answer.setAttribute('translate','no');}
+   list.append(el('dt',f.label),answer);
   });section.append(list);const edit=el('a','Edit this section');edit.href=page+'.html';section.append(edit);container.append(section);
  });
+}
+function validationMessage(input){
+ if(input.validity.valueMissing)return 'This field is required.';
+ if(input.type==='email'&&input.validity.typeMismatch)return 'Enter a valid email address.';
+ if(input.type==='number')return 'Enter a valid number within the allowed range.';
+ if(input.type==='date')return 'Enter a valid date.';
+ return input.title||'Enter a valid value.';
 }
 window.I130AForms={render,explanations,review,showAutosaveToast,hideAutosaveToast};
 })();

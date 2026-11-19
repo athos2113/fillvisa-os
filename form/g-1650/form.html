@@ -85,6 +85,7 @@
 
    <link rel="canonical" href="https://fillvisa.com/form/g-1650/form">
    <link rel="stylesheet" href="../../assets/css/site-navbar.css?v=1">
+   <script src="../../assets/js/i18n.js" defer></script>
 </head>
 
 <body>
@@ -1254,7 +1255,7 @@
          if (!isValid) {
             el.classList.remove("is-valid");
             el.classList.add("is-invalid");
-            return config.message || "This field is invalid.";
+            return window.FillvisaI18n?.t(config.message || "This field is invalid.") ?? (config.message || "This field is invalid.");
          }
 
          el.classList.remove("is-invalid");
@@ -1316,13 +1317,13 @@
          });
 
          if (errors.length > 0) {
-            alert("Please fix the following issues:\n\n" + errors.join("\n"));
+            alert((window.FillvisaI18n?.t("Please fix the following issues:") ?? "Please fix the following issues:") + "\n\n" + errors.join("\n"));
             return;
          }
 
          saveFormToLocalStorage(true);
          localStorage.setItem("g1650Valid-1", "true");
-         alert("Form validated successfully.");
+         alert(window.FillvisaI18n?.t("Form validated successfully.") ?? "Form validated successfully.");
          updateGeneratePdfButton();
          updateSidebarStatus();
          updateMobileNavStatus();
@@ -1441,7 +1442,7 @@
 
       function downloadG1650PreviewedPdf() {
          if (!g1650PreviewPdfBytes) {
-            alert("Please preview the PDF before downloading.");
+            alert(window.FillvisaI18n?.t("Please preview the PDF before downloading.") ?? "Please preview the PDF before downloading.");
             return;
          }
 
